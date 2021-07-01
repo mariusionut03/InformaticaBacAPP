@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeNav"
+        android:icon="@drawable/homeblack"
+        android:title="Home" />
+    <item
+        android:id="@+id/learnNav"
+        android:icon="@drawable/bookblack"
+        android:title="Learn" />
+    <item
+        android:id="@+id/practiceNav"
+        android:icon="@drawable/practiceblack"
+        android:title="Practice" />
+    <item
+        android:id="@+id/settingsNav"
+        android:icon="@drawable/settingsblack"
+        android:title="Settings" />
+
+</menu>
