@@ -8,21 +8,30 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 public class HomeFragment extends Fragment {
-
-    private Button learnbutton;
+    private Button learnButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home,
+                container, false);
 
-        learnbutton.setOnClickListener(new View.OnClickListener() {
+        learnButton = (Button) view.findViewById(R.id.buttonLearn);
+        learnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                learnbutton.setTextColor(000000);
+                setButtonTextColor();
             }
         });
+        return view;
+    }
+
+    public void setButtonTextColor()
+    {
+        learnButton.setTextColor(000000);
+
     }
 }
