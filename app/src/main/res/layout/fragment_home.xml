@@ -15,25 +15,25 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintHorizontal_bias="0.786"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.158" />
 
     <Button
         android:id="@+id/buttonLearn"
+        style="@style/Theme.MyApplication"
         android:layout_width="320dp"
         android:layout_height="49dp"
-        android:text="Mediu de învățare"
-        android:fontFamily="monospace"
-        style="@style/Theme.MyApplication"
         android:background="@drawable/buttonwhite"
+        android:fontFamily="monospace"
+        android:text="Mediu de învățare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275"/>
+        app:layout_constraintVertical_bias="0.275" />
 
     <Button
         android:id="@+id/buttonQuiz"
@@ -87,9 +87,9 @@
         android:background="@drawable/programming"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.04" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
