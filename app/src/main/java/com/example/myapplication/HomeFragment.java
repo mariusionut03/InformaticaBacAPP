@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 
 public class HomeFragment extends Fragment {
     private Button learnButton, settingsButton;
+    private Button learnButton, quizButton, subiecteButton, settingsButton;
 
     @Nullable
     @Override
@@ -21,13 +24,7 @@ public class HomeFragment extends Fragment {
                 container, false);
 
         learnButton = (Button) view.findViewById(R.id.buttonLearn);
-        learnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setButtonTextColor();
-            }
-        });
-
+        learnButton.setOnClickListener(v -> learnButtonFunction());
         settingsButton = (Button) view.findViewById(R.id.buttonSettings);
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,12 +33,10 @@ public class HomeFragment extends Fragment {
                 FragmentManager manager = getParentFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
             }
-        });
-
         return view;
     }
 
-    public void setButtonTextColor() {
+    public void learnButtonFunction() {
         Intent intent = new Intent(getActivity(), LearnActivity1.class);
         startActivity(intent);
     }
