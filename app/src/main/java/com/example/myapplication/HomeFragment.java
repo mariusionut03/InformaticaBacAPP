@@ -15,7 +15,6 @@ import androidx.fragment.app.FragmentManager;
 
 public class HomeFragment extends Fragment {
     private Button learnButton, settingsButton;
-    private Button learnButton, quizButton, subiecteButton, settingsButton;
 
     @Nullable
     @Override
@@ -33,7 +32,9 @@ public class HomeFragment extends Fragment {
                 FragmentManager manager = getParentFragmentManager();
                 manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
             }
+        });
         return view;
+
     }
 
     public void learnButtonFunction() {
