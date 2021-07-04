@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Button;
 
 public class LearnActivity1 extends AppCompatActivity {
 
@@ -22,6 +24,16 @@ public class LearnActivity1 extends AppCompatActivity {
         webSettings.setJavaScriptEnabled(true);
 
         webView.loadUrl("file:///android_asset/examplewebview.html");
+
+
+        Button backButton;
+        backButton = findViewById(R.id.buttonBack);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 }
