@@ -17,6 +17,9 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:fontFamily="@font/monda"
+        android:background="@drawable/learnactivitybuttonlight"
         android:text="Back" />
 
     <TextView
@@ -24,7 +27,8 @@
         android:layout_width="321dp"
         android:layout_height="49dp"
         android:text="Example Learn Activity"
-        android:textSize="30sp"
+        android:fontFamily="@font/monda"
+        android:textSize="27sp"
         android:textColor="#000000"
         android:textAlignment="center"
         android:layout_alignParentRight="true"/>
@@ -33,14 +37,20 @@
         android:id="@+id/buttonBackwards"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Backwards"
+        android:text="Inapoi"
+        android:fontFamily="@font/monda"
+        android:textColor="#000000"
+        android:background="@drawable/learnactivitybuttonlight"
         android:layout_alignParentBottom="true"/>
 
     <Button
         android:id="@+id/buttonForwards"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forwards"
+        android:text="Inainte"
+        android:fontFamily="@font/monda"
+        android:textColor="#000000"
+        android:background="@drawable/learnactivitybuttonlight"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"/>
 
@@ -48,12 +58,13 @@
         android:id="@+id/textView2"
         android:layout_width="198dp"
         android:layout_height="41dp"
-        android:text="Page 1/7"
-        android:textSize="30sp"
+        android:text="1/7"
+        android:fontFamily="@font/monda"
+        android:textSize="18sp"
         android:textAlignment="center"
         android:textColor="#000000"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"/>
 
 
-</RelativeLayout>>
+</RelativeLayout>
