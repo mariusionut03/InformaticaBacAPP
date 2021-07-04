@@ -1,8 +1,12 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class LearnActivity1 extends AppCompatActivity {
@@ -13,6 +17,11 @@ public class LearnActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_learn1);
 
         WebView webView = findViewById(R.id.webViewHtml);
-        webView.loadUrl("file:///android_asset/testhtmlcode.html");
+
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.loadUrl("file:///android_asset/examplewebview.html");
     }
+
 }

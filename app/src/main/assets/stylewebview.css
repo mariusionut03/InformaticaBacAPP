@@ -1,0 +1,83 @@
+@font-face {
+			font-family: monda;
+			src: url("file:///android_asset/font/monda.ttf")
+		}
+		body {
+			font-family: monda;
+			font-size: medium;
+			text-align: justify;
+		}
+
+@font-face {
+			font-family: oxygen;
+			src: url("file:///android_asset/font/oxygen.ttf")
+		}
+		body {
+			font-family: oxygen;
+			font-size: medium;
+			text-align: justify;
+		}
+
+body
+{
+background-color:transparent;
+}
+
+h1 {
+	font-family: 'oxygen', sans-serif;
+}
+
+p {
+	font-family: 'monda', sans-serif;
+}
+
+.codeblock {
+	overflow: scroll;
+	white-space: nowrap;
+	border-radius: 15px;
+	padding: 10px 10px 10px 10px;
+	width: 95%;
+	align: center;
+	color: white;
+	background-color: #1f1f1f;
+}
+
+.functions {
+	color: #00b3ff;
+}
+.strings {
+	color: #00ff6e;
+}
+.numbers {
+	color: #c387ff;
+}
+.vars {
+	color: #fff387;
+}
+.commands {
+	color: #ff8787;
+}
+.comments {
+	color: #7d7d7d;
+}
+
+
+
+
+
+
+
+/* SCROLLBAR FOR CODE */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
