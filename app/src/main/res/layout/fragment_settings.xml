@@ -19,12 +19,12 @@
 
     <Switch
         android:id="@+id/switchTheme"
-        android:layout_width="50dp"
+        android:layout_width="55dp"
         android:layout_height="43dp"
         android:layout_below="@id/settingsTitle"
-        android:layout_marginTop="52dp"
         android:layout_marginLeft="9dp"
-        android:layout_toEndOf="@+id/chooseThemeTextView"/>
+        android:layout_marginTop="52dp"
+        android:layout_toEndOf="@+id/chooseThemeTextView" />
 
     <TextView
         android:id="@+id/chooseThemeTextView"
