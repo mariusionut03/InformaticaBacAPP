@@ -10,11 +10,11 @@
         android:id="@+id/webViewHtml"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/buttonBack"
-        android:layout_above="@id/buttonBackwards" />
+        android:layout_below="@id/buttonExit"
+        android:layout_above="@id/buttonBack" />
 
     <Button
-        android:id="@+id/buttonBack"
+        android:id="@+id/buttonExit"
         android:layout_width="150px"
         android:layout_height="120px"
         android:text="X"
@@ -25,7 +25,7 @@
         app:tint="@android:color/black" />
 
     <Button
-        android:id="@+id/buttonBackwards"
+        android:id="@+id/buttonBack"
         android:layout_width="250px"
         android:layout_height="wrap_content"
         android:text="Inapoi"
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"/>
 
     <Button
-        android:id="@+id/buttonForwards"
+        android:id="@+id/buttonNext"
         android:layout_width="290px"
         android:layout_height="wrap_content"
         android:text="Inainte"
