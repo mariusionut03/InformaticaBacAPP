@@ -15,6 +15,8 @@ import androidx.fragment.app.FragmentManager;
 
 public class HomeFragment extends Fragment {
     private Button learnButton, settingsButton;
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String THEME = "switchTheme";
 
     @Nullable
     @Override
@@ -25,16 +27,15 @@ public class HomeFragment extends Fragment {
         learnButton = (Button) view.findViewById(R.id.buttonLearn);
         learnButton.setOnClickListener(v -> learnButtonFunction());
         settingsButton = (Button) view.findViewById(R.id.buttonSettings);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SettingsFragment settingsFragment = new SettingsFragment();
-                FragmentManager manager = getParentFragmentManager();
-                manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
-            }
+        settingsButton.setOnClickListener(v -> {
+            SettingsFragment settingsFragment = new SettingsFragment();
+            FragmentManager manager = getParentFragmentManager();
+            manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
         });
-        return view;
 
+        
+
+        return view;
     }
 
     public void learnButtonFunction() {

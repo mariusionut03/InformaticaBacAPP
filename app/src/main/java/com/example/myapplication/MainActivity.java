@@ -2,26 +2,60 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String THEME = "switchTheme";
+    public static final String REFRESH = "refreshTheme";
+    public boolean theme;
+    public FrameLayout frameLayout;
+    public BottomNavigationView bottomNav;
+    public boolean appRefreshTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        frameLayout = findViewById(R.id.fragment_container);
+        bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new HomeFragment()).commit();
 
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        appRefreshTheme = sharedPreferences.getBoolean(REFRESH, false);
+
+        if(appRefreshTheme == true)
+        {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(REFRESH, false);
+            editor.apply();
+            SettingsFragment settingsFragment = new SettingsFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
+        }
+        else
+        {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new HomeFragment()).commit();
+        }
+        LoadDataMainActivity();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
@@ -50,4 +84,26 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    public void LoadDataMainActivity()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        theme = sharedPreferences.getBoolean(THEME, false);
+
+        if(theme == false)
+        {
+
+        }
+        else
+        {
+            frameLayout.setBackgroundResource(R.drawable.style_bg_menu_dark);
+            bottomNav.setBackgroundResource(R.drawable.style_bg_menu_dark);
+            bottomNav.setItemIconTintList(ContextCompat.getColorStateList(this, R.color.colors_menu_dark));
+            bottomNav.setItemTextColor(ContextCompat.getColorStateList(this, R.color.colors_menu_dark));
+        }
+    }
+
+    public static void refreshApp(AppCompatActivity appCompatActivity){
+        appCompatActivity.recreate();
+    }
 }
