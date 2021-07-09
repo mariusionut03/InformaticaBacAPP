@@ -1,14 +1,17 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class LearnActivity1 extends AppCompatActivity {
@@ -16,6 +19,7 @@ public class LearnActivity1 extends AppCompatActivity {
     public Button buttonNext, buttonBack, exitButton;
     public TextView pageCountText;
     public WebView webView;
+    public RelativeLayout layoutId;
     public String[][] urlArray = new String[17][9];
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String THEME = "switchTheme";
@@ -31,6 +35,7 @@ public class LearnActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn1);
 
+        layoutId = findViewById(R.id.layoutId);
         // Load chapter and page with SharedPreferences
         loadDataLearn();
 
@@ -58,6 +63,7 @@ public class LearnActivity1 extends AppCompatActivity {
         // Page Count TextView (bottom of the page)
         pageCountText = findViewById(R.id.textViewPageCount);
         setPageCountTextFunction();
+        setThemeFunction();
     }
 
     public void buttonNextFunction()
@@ -114,6 +120,22 @@ public class LearnActivity1 extends AppCompatActivity {
         pageString = sharedPreferences.getString(PAGE, "0");
         chapter = Integer.parseInt(chapterString);
         page = Integer.parseInt(pageString);
+    }
+
+    public void setThemeFunction()
+    {
+        if(theme == false)
+        {
+            layoutId.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
+        else
+        {
+            layoutId.setBackgroundColor(Color.parseColor("#000000"));
+            pageCountText.setTextColor(Color.parseColor("#FFFFFF"));
+            buttonNext.setTextColor(Color.parseColor("#FFFFFF"));
+            buttonBack.setTextColor(Color.parseColor("#FFFFFF"));
+            exitButton.setTextColor(Color.parseColor("#FFFFFF"));
+        }
     }
 
     public void saveDataLearn()

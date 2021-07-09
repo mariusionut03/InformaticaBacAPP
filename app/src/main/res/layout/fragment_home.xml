@@ -1,100 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/titleHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="464dp"
-        android:fontFamily="@font/monda"
-        android:text="Home Fragment"
+        android:fontFamily="@font/righteous"
+        android:text="Infromatică Bac"
         android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        android:textSize="30sp" />
+
 
     <Button
         android:id="@+id/buttonLearn"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="100dp"
         android:background="@drawable/style_bg_light"
+        android:layout_marginTop="125dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/textViewLearn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
         android:fontFamily="@font/dosis"
-        android:textSize="20dp"
-        android:text="Mediu de învățare"
+        android:text="Continuă învățatul"
+        android:elevation="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.275" />
+        android:layout_alignTop="@+id/buttonLearn"
+        android:layout_alignStart="@+id/buttonLearn"/>
+    
+    <TextView
+        android:id="@+id/textViewLearn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chapter 2"
+        android:fontFamily="@font/shoulders"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:elevation="2dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="3dp"
+        android:layout_alignStart="@+id/buttonLearn"
+        android:layout_below="@id/textViewLearn1"/>
+
+    <TextView
+        android:id="@+id/textViewLearn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Page 2"
+        android:fontFamily="@font/shoulders"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:elevation="2dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="3dp"
+        android:layout_toEndOf="@+id/textViewLearn2"
+        android:layout_below="@id/textViewLearn1"/>
 
     <Button
         android:id="@+id/buttonQuiz"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="75dp"
         android:text="Quiz - Exersează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
         android:background="@drawable/style_bg_light"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        android:layout_below="@+id/buttonLearn"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/buttonSubiecte"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="75dp"
         android:text="Subiecte - Testează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
         android:background="@drawable/style_bg_light"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
+        android:layout_below="@+id/buttonQuiz"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/buttonSettings"
         android:layout_width="320dp"
-        android:layout_height="49dp"
+        android:layout_height="75dp"
         android:text="Setări - Personalizează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
         android:background="@drawable/style_bg_light"
         android:textColor="@color/black"
         android:onClick="onSelectFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        android:layout_below="@+id/buttonSubiecte"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="82dp"
-        android:layout_height="81dp"
-        android:background="@drawable/programming"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+    <Button
+        android:id="@+id/buttonFeedback"
+        android:layout_width="320dp"
+        android:layout_height="75dp"
+        android:text="Feedback"
+        android:fontFamily="@font/dosis"
+        android:textSize="20dp"
+        android:background="@drawable/style_bg_light"
+        android:textColor="@color/black"
+        android:layout_below="@+id/buttonSettings"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -96,10 +96,11 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            frameLayout.setBackgroundResource(R.drawable.style_bg_menu_dark);
-            bottomNav.setBackgroundResource(R.drawable.style_bg_menu_dark);
+            frameLayout.setBackgroundColor(Color.parseColor("#000c2e"));
+            bottomNav.setBackgroundColor(Color.parseColor("#011c08"));
             bottomNav.setItemIconTintList(ContextCompat.getColorStateList(this, R.color.colors_menu_dark));
             bottomNav.setItemTextColor(ContextCompat.getColorStateList(this, R.color.colors_menu_dark));
+
         }
     }
 
