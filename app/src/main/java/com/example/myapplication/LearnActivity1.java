@@ -3,16 +3,27 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class LearnActivity1 extends AppCompatActivity {
 
@@ -46,10 +57,21 @@ public class LearnActivity1 extends AppCompatActivity {
         chaptersCount = res.getInteger(R.integer.chaptersCount);
 
         // WebView Setup
+        Context context = getApplicationContext();
+        String htmlBodyFromFile = null;
+        try {
+            htmlBodyFromFile = getStringFromFile(urlArray[chapter][page]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String htmlToLoad = "<html>" +
+                "<head><link href=\"file:///android_asset/stylewebview.css\" rel=\"stylesheet\" type=\"text/css\"></head>" +
+                htmlBodyFromFile +
+                "</html>";
         webView = findViewById(R.id.webViewHtml);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl(urlArray[chapter][page]);
+        webView.loadDataWithBaseURL(null, htmlToLoad, "text/html", "utf-8", null);
 
         // Exit Button (Top Left Corner)
         exitButton = findViewById(R.id.buttonExit);
@@ -153,5 +175,32 @@ public class LearnActivity1 extends AppCompatActivity {
         String chapterCurrentString = String.valueOf(urlArray[chapter].length);
         String textString = pageCurrentString + "/" + chapterCurrentString;
         pageCountText.setText(textString);
+    }
+
+    public static String convertStreamToString(InputStream is) throws IOException {
+        // http://www.java2s.com/Code/Java/File-Input-Output/ConvertInputStreamtoString.htm
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        StringBuilder sb = new StringBuilder();
+        String line = null;
+        Boolean firstLine = true;
+        while ((line = reader.readLine()) != null) {
+            if(firstLine){
+                sb.append(line);
+                firstLine = false;
+            } else {
+                sb.append("\n").append(line);
+            }
+        }
+        reader.close();
+        return sb.toString();
+    }
+
+    public static String getStringFromFile (String filePath) throws IOException {
+        File fl = new File(filePath);
+        FileInputStream fin = new FileInputStream(fl);
+        String ret = convertStreamToString(fin);
+        //Make sure you close all streams.
+        fin.close();
+        return ret;
     }
 }

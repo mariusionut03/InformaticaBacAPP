@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     public FrameLayout frameLayout;
     public BottomNavigationView bottomNav;
     public boolean appRefreshTheme;
-
+    public boolean refreshNeeded = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
                     new HomeFragment()).commit();
         }
         LoadDataMainActivity();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (refreshNeeded == true) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            finish();
+            startActivity(intent);
+        }
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

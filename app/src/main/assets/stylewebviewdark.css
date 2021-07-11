@@ -20,15 +20,17 @@
 
 body
 {
-background-color:#FFFFFF;
+background-color:#000000;
 }
 
 h1 {
 	font-family: 'oxygen', sans-serif;
+	color: #FFFFFF;
 }
 
 p {
 	font-family: 'monda', sans-serif;
+	color: #FFFFFF;
 }
 
 .codeblock {

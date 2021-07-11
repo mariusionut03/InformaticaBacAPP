@@ -17,14 +17,15 @@
         android:textColor="#000000"
         android:textSize="30sp" />
 
-
-    <Button
+    <TextView
         android:id="@+id/buttonLearn"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_height="100dp"
-        android:background="@drawable/style_bg_light"
+        android:background="@drawable/style_bg_light_ripple"
         android:layout_marginTop="125dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textViewLearn1"
@@ -44,81 +45,136 @@
         android:id="@+id/textViewLearn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chapter 2"
-        android:fontFamily="@font/shoulders"
+        android:text="Capitolul 12"
+        android:fontFamily="@font/dosis"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:elevation="2dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_alignStart="@+id/buttonLearn"
-        android:layout_below="@id/textViewLearn1"/>
+        android:layout_alignBottom="@id/buttonLearn"
+        android:layout_alignEnd="@id/buttonLearn"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="5dp"/>
 
     <TextView
         android:id="@+id/textViewLearn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Page 2"
-        android:fontFamily="@font/shoulders"
+        android:text="Pagina 2"
+        android:fontFamily="@font/dosis"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:elevation="2dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="3dp"
-        android:layout_toEndOf="@+id/textViewLearn2"
-        android:layout_below="@id/textViewLearn1"/>
+        android:layout_alignEnd="@id/textViewLearn2"
+        android:layout_above="@+id/textViewLearn2"/>
 
-    <Button
+    <TextView
         android:id="@+id/buttonQuiz"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:text="Quiz - Exersează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
-        android:background="@drawable/style_bg_light"
+        android:background="@drawable/style_bg_light_ripple"
         android:textColor="@color/black"
         android:layout_below="@+id/buttonLearn"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true" />
 
-    <Button
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis"
+        android:textSize="30dp"
+        android:elevation="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/buttonQuiz"
+        android:layout_alignStart="@+id/buttonQuiz"
+        android:text="Quiz Button" />
+
+    <TextView
         android:id="@+id/buttonSubiecte"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:text="Subiecte - Testează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
-        android:background="@drawable/style_bg_light"
+        android:background="@drawable/style_bg_light_ripple"
         android:textColor="@color/black"
         android:layout_below="@+id/buttonQuiz"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true" />
 
-    <Button
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis"
+        android:textSize="30dp"
+        android:elevation="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/buttonSubiecte"
+        android:layout_alignStart="@+id/buttonSubiecte"
+        android:text="Subiecte Button" />
+
+    <TextView
         android:id="@+id/buttonSettings"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:text="Setări - Personalizează"
         android:fontFamily="@font/dosis"
         android:textSize="20dp"
-        android:background="@drawable/style_bg_light"
+        android:background="@drawable/style_bg_light_ripple"
         android:textColor="@color/black"
         android:onClick="onSelectFragment"
         android:layout_below="@+id/buttonSubiecte"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/buttonFeedback"
-        android:layout_width="320dp"
-        android:layout_height="75dp"
-        android:text="Feedback"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/dosis"
-        android:textSize="20dp"
-        android:background="@drawable/style_bg_light"
+        android:textSize="30dp"
+        android:elevation="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
+        android:layout_alignTop="@+id/buttonSettings"
+        android:layout_alignStart="@+id/buttonSettings"
+        android:text="Settings Button" />
+
+    <TextView
+        android:id="@+id/buttonFeedback"
+        android:layout_width="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_height="75dp"
+        android:background="@drawable/style_bg_light_ripple"
         android:layout_below="@+id/buttonSettings"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dosis"
+        android:textSize="30dp"
+        android:elevation="2dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/black"
+        android:layout_alignTop="@+id/buttonFeedback"
+        android:layout_alignStart="@+id/buttonFeedback"
+        android:text="FeedBack Button" />
 
 </RelativeLayout>
