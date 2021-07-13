@@ -57,21 +57,10 @@ public class LearnActivity1 extends AppCompatActivity {
         chaptersCount = res.getInteger(R.integer.chaptersCount);
 
         // WebView Setup
-        Context context = getApplicationContext();
-        String htmlBodyFromFile = null;
-        try {
-            htmlBodyFromFile = getStringFromFile(urlArray[chapter][page]);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String htmlToLoad = "<html>" +
-                "<head><link href=\"file:///android_asset/stylewebview.css\" rel=\"stylesheet\" type=\"text/css\"></head>" +
-                htmlBodyFromFile +
-                "</html>";
         webView = findViewById(R.id.webViewHtml);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadDataWithBaseURL(null, htmlToLoad, "text/html", "utf-8", null);
+        loadHtmlPage(urlArray[chapter][page]);
 
         // Exit Button (Top Left Corner)
         exitButton = findViewById(R.id.buttonExit);
@@ -88,54 +77,41 @@ public class LearnActivity1 extends AppCompatActivity {
         setThemeFunction();
     }
 
-    public void buttonNextFunction()
-    {
-        if(page == urlArray[chapter].length - 1 && chapter != chaptersCount-1)
-        {
+    public void buttonNextFunction() {
+        if (page == urlArray[chapter].length - 1 && chapter != chaptersCount - 1) {
             chapter++;
             page = 0;
             saveDataLearn();
             setPageCountTextFunction();
-        }
-        else if(page == urlArray[chapter].length - 1 && chapter == chaptersCount-1)
-        {
+        } else if (page == urlArray[chapter].length - 1 && chapter == chaptersCount - 1) {
             saveDataLearn();
             finish();
-        }
-        else
-        {
+        } else {
             page++;
             saveDataLearn();
             setPageCountTextFunction();
         }
-        webView.loadUrl(urlArray[chapter][page]);
+        loadHtmlPage(urlArray[chapter][page]);
     }
 
-    public void buttonBackFunction()
-    {
-        if(page == 0 && chapter != 0)
-        {
+    public void buttonBackFunction() {
+        if (page == 0 && chapter != 0) {
             chapter--;
             page = urlArray[chapter].length - 1;
             saveDataLearn();
             setPageCountTextFunction();
-        }
-        else if(page == 0 && chapter == 0)
-        {
+        } else if (page == 0 && chapter == 0) {
             saveDataLearn();
             finish();
-        }
-        else
-        {
+        } else {
             page--;
             saveDataLearn();
             setPageCountTextFunction();
         }
-        webView.loadUrl(urlArray[chapter][page]);
+        loadHtmlPage(urlArray[chapter][page]);
     }
 
-    public void loadDataLearn()
-    {
+    public void loadDataLearn() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         theme = sharedPreferences.getBoolean(THEME, false);
         chapterString = sharedPreferences.getString(CHAPTER, "0");
@@ -144,14 +120,10 @@ public class LearnActivity1 extends AppCompatActivity {
         page = Integer.parseInt(pageString);
     }
 
-    public void setThemeFunction()
-    {
-        if(theme == false)
-        {
+    public void setThemeFunction() {
+        if (theme == false) {
             layoutId.setBackgroundColor(Color.parseColor("#FFFFFF"));
-        }
-        else
-        {
+        } else {
             layoutId.setBackgroundColor(Color.parseColor("#000000"));
             pageCountText.setTextColor(Color.parseColor("#FFFFFF"));
             buttonNext.setTextColor(Color.parseColor("#FFFFFF"));
@@ -160,8 +132,7 @@ public class LearnActivity1 extends AppCompatActivity {
         }
     }
 
-    public void saveDataLearn()
-    {
+    public void saveDataLearn() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(CHAPTER, String.valueOf(chapter));
@@ -169,38 +140,47 @@ public class LearnActivity1 extends AppCompatActivity {
         editor.apply();
     }
 
-    public void setPageCountTextFunction()
-    {
-        String pageCurrentString = String.valueOf(page+1);
+    public void setPageCountTextFunction() {
+        String pageCurrentString = String.valueOf(page + 1);
         String chapterCurrentString = String.valueOf(urlArray[chapter].length);
         String textString = pageCurrentString + "/" + chapterCurrentString;
         pageCountText.setText(textString);
     }
 
-    public static String convertStreamToString(InputStream is) throws IOException {
-        // http://www.java2s.com/Code/Java/File-Input-Output/ConvertInputStreamtoString.htm
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        StringBuilder sb = new StringBuilder();
-        String line = null;
-        Boolean firstLine = true;
-        while ((line = reader.readLine()) != null) {
-            if(firstLine){
-                sb.append(line);
-                firstLine = false;
-            } else {
-                sb.append("\n").append(line);
-            }
+    public void loadHtmlPage(String fileAdress)
+    {
+        InputStream in = null;
+        try {
+            in = getAssets().open(fileAdress);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
-        return sb.toString();
-    }
 
-    public static String getStringFromFile (String filePath) throws IOException {
-        File fl = new File(filePath);
-        FileInputStream fin = new FileInputStream(fl);
-        String ret = convertStreamToString(fin);
-        //Make sure you close all streams.
-        fin.close();
-        return ret;
+        StringBuilder stringBuilder = new StringBuilder();
+
+        InputStreamReader reader = new InputStreamReader(in);
+        try {
+            int data = reader.read();
+            while (data != -1) {
+                char current = (char) data;
+                stringBuilder.append(current);
+                data = reader.read();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String htmlBodyFromFile = stringBuilder.toString();
+
+        String cssFileAddress = "file:///android_asset/stylewebview.css";
+        if(theme == true)
+        {
+            cssFileAddress = "file:///android_asset/stylewebviewdark.css";
+        }
+
+        String htmlToLoad = "<html>" +
+                "<head><link href=\"" + cssFileAddress + "\" rel=\"stylesheet\" type=\"text/css\"></head>" +
+                htmlBodyFromFile +
+                "</html>";
+        webView.loadDataWithBaseURL(null, htmlToLoad, "text/html", "utf-8", null);
     }
 }

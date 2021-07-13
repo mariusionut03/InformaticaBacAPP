@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="urlChapter1">
-        <item>file:///android_asset/HTMLexampleChapter1/example01.html</item>
-        <item>file:///android_asset/HTMLexampleChapter1/example02.html</item>
-        <item>file:///android_asset/HTMLexampleChapter1/example03.html</item>
+        <item>HTMLexampleChapter1/example01.html</item>
+        <item>HTMLexampleChapter1/example02.html</item>
+        <item>HTMLexampleChapter1/example03.html</item>
     </string-array>
     <string-array name="urlChapter2">
-        <item>file:///android_asset/HTMLexampleChapter2/example04.html</item>
-        <item>file:///android_asset/HTMLexampleChapter2/example05.html</item>
-        <item>file:///android_asset/HTMLexampleChapter2/example06.html</item>
-        <item>file:///android_asset/HTMLexampleChapter2/example07.html</item>
-        <item>file:///android_asset/HTMLexampleChapter2/example08.html</item>
+        <item>HTMLexampleChapter2/example04.html</item>
+        <item>HTMLexampleChapter2/example05.html</item>
+        <item>HTMLexampleChapter2/example06.html</item>
+        <item>HTMLexampleChapter2/example07.html</item>
+        <item>HTMLexampleChapter2/example08.html</item>
     </string-array>
 
     <integer name="chaptersCount">2</integer>
