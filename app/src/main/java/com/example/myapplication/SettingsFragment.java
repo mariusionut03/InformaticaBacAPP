@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,14 +47,9 @@ public class SettingsFragment extends Fragment {
                     settingsTitle.setTextColor(Color.parseColor("#FFFFFF"));
                     chooseThemeTextView.setTextColor(Color.parseColor("#FFFFFF"));
                 }
+                if(switchOnOff != isChecked)
+                    refreshAppFunctionSettings();
                 saveThemeData(isChecked);
-            }
-        });
-
-        switchTheme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                refreshAppFunctionSettings();
             }
         });
 
