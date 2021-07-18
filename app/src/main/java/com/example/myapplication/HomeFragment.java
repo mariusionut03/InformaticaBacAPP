@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -25,10 +26,12 @@ public class HomeFragment extends Fragment {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String THEME = "switchTheme";
     public static final String CHAPTER = "chapter";
+    public static final String REFRESH = "refreshTheme";
     public static final String PAGE = "page";
     private boolean theme;
     private String chapterString, pageString;
 
+    public boolean appRefreshTheme;
     public TextView learn1Text, learn2Text, learn3Text, titleText, textView4, textView5, textView6, textView7;
 
     @SuppressLint("ClickableViewAccessibility")
@@ -89,6 +92,24 @@ public class HomeFragment extends Fragment {
 
         loadThemeFunction();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getContext().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        appRefreshTheme = sharedPreferences.getBoolean(REFRESH, false);
+        if(appRefreshTheme == true)
+        {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(REFRESH, false);
+            editor.apply();
+            chapterString = sharedPreferences.getString(CHAPTER, "0");
+            pageString = sharedPreferences.getString(PAGE, "0");
+            learn2Text.setText("Capitolul " + String.valueOf(Integer.parseInt(chapterString) + 1));
+            learn3Text.setText("Pagina " + String.valueOf(Integer.parseInt(pageString) + 1));
+        }
+
     }
 
     public void learnButtonFunction() {

@@ -36,6 +36,7 @@ public class LearnActivity1 extends AppCompatActivity {
     public static final String THEME = "switchTheme";
     public static final String CHAPTER = "chapter";
     public static final String PAGE = "page";
+    public static final String REFRESH = "refreshTheme";
     private boolean theme;
     private String chapterString, pageString;
     private Integer chapter, page, chaptersCount;
@@ -64,7 +65,7 @@ public class LearnActivity1 extends AppCompatActivity {
 
         // Exit Button (Top Left Corner)
         exitButton = findViewById(R.id.buttonExit);
-        exitButton.setOnClickListener(v -> finish());
+        exitButton.setOnClickListener(v -> goBackToMain());
         // Next page Button
         buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(v -> buttonNextFunction());
@@ -85,7 +86,7 @@ public class LearnActivity1 extends AppCompatActivity {
             setPageCountTextFunction();
         } else if (page == urlArray[chapter].length - 1 && chapter == chaptersCount - 1) {
             saveDataLearn();
-            finish();
+            goBackToMain();
         } else {
             page++;
             saveDataLearn();
@@ -102,7 +103,7 @@ public class LearnActivity1 extends AppCompatActivity {
             setPageCountTextFunction();
         } else if (page == 0 && chapter == 0) {
             saveDataLearn();
-            finish();
+            goBackToMain();
         } else {
             page--;
             saveDataLearn();
@@ -182,5 +183,14 @@ public class LearnActivity1 extends AppCompatActivity {
                 htmlBodyFromFile +
                 "</html>";
         webView.loadDataWithBaseURL(null, htmlToLoad, "text/html", "utf-8", null);
+    }
+
+    public void goBackToMain()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(REFRESH, true);
+        editor.apply();
+        finish();
     }
 }

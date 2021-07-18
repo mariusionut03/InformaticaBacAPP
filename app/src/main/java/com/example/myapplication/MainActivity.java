@@ -15,19 +15,25 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String THEME = "switchTheme";
     public static final String REFRESH = "refreshTheme";
+    public static final String CHAPTER = "chapter";
+    public static final String PAGE = "page";
     public boolean theme;
     public FrameLayout frameLayout;
     public BottomNavigationView bottomNav;
     public boolean appRefreshTheme;
     public boolean refreshNeeded = false;
+    public String chapterString, pageString;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         appRefreshTheme = sharedPreferences.getBoolean(REFRESH, false);
+        chapterString = sharedPreferences.getString(CHAPTER, "0");
+        pageString = sharedPreferences.getString(PAGE, "0");
 
         if(appRefreshTheme == true)
         {
@@ -68,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
             startActivity(intent);
         }
+
 
     }
 
