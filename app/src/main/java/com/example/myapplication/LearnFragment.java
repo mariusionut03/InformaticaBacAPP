@@ -37,6 +37,10 @@ public class LearnFragment extends Fragment {
     public String[] titleArray = new String[20];
     public String[] pagesArray = new String[20];
     public TextView[] buttonsArray = new TextView[20];
+    public TextView[] titleArrayActually = new TextView[20];
+    public TextView[] capitolArrayActually = new TextView[20];
+    public TextView[] pagesArrayActually = new TextView[20];
+    public TextView learnText;
 
     @Nullable
     @Override
@@ -44,6 +48,7 @@ public class LearnFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_learn, container, false);
 
         layout = view.findViewById(R.id.layoutId);
+        learnText = view.findViewById(R.id.learnTitle);
         i = 1; currentChapter = 0;
 
         SharedPreferences sharedPreferences = getContext().getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
@@ -54,13 +59,19 @@ public class LearnFragment extends Fragment {
         page = Integer.parseInt(pageString);
 
         fillTheArraysFromRes();
-        createTextViews();
-        createTextViews();
+
+        for(int y = 1; y <= nrChapters; y++)
+        {
+            createTextViews();
+        }
+
         for(int z = 0; z < nrChapters; z++)
         {
             int finalZ = z;
             buttonsArray[z].setOnClickListener(v -> openLearnActivity(finalZ));
         }
+
+        setThemeFunction();
         return view;
     }
 
@@ -77,14 +88,15 @@ public class LearnFragment extends Fragment {
         else {
             paramsBtn.addRule(RelativeLayout.BELOW, (i-nrOfAttributes));
         }
-        paramsBtn.setMargins(30, 65, 30, 0);
+        paramsBtn.setMargins(0, 65, 0, 0);
         btn.setLayoutParams(paramsBtn);
-        btn.setHeight(300);
+        btn.setHeight(275);
         btn.setBackgroundResource(R.drawable.style_bg_light_ripple);
         layout.addView(btn, paramsBtn);
 
 
         final TextView capitol = new TextView(getContext());
+        capitolArrayActually[currentChapter] = capitol;
         capitol.setId(++i);
         final RelativeLayout.LayoutParams paramsCapitol =
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -93,7 +105,7 @@ public class LearnFragment extends Fragment {
         paramsCapitol.addRule(RelativeLayout.ALIGN_START, (i-1));
         paramsCapitol.addRule(RelativeLayout.ALIGN_TOP, (i-1));
         capitol.setTextColor(Color.parseColor("#000000"));
-        capitol.setTextSize(18);
+        capitol.setTextSize(17);
         Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.dosis);
         capitol.setTypeface(typeface);
         paramsCapitol.setMargins(15, 15, 0, 0);
@@ -102,6 +114,7 @@ public class LearnFragment extends Fragment {
 
 
         final TextView title = new TextView(getContext());
+        titleArrayActually[currentChapter] = title;
         title.setId(++i);
         final RelativeLayout.LayoutParams paramsTitle =
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -110,7 +123,7 @@ public class LearnFragment extends Fragment {
         paramsTitle.addRule(RelativeLayout.BELOW, (i-1));
         paramsTitle.addRule(RelativeLayout.ALIGN_START, (i-2));
         title.setTextColor(Color.parseColor("#000000"));
-        title.setTextSize(32);
+        title.setTextSize(28);
         title.setTypeface(typeface);
         paramsTitle.setMargins(45, 0, 0, 0);
         title.setLayoutParams(paramsTitle);
@@ -118,6 +131,7 @@ public class LearnFragment extends Fragment {
 
 
         final TextView pages = new TextView(getContext());
+        pagesArrayActually[currentChapter] = pages;
         pages.setId(++i);
         final RelativeLayout.LayoutParams paramsPages =
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -126,9 +140,9 @@ public class LearnFragment extends Fragment {
         paramsPages.addRule(RelativeLayout.ALIGN_BOTTOM, (i-3));
         paramsPages.addRule(RelativeLayout.ALIGN_END, (i-3));
         pages.setTextColor(Color.parseColor("#000000"));
-        pages.setTextSize(18);
+        pages.setTextSize(15);
         pages.setTypeface(typeface);
-        paramsPages.setMargins(0, 0, 10, 6);
+        paramsPages.setMargins(0, 0, 15, 10);
         pages.setLayoutParams(paramsPages);
         layout.addView(pages, paramsPages);
 
@@ -154,5 +168,20 @@ public class LearnFragment extends Fragment {
         editor.apply();
         Intent intent = new Intent(getActivity(), LearnActivity1.class);
         startActivity(intent);
+    }
+
+    public void setThemeFunction()
+    {
+        if(theme == true)
+        {
+            learnText.setTextColor(Color.parseColor("#FFFFFF"));
+            for(int t = 0; t < nrChapters; t++)
+            {
+                buttonsArray[t].setBackgroundResource(R.drawable.style_bg_dark_ripple);
+                titleArrayActually[t].setTextColor(Color.parseColor("#FFFFFF"));
+                capitolArrayActually[t].setTextColor(Color.parseColor("#FFFFFF"));
+                pagesArrayActually[t].setTextColor(Color.parseColor("#FFFFFF"));
+            }
+        }
     }
 }

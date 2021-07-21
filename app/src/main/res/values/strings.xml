@@ -5,20 +5,21 @@
     <string-array name="titlesArrayRes">
         <item>Introducere</item>
         <item>Pseudocod</item>
+        <item>Bazele C++</item>
+        <item>Structuri alternative</item>
+        <item>Structuri repetitive</item>
+        <item>Algoritmi Elementari</item>
+        <item>Backtracking</item>
     </string-array>
     
     <string-array name="pagesArrayRes">
         <item>3</item>
         <item>5</item>
-    </string-array>
-
-    <string-array name="badges1ArrayRes">
-        <item>C++</item>
-        <item>Pseudocod</item>
-    </string-array>
-    <string-array name="badges2ArrayRes">
-        <item>M1</item>
-        <item>null</item>
+        <item>4</item>
+        <item>9</item>
+        <item>12</item>
+        <item>7</item>
+        <item>5</item>
     </string-array>
 
     <integer name="nrOfAttributes">4</integer>
