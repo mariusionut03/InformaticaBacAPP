@@ -55,6 +55,11 @@ public class LearnActivity1 extends AppCompatActivity {
         Resources res = getResources();
         urlArray[0] = res.getStringArray(R.array.urlChapter1);
         urlArray[1] = res.getStringArray(R.array.urlChapter2);
+        urlArray[2] = res.getStringArray(R.array.urlChapter3);
+        urlArray[3] = res.getStringArray(R.array.urlChapter4);
+        urlArray[4] = res.getStringArray(R.array.urlChapter5);
+        urlArray[5] = res.getStringArray(R.array.urlChapter6);
+        urlArray[6] = res.getStringArray(R.array.urlChapter7);
         chaptersCount = res.getInteger(R.integer.chaptersCount);
 
         // WebView Setup

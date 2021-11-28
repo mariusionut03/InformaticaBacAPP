@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="urlChapter1">
-        <item>HTMLexampleChapter1/example01.html</item>
-        <item>HTMLexampleChapter1/example02.html</item>
-        <item>HTMLexampleChapter1/example03.html</item>
+        <item>HtmlChapter01/page01.html</item>
+        <item>HtmlChapter01/page02.html</item>
     </string-array>
     <string-array name="urlChapter2">
-        <item>HTMLexampleChapter2/example04.html</item>
-        <item>HTMLexampleChapter2/example05.html</item>
-        <item>HTMLexampleChapter2/example06.html</item>
-        <item>HTMLexampleChapter2/example07.html</item>
-        <item>HTMLexampleChapter2/example08.html</item>
+        <item>HtmlChapter02/page01.html</item>
+        <item>HtmlChapter02/page02.html</item>
+        <item>HtmlChapter02/page03.html</item>
+        <item>HtmlChapter02/page04.html</item>
+        <item>HtmlChapter02/page05.html</item>
+    </string-array>
+    <string-array name="urlChapter3">
+        <item>HtmlChapter03/page01.html</item>
+        <item>HtmlChapter03/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter4">
+        <item>HtmlChapter04/page01.html</item>
+        <item>HtmlChapter04/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter5">
+        <item>HtmlChapter05/page01.html</item>
+        <item>HtmlChapter05/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter6">
+        <item>HtmlChapter06/page01.html</item>
+        <item>HtmlChapter06/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter7">
+        <item>HtmlChapter07/page01.html</item>
+        <item>HtmlChapter07/page02.html</item>
     </string-array>
 
     <integer name="chaptersCount">7</integer>

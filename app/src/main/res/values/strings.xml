@@ -13,13 +13,13 @@
     </string-array>
     
     <string-array name="pagesArrayRes">
-        <item>3</item>
+        <item>2</item>
         <item>5</item>
-        <item>4</item>
-        <item>9</item>
-        <item>12</item>
-        <item>7</item>
-        <item>5</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
     </string-array>
 
     <integer name="nrOfAttributes">4</integer>
