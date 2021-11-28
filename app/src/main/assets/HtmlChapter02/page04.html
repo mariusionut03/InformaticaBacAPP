@@ -1,25 +1,67 @@
 <body>
-<h1>Example Title 07</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
+<h1>2. Structura repetitiva</h1>
+<h2>a. Instructiunea PENTRU</h2>
 
-<p class="codeblock"> <span class="comments">// This is code example text</span> <br>
-	<span class="functions">#include</span> <span class="commands">&lt;iostream&gt;</span> <br>
-	<span class="functions">using namespace std</span>;<br>
-	<span class="vars">int</span> <span class="functions">main</span> () <br>
-	{<br>
-	&emsp;&emsp;<span class="vars">int</span> i; <br>
-	&emsp;&emsp;i = i + <span class="numbers">1</span>; <br>
-	&emsp;&emsp;<span class="commands">cout</span> << i << <span class="strings">"is the number"</span> << <span class="commands">endl</span>; <br>
-	&emsp;&emsp;<span class="comments">//If i = 1, the output is 2</span><br>
-	&emsp;&emsp;<span class="commands">for</span> (int i = <span class="numbers">1</span>; i <= <span class="numbers">5</span>; i++) {<br>
-	&emsp;&emsp;&emsp;&emsp;<span class="commands">cout</span> << i << <span class="strings">", "</span>;<br>
-	&emsp;&emsp;} <span class="comments">//The FOR loop output is: 1, 2, 3, 4, 5.</span><br>
-	&emsp;&emsp;<span class="functions">return</span> <span class="numbers">0</span>;<br>
-	}
+<p class="codeblock">
+	<span class="comments">// Deruleaza spre dreapta pentru a vedea codul complet</span><br>
+<span class="comments">┌</span>
+<span class="functions">pentru</span>
+<span class="numbers"><</span><span class="numbers">variabila</span><span class="numbers">></span> ← <span class="numbers"><</span><span class="numbers">expresie initiala</span><span class="numbers">></span>, <span class="numbers"><</span><span class="numbers">expresie finala</span><span class="numbers">></span> , <span class="numbers"><</span><span class="numbers">pas</span><span class="numbers">></span>
+	<span class="functions">executa</span>
+<br><span class="comments">│</span>
+	<span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span>
+<br><span class="comments">└■</span>
 </p>
 
-<h1>Example Title</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
-<h1>Example Title</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
+<p>In locul campurilor 'expresie initiala' si 'expresie finala' se introduc doua numere intregi sau variabile.<br>In locul campului 'pas' se va scrie o expresie (Exemplu: i = i + 1).<br>
+Variabila va primi valoarea expresiei initiale si va aplica expresia 'pas' dupa fiecare executare a instructiunilor, pana cand valoarea ei va ajunge egala cu cea finala.</p>
+<p>Exemplu. Suma primelor n numere naturale:</p>
+<p class="codeblock">
+	<span class="numbers">S</span> <span>←</span> <span class="numbers">0</span><br>
+	<span class="functions">citeste</span> <span class="numbers">n</span> <span class="comments">(numar natural)</span><br>
+	<span class="comments">┌ <span class="functions">pentru</span> <span class="numbers">i</span> ← <span class="numbers">1</span>, <span class="numbers">n</span> <span class="functions">executa</span><br>
+	<span class="comments">│<span class="numbers">   S</span> ← <span class="numbers">S</span> + <span class="numbers">i</span><br>
+	<span class="comments">└■</span><br>
+	<span class="functions">scrie</span> <span class="numbers">S</span>
+</p>
+<br>
+<h2>b. Instructiunea CAT TIMP ... EXECUTA</h2>
+<p class="codeblock">
+	<span class="comments">┌</span>
+	<span class="functions">cat timp</span>
+	<span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span>
+	<span class="functions">executa</span>
+	<br><span class="comments">│</span>
+	<span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span>
+	<br><span class="comments">└■</span>
+</p>
+
+<p>Se verifica conditia si executa instructiunile pana cand ea se indeplineste.</p>
+<br>
+<h2>c. Instructiunea EXECUTA ... CAT TIMP</h2>
+<p class="codeblock">
+	<span class="comments">┌</span>
+	<span class="functions">executa</span>
+	<br><span class="comments">│</span>
+	<span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span>
+	<br><span class="comments">└■</span>
+	<span class="functions">cat timp</span>
+	<span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span>
+</p>
+
+<p>Se executa instructiunile o singura data, dupa care se verifica conditia si se repeta procesul pana cand ea se indeplineste.</p>
+
+<br>
+<h2>d. Instructiunea REPETA ... PANA CAND</h2>
+<p class="codeblock">
+	<span class="comments">┌</span>
+	<span class="functions">repeta</span>
+	<br><span class="comments">│</span>
+	<span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span>
+	<br><span class="comments">└■</span>
+	<span class="functions">pana cand</span>
+	<span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span>
+</p>
+
+<p>Se executa instructiunile, se verifica conditia si, daca este FALSA, se executa instructiunile pana cand ea devine ADEVARATA.</p>
 </body>

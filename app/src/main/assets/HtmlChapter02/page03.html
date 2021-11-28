@@ -1,25 +1,28 @@
 <body>
-<h1>Example Title 06</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
+<h1>Structurile in pseudocod</h1>
+<p>Orice algoritm poate fi reprezentat prin intermediul a trei tipuri de structuri:
+<br>- structura liniara
+<br>- structura alternativa
+<br> - structura repetitiva<br></p>
+<h2>1. Structura alternativa</h2>
 
-<p class="codeblock"> <span class="comments">// This is code example text</span> <br>
-	<span class="functions">#include</span> <span class="commands">&lt;iostream&gt;</span> <br>
-	<span class="functions">using namespace std</span>;<br>
-	<span class="vars">int</span> <span class="functions">main</span> () <br>
-	{<br>
-	&emsp;&emsp;<span class="vars">int</span> i; <br>
-	&emsp;&emsp;i = i + <span class="numbers">1</span>; <br>
-	&emsp;&emsp;<span class="commands">cout</span> << i << <span class="strings">"is the number"</span> << <span class="commands">endl</span>; <br>
-	&emsp;&emsp;<span class="comments">//If i = 1, the output is 2</span><br>
-	&emsp;&emsp;<span class="commands">for</span> (int i = <span class="numbers">1</span>; i <= <span class="numbers">5</span>; i++) {<br>
-	&emsp;&emsp;&emsp;&emsp;<span class="commands">cout</span> << i << <span class="strings">", "</span>;<br>
-	&emsp;&emsp;} <span class="comments">//The FOR loop output is: 1, 2, 3, 4, 5.</span><br>
-	&emsp;&emsp;<span class="functions">return</span> <span class="numbers">0</span>;<br>
-	}
+<p class="codeblock">
+	<span class="comments">┌</span> <span class="functions">daca</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span> <span class="functions">atunci</span><br>
+	<span class="comments">│</span>    <span class="numbers"><</span><span class="numbers">instructiuni1</span><span class="numbers">></span><br>
+		<span class="comments">└■ </span>
 </p>
 
-<h1>Example Title</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
-<h1>Example Title</h1>
-<p>Example paragraph the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog the quick fox jumped over the lazy dog.</p>
+<p>Programul de mai sus verifica conditia si executa setul de instructiuni 1 doar daca conditia este adevarata. In caz contrar, nu executa nimic si trece mai departe.</p>
+
+<p class="codeblock">
+	<span class="comments">┌</span> <span class="functions">daca</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span> <span class="functions">atunci</span><br>
+	<span class="comments">│</span>    <span class="numbers"><</span><span class="numbers">instructiuni1</span><span class="numbers">></span><br>
+	<span class="comments">│</span> <span class="functions">altfel</span><br>
+	<span class="comments">│</span>    <span class="numbers"><</span><span class="numbers">instructiuni2</span><span class="numbers">></span><br>
+	<span class="comments">└■ </span>
+</p>
+
+<p>Programul de mai sus verifica conditia si executa setul de instructiuni 1 doar daca conditia este adevarata. In caz contrar, executa setul de instructiuni 2.</p>
+
+
 </body>
