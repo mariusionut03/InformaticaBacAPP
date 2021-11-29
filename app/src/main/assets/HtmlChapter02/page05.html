@@ -4,15 +4,15 @@
 
 <h2>Pentru → Cat timp</h2>
 <p class="codeblock">
-    <span class="comments">┌ <span class="functions">pentru</span> <span class="numbers">i</span> ← <span class="numbers">a</span>, <span class="numbers">b</span> <span class="functions">executa</span><br>
-    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">┌</span> <span class="functions">pentru</span> <span class="numbers">i</span> ← <span class="numbers">a</span>, <span class="numbers">b</span> <span class="functions">executa</span><br>
+    <span class="comments">│</span> <span class="numbers"><</span> <span class="numbers">instructiuni</span> <span class="numbers">></span><br>
     <span class="comments">└■</span>
 </p>
 <p class="codeblock">
     <span class="numbers">i</span> ← <span class="numbers">a</span><br>
-    <span class="comments">┌ <span class="functions">cat timp</span> <span class="numbers">i</span> <= <span class="numbers">b</span> <span class="functions">executa</span><br>
+    <span class="comments">┌</span> <span class="functions">cat timp</span> <span class="numbers">i</span> <= <span class="numbers">b</span> <span class="functions">executa</span><br>
     <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
-    <span class="comments">│</span><span class="numbers">i</span> ← <span class="numbers">i</span> + <span class="numbers">i</span><br>
+    <span class="comments">│</span><span class="numbers">i</span> ← <span class="numbers">i</span> + <span class="numbers">1</span><br>
     <span class="comments">└■</span>
 </p>
 
@@ -20,50 +20,84 @@
 
 <h2>Pentru → Executa ... Cat timp</h2>
 <p class="codeblock">
-
+    <span class="comments">┌</span> <span class="functions">pentru</span> <span class="numbers">i</span> ← <span class="numbers">a</span>, <span class="numbers">b</span> <span class="functions">executa</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 <p class="codeblock">
-
+    <span class="numbers">i</span> ← <span class="numbers">a</span><br>
+    <span class="comments">┌</span><span class="functions">daca</span><span class="numbers">i</span> <= <span class="numbers">b</span> <span class="functions">atunci</span><br>
+    <span class="comments">│┌</span><span class="functions">executa</span><br>
+    <span class="comments">││</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">││</span><span class="numbers">i</span> ← <span class="numbers">i</span> + <span class="numbers">1</span><br>
+    <span class="comments">│└■</span><span class="functions">cat timp</span> <span class="numbers">i</span> <= <span class="numbers">b</span><br>
+    <span class="comments">└■</span>
 </p>
 
 
 
 <h2>Pentru → Repeta ... Pana cand</h2>
 <p class="codeblock">
-
+    <span class="comments">┌</span> <span class="functions">pentru</span> <span class="numbers">i</span> ← <span class="numbers">a</span>, <span class="numbers">b</span> <span class="functions">executa</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 <p class="codeblock">
-
+    <span class="numbers">i</span> ← <span class="numbers">a</span><br>
+    <span class="comments">┌</span><span class="functions">daca</span><span class="numbers">i</span> <= <span class="numbers">b</span> <span class="functions">atunci</span><br>
+    <span class="comments">│┌</span><span class="functions">repeta</span><br>
+    <span class="comments">││</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">││</span><span class="numbers">i</span> ← <span class="numbers">i</span> + <span class="numbers">1</span><br>
+    <span class="comments">│└■</span><span class="functions">pana cand</span> <span class="numbers">i</span> > <span class="numbers">b</span><br>
+    <span class="comments">└■</span>
 </p>
 
 
 
 <h2>Cat timp → Executa ... Cat timp</h2>
 <p class="codeblock">
-
+    <span class="comments">┌</span><span class="functions">cat timp</span><span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><span class="functions">executa</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 <p class="codeblock">
-
+    <span class="comments">┌</span><span class="functions">daca</span><span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><span class="functions">atunci</span><br>
+    <span class="comments">│┌</span><span class="functions">executa</span><br>
+    <span class="comments">││</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">│└■</span><span class="functions">cat timp</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 
 
 
 <h2>Cat timp → Repeta ... Pana cand</h2>
 <p class="codeblock">
-
+    <span class="comments">┌</span><span class="functions">cat timp</span><span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><span class="functions">executa</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 <p class="codeblock">
-
+    <span class="comments">┌</span><span class="functions">daca</span><span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><span class="functions">atunci</span><br>
+    <span class="comments">│┌</span><span class="functions">repeta</span><br>
+    <span class="comments">││</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">│└■</span><span class="functions">pana cand</span> <span>NOT</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 
 
 
 <h2>Repeta ... Pana cand → Cat timp</h2>
 <p class="codeblock">
+    <span class="comments">┌</span><span class="functions">repeta</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span><span class="functions">pana cand</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span>
 
 </p>
 <p class="codeblock">
-
+    <span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">┌</span><span class="functions">cat timp</span> <span>NOT</span> <span class="numbers"><</span><span class="numbers">conditie</span><span class="numbers">></span><span class="functions">executa</span><br>
+    <span class="comments">│</span><span class="numbers"><</span><span class="numbers">instructiuni</span><span class="numbers">></span><br>
+    <span class="comments">└■</span>
 </p>
 
 </body>

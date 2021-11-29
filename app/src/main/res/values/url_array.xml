@@ -31,6 +31,30 @@
         <item>HtmlChapter07/page01.html</item>
         <item>HtmlChapter07/page02.html</item>
     </string-array>
+    <string-array name="urlChapter8">
+        <item>HtmlChapter08/page01.html</item>
+        <item>HtmlChapter08/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter9">
+        <item>HtmlChapter09/page01.html</item>
+        <item>HtmlChapter09/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter10">
+        <item>HtmlChapter10/page01.html</item>
+        <item>HtmlChapter10/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter11">
+        <item>HtmlChapter11/page01.html</item>
+        <item>HtmlChapter11/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter12">
+        <item>HtmlChapter12/page01.html</item>
+        <item>HtmlChapter12/page02.html</item>
+    </string-array>
+    <string-array name="urlChapter13">
+        <item>HtmlChapter13/page01.html</item>
+        <item>HtmlChapter13/page02.html</item>
+    </string-array>
 
-    <integer name="chaptersCount">7</integer>
+    <integer name="chaptersCount">13</integer>
 </resources>

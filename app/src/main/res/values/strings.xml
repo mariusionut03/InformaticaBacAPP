@@ -6,15 +6,27 @@
         <item>Introducere</item>
         <item>Pseudocod</item>
         <item>Bazele C++</item>
-        <item>Structuri alternative</item>
-        <item>Structuri repetitive</item>
-        <item>Algoritmi Elementari</item>
+        <item>Algoritmi elementari</item>
+        <item>Vectori (T. unidimensionale)</item>
+        <item>Matrici (T. bidimensionale)</item>
+        <item>Subprograme</item>
+        <item>Siruri de caractere</item>
+        <item>Structuri de date neomogene</item>
+        <item>Alocarea dinamica a memoriei</item>
+        <item>Structuri de date liniare</item>
         <item>Backtracking</item>
+        <item>Teoria grafurilor</item>
     </string-array>
     
     <string-array name="pagesArrayRes">
         <item>2</item>
         <item>5</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
         <item>2</item>
         <item>2</item>
         <item>2</item>
