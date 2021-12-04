@@ -1,1 +1,128 @@
-<body><h1>Chapter 3</h1></body>
+<body>
+<h1>Tipuri de date simple</h1>
+<p class="codeblock">
+    1. Tipul <span class="functions">int</span><br>
+    2. Tipurile <span class="functions">float</span> si <span class="functions">double</span><br>
+    3. Tipul <span class="functions">char</span><br>
+    4. Tipul <span class="functions">pointer</span><br>
+    5. Tipul <span class="functions">bool</span><br>
+    6. Tipul <span class="functions">void</span><br>
+</p>
+<h2>1. Tipul int</h2>
+<p>Permite memorarea unei valori intregi (pozitiva sau negativa).<br>
+    Ea ocupa 4 octeti, deci poate memora valori din intervalul <span class="functions">[-2<sup>31</sup>, 2<sup>31</sup>-1]</span>, adica <span class="functions">[−2.147.483.648, 2.147.483.647]</span>.</p>
+<p class="codeblock">
+    int <span class="numbers">n</span> = 100;
+</p>
+<p>Daca in datele unei probleme, numere intregi depasesc <span class="functions">2.000.000.000</span> folosim tipul <span class="functions">long long</span>.</p>
+
+<h2>2. Tipurile float si double</h2>
+<p>Memoreaza numere reale. Separatorul zecimal este punctul "<span class="functions">.</span>".
+<br>Tipul <span class="functions">float</span> se reprezinta pe 4 octeti.
+    <br>Tipul <span class="functions">double</span> se reprezinta pe 8 octeti.</p>
+<p class="codeblock">
+    float <span class="numbers">p</span> = 3.14, <span class="numbers">r</span> = 2.5;<br>
+    double <span class="numbers">A</span> = p * r * r;
+</p>
+<p>Datele reale pot fi scrise in forma stiintifica: </p>
+<p class="codeblock">
+    double <span class="numbers">x</span> = 1.24E+07;<br>
+    <span class="comments">// x are valoarea 1.24 * 10<sup>7</sup>.</span>
+</p>
+
+<h2>3. Tipul char</h2>
+<p>Memoreaza codul ASCII al unui caracter. Delimitarea este facuta prin " <span class="functions">'</span> ". Se reprezinta pe 1 octet.</p>
+<p class="codeblock">
+    char <span class="numbers">c</span> = <span class="strings">'A'</span>;
+    <span class="comments">// In variabila c nu se retine caracterul 'A', ci codul ASCII al caracterului, care este 65.</span>
+</p>
+
+<h2>4. Tipul pointer</h2>
+<p>Acest tip de data retine o adresa din memorie. Spre exemplu, adresa unei variabile.</p>
+
+<h2>5. Tipul bool</h2>
+<p>Tipul bool poate retine doar 2 valori: adevarat sau fals. El se reprezinta pe 1 octet. Valorile numerice sunt 1(Adevarat) si 0(Fals).</p>
+<p class="codeblock">
+    bool <span class="numbers">p</span> = false;
+</p>
+
+<h2>6. Tipul void</h2>
+<p>Cuvantul void inseamna nimic. Aceste date nu au valori si nu poti face operatii cu ele. Le folosim doar la functii si pointeri.</p>
+
+<h1>Modificatori de tip</h1>
+<p>Permit schimbarea modului in care se reprezinta o data.</p>
+<p class="codeblock">
+    Ele sunt:<br>
+    - signed<br>
+    - unsigned<br>
+    - short<br>
+    - long<br>
+    Pot fi aplicate la:<br>
+    - int<br>
+    - double<br>
+    - char
+</p>
+
+<table>
+    <tr>
+        <th>Tipul</th>
+        <th>Spatiu</th>
+        <th>Domeniu</th>
+    </tr>
+    <tr>
+        <td>signed int</td>
+        <td>4 octeți cu semn</td>
+        <td>[-2<sup>31</sup>, 2<sup>31</sup>-1], adica [-2.147.483.648, 2.147.483.647]</td>
+    </tr>
+    <tr>
+        <td>unsigned int</td>
+        <td>4 octeți fără semn</td>
+        <td>[0, 2<sup>32</sup>-1], adica [0, 4.294.967.295]</td>
+    </tr>
+    <tr>
+        <td>long</td>
+        <td>4 octeți cu semn</td>
+        <td>La fel ca int. Echivalent cu long int.</td>
+    </tr>
+    <tr>
+        <td>unsigned long</td>
+        <td>4 octeți fără semn</td>
+        <td>Echivalent cu unsigned int / unsigned long int.</td>
+    </tr>
+    <tr>
+        <td>short</td>
+        <td>2 octeți cu semn</td>
+        <td>[-2<sup>15</sup>, 2<sup>15</sup>-1], adica [−32.768, 32.767]</td>
+    </tr>
+    <tr>
+        <td>unsigned short</td>
+        <td>2 octeți fără semn</td>
+        <td>[0, 2<sup>16</sup>-1], adica [0, 65.535]</td>
+    </tr>
+    <tr>
+        <td>long long</td>
+        <td>8 octeți cu semn</td>
+        <td>[-2<sup>63</sup>, 2<sup>63</sup>-1], echivalent cu long long int.</td>
+    </tr>
+    <tr>
+        <td>unsigned long long</td>
+        <td>8 octeți fără semn</td>
+        <td>[0, 2<sup>64</sup>-1], echivalent cu unsigned long long int.</td>
+    </tr>
+    <tr>
+        <td>signed char</td>
+        <td>1 octet cu semn</td>
+        <td>[-2<sup>7</sup>, 2<sup>7</sup>-1], adica [-128, 127].</td>
+    </tr>
+    <tr>
+        <td>unsigned char</td>
+        <td>1 octet fără semn</td>
+        <td>[0, 2<sup>8</sup>-1], adica [0, 255].</td>
+    </tr>
+    <tr>
+        <td>long double</td>
+        <td>10, 12, 16</td>
+        <td>Memorează numere reale mari.</td>
+    </tr>
+</table>
+</body>

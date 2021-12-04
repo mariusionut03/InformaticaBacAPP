@@ -1,1 +1,60 @@
-<body><h1>Chapter 3</h1></body>
+<body>\
+<h1>Bazele limbajului C++</h1>
+<p>Limbajul C++ este cel pe care il invatam in Romania pentru bacalaureat. Fata de pseudocod, acesta poate fi citit de calculator.</p>
+<br>
+<p>Acesta este primul program C++. El afiseaza pe ecran textul "Hello world".</p>
+
+<p class="codeblock">
+    <span>#include</span> <span><</span><span class="functions">iostream</span><span>></span><br>
+    <span>using namespace std</span>;<br>
+    <span>int</span> <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;<span class="functions">cout</span> << <span class="strings">"Hello world"</span>;<br>
+    &emsp;&emsp;<span class="functions">return</span> <span>0</span>;<br>
+    }<br>
+    <span class="comments">// Afisare: Hello world</span>
+</p>
+
+<p>Acum o sa luam pe rand fiecare linie pentru a explica programul: </p>
+
+<p class="codeblock">
+    <span>#include</span> <span><</span><span class="functions">iostream</span><span>></span>
+</p>
+<p>Aceasta linie ne introduce in program libraria de comenzi <span class="functions">iostream</span>. Aceasta ne lasa sa utilizam <span class="functions">cout</span> (Afisarea pe ecran)
+ si <span class="functions">cin</span> (Citirea de la tastatura), comenzi esentiale pentru un program. Mai tarziu o sa folosim si alte librarii, cum ar fi <span class="functions">cstring</span>
+(Siruri de caractere) si <span class="functions">fstream</span> (Citirea si scrierea in fisiere externe).</p>
+<p class="codeblock">
+    <span>using namespace std</span>;
+</p>
+<p>Acesta este un namespace ce ne usureaza treaba. <span class="functions">'std'</span> este prescurtarea de la standard. Un exemplu prin care ne dam seama ca ne ajuta foarte mult, in loc sa scriem direct
+<span class="functions">cout</span> cand folosim aceasta comanda, ar fi trebuit sa scriem <span class="functions">std :: cout</span> pentru ca aceasta sa functioneze.</p>
+<p class="codeblock">
+    <span>int</span> <span class="functions">main</span>()
+</p>
+<p>Aici am declarat o functie. Functia <span class="functions">main</span> este necesara in orice program C++. <span class="functions">'int'</span> vine de la numar intreg si reprezinta tipul de data pe care functia
+    o sa o returneze la final. <span class="functions">'main'</span> este numele functiei. O sa vorbim mai amanuntit despre functii la capitolul <span class="functions">'Subprograme'</span>.</p>
+<p class="codeblock">
+    {
+</p>
+<p>Aceasta paranteza marcheza inceputul functiei main.</p>
+<p class="codeblock">
+    <span class="functions">cout</span> << <span class="strings">"Hello world"</span>;
+</p>
+<p>Comanda '<span class="functions">cout</span>' vine de la 'console output' si cu ajutorul ei afisam text pe ecran. Sagetile '<span class="functions"><<</span>'
+ne arata o directie. Indica faptul ca ce urmeaza dupa ele este inserat in '<span class="functions">cout</span>', deci se va afisa pe ecran.
+    <span class="functions">"Hello world"</span> ne arata textul pe care il afisam si il putem schimba cum vrem. Textele in limbajul C++ au la inceput si la final semnele <span class="functions">"</span></p>
+<p class="codeblock">
+    <span class="functions">return</span> <span>0</span>;
+</p>
+<p>Reprezinta valoarea pe care o returneaza functia main, adica 0. O sa vorbim mai amanuntit la capitolul <span class="functions">'Subprograme'</span>.</p>
+<p class="codeblock">
+    }
+</p>
+<p>Aceasta paranteza marcheaza sfarsitul functiei main.</p>
+<p class="codeblock">
+    <span class="comments">// Afisare: Hello world</span>
+</p>
+<p>Acesta este un comentariu, deci orice scriem aici nu o sa se ia in considerare la rularea programului. Comentariile pe o singura linie se marcheaza cu '<span class="functions">//</span>'. Orice scriem pe linia care are la inceput acest marcaj este un comentariu.</p>
+
+
+</body>
