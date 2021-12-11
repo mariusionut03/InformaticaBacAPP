@@ -1,0 +1,122 @@
+<body>
+    <h1>Structuri alternative</h1>
+    <p>În anumite situații, este necesară executarea unor instrucțiuni în cadrul unui program numai în anumite condiții. Structurile alternative (numite și structuri de decizie) permit rezolvarea unor asemenea situații.</p>
+    <h2>Instrucțiunea if</h2>
+<p>Instrucțiunea if este cea mai utilizată structură alternativă. Ea are mai multe forme:</p>
+<p class="codeblock">
+    if ( Expresie )<br>
+    Instrucțiune1;
+</p>
+<p>Varianta de mai sus verifica expresia, iar daca ea este adevarata executa Instructiune1. In caz contrar, nu face nimic.</p>
+    <p class="codeblock">
+        if ( Expresie )<br>
+        Instrucțiune1<br>
+        else<br>
+        Instrucțiune2
+    </p>
+<p>Varianta de mai sus verifica expresia. Daca este adevarata, executa Instructiune1, in caz contrar va executa Instructiune2.</p>
+    <p class="codeblock">
+        if ( Expresie1 )<br>
+        Instrucțiune1<br>
+        else if ( Expresie2 )<br>
+        Instrucțiune2<br>
+        else if ( Expresie3 )<br>
+        Instructiune3<br>
+        .<br>
+        .<br>
+        .<br>
+        else if ( ExpresieN )<br>
+        InstructiuneN;<br>
+        else<br>
+        InstructiuneM;
+    </p>
+<p>Putem adauga cat de multe expresii vrem, daca adaugam instructiunea else if, ca in exemplul de mai sus. Programul va verifica pe rand fiecare expresie. Prima care este adevarata, i se va executa instructiunea. Daca doua expresii sunt adevarate, doar prima gasita se va lua in considerare.</p>
+
+<p>Exemple:</p>
+<p class="codeblock">
+    int x;<br>
+    cin >> x;<br>
+    if(x % 2 == 0)<br>
+    cout << x << " este par";<br>
+    else<br>
+    cout << x << " este impar";<br>
+</p>
+<p>sau, un exemplu cu instructiuni compuse: </p>
+<p class="codeblock">
+    int x, y, dif;<br>
+    cin >> x >> y;<br>
+    if(x > y)<br>
+    {<br>
+    dif = x - y;<br>
+    cout << "Diferenta este " << dif << ".";<br>
+    }<br>
+    else if (x < y)
+    {<br>
+    dif = y - x;<br>
+    cout << "Diferenta este " << dif << ".";<br>
+    }<br>
+    else<br>
+    {<br>
+    cout << 0;<br>
+    }
+</p>
+
+<h2>Instructiunea switch</h2>
+<p>Instrucțiunea switch permite executarea unor instrucțiuni, în funcție de egalitatea unei expresii cu anumite valori numerice constante:</p>
+<p class="codeblock">
+    switch ( Expresie )<br>
+    {<br>
+    case Constanta_1:<br>
+    Grup_Instructiuni_1<br>
+    break;<br>
+    case Constanta_2:<br>
+    Grup_Instructiuni_2<br>
+    break;<br>
+    …<br>
+    case Constanta_N:<br>
+    Grup_Instructiuni_N<br>
+    break;<br>
+    default:<br>
+    Grup_Instructiuni_default<br>
+    break;<br>
+    }
+</p>
+<p>Mod de executie</p>
+<p>
+    1: Se evaluează Expresie<br>
+    2.1: Dacă valoarea expresiei este egală cu una dintre valorile constante din clauzele case, se execută instrucțiunile din grupul de instrucțiuni corespunzător, apoi se trece la instrucțiunea de după switch<br>
+    2.2: Dacă valoarea expresiei nu este egală cu niciuna dintre valorile constante din clauzele case, se verifică existența clausei default;<br>
+    3.1: Dacă există clauza default, se execută instrucțiunile din grupul de instrucțiuni corespunzător clauzei default, apoi se trece la instrucțiunea de după switch<br>
+    3.2: Dacă nu există clauza default, se trece la instrucțiunea de după switch
+</p>
+
+<p>Exemplu: </p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main(){<br>
+    int zi;<br>
+    cin >> zi;<br>
+    switch(zi)<br>
+    {<br>
+    case 1:<br>
+    cout << "Luni\n"; break;<br>
+    case 2:<br>
+    cout << "Marti\n"; break;<br>
+    case 3:<br>
+    cout << "Miercuri\n"; break;<br>
+    case 4:<br>
+    cout << "Joi\n"; break;<br>
+    case 5:<br>
+    cout << "Vineri\n"; break;<br>
+    case 6:<br>
+    case 7:<br>
+    cout << "WEEKEND!!!\n"; break;<br>
+    default:<br>
+    cout << "Numarul zilei este incorect\n"; break;<br>
+    }<br>
+    return 0;<br>
+    }
+</p>
+<p>Observați mai sus că în clauza case 6: nu avem instrucțiuni. Dacă variabila zi are valoarea 6 sau 7 se va afișa "WEEKEND!!!"</p>
+</body>

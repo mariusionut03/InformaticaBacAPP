@@ -1,0 +1,59 @@
+<body>
+<h2>Instrucțiuni care controlează execuția structurilor repetitive</h2>
+<h2>Instrucțiunea break</h2>
+<p>Instrucțiunea break are sens și poate fi folosită numai în instrucțiunile switch, while, do ... while și for.</p>
+<p class="codeblock">break;</p>
+<p>Mod de execuție<br>
+    Am văzut semnificația instrucțiunii break atunci când apare în instrucțiunea switch.<br>
+    Efectul instrucțiunii break când apare într-o instrucțiune repetitivă este întreruperea execuției acesteia și trecerea la instrucțiunea care urmează celei repetitive.</p>
+<p>Exemplu:</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main ()<br>
+    {<br>
+    int n;<br>
+    cin >> n;<br>
+    int S = 0;<br>
+    for(int i = 1; i <= n ; i ++)<br>
+    {<br>
+    S += i;<br>
+    if(i == 5)<br>
+    break;<br>
+    }<br>
+    cout << S << endl;<br>
+    return 0;<br>
+    }
+</p>
+
+<p>- Dacă valoarea lui n este cel mult 5, se va afișa suma numerelor de la 1 la n.<br>
+    - Dacă n >= 5 se va afișa întotdeauna 15, deoarece execuția lui for se întrerupe, datorită lui break, când i este 5.</p>
+
+<h2>Instrucțiunea continue</h2>
+<p>Instrucțiunea continue are sens și poate fi folosită numai în instrucțiunile while, do ... while și for.</p>
+<p class="codeblock">continue;</p>
+
+<p>Mod de execuție<br>
+    Efectul instrucțiunii continue este ignorarea instrucțiunilor care îi urmează în corpul ciclului și revenirea la evaluarea Expresiei, în cazul lui while, do ... while, respectiv la evaluarea Expresiei_de_Continuare, în cazul lui for.</p>
+<p>Exemplu</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main ()<br>
+    {<br>
+    int n;<br>
+    cin >> n;<br>
+    int S = 0;<br>
+    for(int i = 1; i <= n ; i ++)<br>
+    {<br>
+    if(i % 2 == 0)<br>
+    continue;<br>
+    S += i;<br>
+    }<br>
+    cout << S << endl;<br>
+    return 0;<br>
+    }
+</p>
+
+
+</body>

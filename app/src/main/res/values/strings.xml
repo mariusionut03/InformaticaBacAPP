@@ -6,6 +6,7 @@
         <item>Introducere</item>
         <item>Pseudocod</item>
         <item>Bazele C++</item>
+        <item>Structuri de control</item>
         <item>Algoritmi elementari</item>
         <item>Vectori (T. unidimensionale)</item>
         <item>Matrici (T. bidimensionale)</item>
@@ -21,7 +22,8 @@
     <string-array name="pagesArrayRes">
         <item>2</item>
         <item>5</item>
-        <item>7</item>
+        <item>6</item>
+        <item>6</item>
         <item>2</item>
         <item>2</item>
         <item>2</item>

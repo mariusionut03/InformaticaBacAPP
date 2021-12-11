@@ -23,4 +23,29 @@
 <p> Urmatorii identificatori C++ sunt corecti: a, numar, Numar, alt_numar, a2b, _suma, un_nume_de_variabila_foarte_lung.</p>
 <p> Urmatorii identificatori C++ sunt incorecti: 2a (Incepe cu cifra), alt numar (contine spatiu), un-numar (contine minus), număr (contine diacritice, identificatorii pot contine numai litere ASCII).</p>
 
+
+<h2>Constante</h2>
+<p>Constantele sunt date care nu isi modifica valoarea in timpul executiei programului.</p>
+<p>Ele se declara prin doua moduri: </p>
+<p class="codeblock">
+    <span class="comments">// Prin directiva define: </span><br>
+    #define ABC 123<br>
+    <span class="comments">// Prin modificatorul const: </span><br>
+    const int ABC = 123;
+</p>
+<p>La declararea constantelor este obligatorie initializarea.</p>
+<br>
+<p>O categorie aparte de caractere constă în secvențele ESCAPE. O secvență escape este alcătuită din două caractere, dintre care primul este backslash: \. Reprezintă caractere care nu pot fi scrise ca atare sau au un înțeles special. Din punct de vedere sintactic sunt caractere, fiind delimitate prin aprostrof. Probabil cea mai cunoscută secvență escape este '\n' – new line (enter).</p>
+<p class="codeblock">
+    '<span class="functions">\n</span>' – Newline<br>
+    '<span class="functions">\b</span>' – Backspace<br>
+    '<span class="functions">\f</span>' – Form feed<br>
+    '<span class="functions">\r</span>' – Return<br>
+    '<span class="functions">\t</span>' – TAB orizontal<br>
+    '<span class="functions">\\</span>' – Backslash<br>
+    '<span class="functions">\'</span>' – Apostrof<br>
+    '<span class="functions">\"</span>' – Ghilimele<br>
+    '<span class="functions">\?</span>' – Semn de întrebare<br>
+    '<span class="functions">\0</span>' -Caracterul nul<br>
+</p>
 </body>

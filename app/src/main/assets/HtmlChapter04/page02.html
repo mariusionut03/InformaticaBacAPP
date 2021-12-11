@@ -1,1 +1,50 @@
-<body><h1>Chapter 4</h1></body>
+<body>
+<h1>1. Structura liniară</h1>
+<p>Structura liniară este reprezentată de instrucțiuni care se execută la fel la fiecare executare a programului (sau a secvenței de program), indiferent care sunt valorile variabilelor cu care se lucrează.</p>
+<h2>Instrucțiunea expresie</h2>
+<p>Instrucțiunea expresie este cel mai frecvent folosit tip de instrucțiune dintr-un program C++. O expresie devine instrucțiune dacă este urmată de ;.</p>
+<p class="codeblock">Expresie;</p>
+<p>Exemple:</p>
+<p class="codeblock">
+    x = 2;<br>
+    x ++;<br>
+    cout << x;
+</p>
+<p>Notă: În C++, operațiile de intrare/ieșire folosind stream-uri sunt și ele operații. În exemplul de mai sus, cout și x sunt operanzii, iar << este operatorul. Rezultat operației este o adresă de memorie, a stream-ului cout.</p>
+
+<h2>Instrucțiunea declarativă</h2>
+<p>Printr-o instrucțiune declarativă se pot declara identificatori de un anumit tip. Identificatorii pot fi variabile, dar vom vedea mai târziu că pot fi și funcții.</p>
+<p class="codeblock">Tip_de_date Lista_identificatori;</p>
+<p>Tip_de_date poate fi orice tip C++ corect (int, double, etc.), iar Lista_identificatori este alcătuită din cel puțin un identificator. Dacă sunt mai mulți, se vor separa prin caracterul virgulă ,.</p>
+<p>Exemple:</p>
+<p class="codeblock">
+    int x, y , z;<br>
+    double a;
+</p>
+
+<h2>Instrucțiunea compusă</h2>
+<p>Instrucțiunea compusă sau blocul este o grupare de declarații și instrucțiuni închise între acolade {}. Ele au fost introduse cu scopul de a folosi mai multe instrucțiuni acolo unde sintaxa cere o singură instrucțiune. Instrucţiunea compusă sau blocul sunt echivalente sintactic cu o singură instrucţiune.</p>
+<p>Blocul determină și un domeniu de vizibilitate pentru identificatori. Mai precis, identificatorii declarați într-un bloc vor fi eliminați la terminarea acestuia.</p>
+<p>După acolada închisă } nu se scrie ;</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main(){<br>
+    int x = 5;<br>
+    {<br>
+    int x = 7;<br>
+    cout << x << endl; // se va afisa 7<br>
+    }<br>
+    cout << x << endl; // se va afisa 5<br>
+    return 0;<br>
+    }<br>
+</p>
+
+
+<h2>Instrucțiunea return</h2>
+<p>O instrucţiune return permite ieşirea dintr-o funcţie și transmiterea controlului apelantului funcției. O funcţie poate returna valori apelantului său, prin intermediul unei instrucţiuni return.</p>
+<p class="codeblock">return;</p>
+<p>sau</p>
+<p class="codeblock">return expresie;</p>
+<p>În primul caz valoarea returnată nu este definită. În al doilea caz valoarea expresiei este returnată apelantului funcţiei.</p>
+</body>

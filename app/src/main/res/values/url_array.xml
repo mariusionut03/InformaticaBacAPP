@@ -18,11 +18,14 @@
         <item>HtmlChapter03/page04.html</item>
         <item>HtmlChapter03/page05.html</item>
         <item>HtmlChapter03/page06.html</item>
-        <item>HtmlChapter03/page07.html</item>
     </string-array>
     <string-array name="urlChapter4">
         <item>HtmlChapter04/page01.html</item>
         <item>HtmlChapter04/page02.html</item>
+        <item>HtmlChapter04/page03.html</item>
+        <item>HtmlChapter04/page04.html</item>
+        <item>HtmlChapter04/page05.html</item>
+        <item>HtmlChapter04/page06.html</item>
     </string-array>
     <string-array name="urlChapter5">
         <item>HtmlChapter05/page01.html</item>
@@ -60,6 +63,10 @@
         <item>HtmlChapter13/page01.html</item>
         <item>HtmlChapter13/page02.html</item>
     </string-array>
+    <string-array name="urlChapter14">
+        <item>HtmlChapter14/page01.html</item>
+        <item>HtmlChapter14/page02.html</item>
+    </string-array>
 
-    <integer name="chaptersCount">13</integer>
+    <integer name="chaptersCount">14</integer>
 </resources>

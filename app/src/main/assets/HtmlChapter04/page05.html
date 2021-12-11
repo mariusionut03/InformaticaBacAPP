@@ -1,0 +1,107 @@
+<body>
+<h1>Instrucțiunile repetitive</h1>
+<h2>Instrucțiunea while</h2>
+<p>Instrucțiunea while este o structură repetitivă cu număr necunoscut de pași și test inițial.</p>
+<p class="codeblock">
+    while (Expresie)<br>
+    Instructiune
+</p>
+
+<p>Mod de execuție</p>
+<p class="codeblock">
+    1. Se evaluează Expresie, iar rezultatul se convertește la bool<br>
+    2. Dacă rezultatul este true<br>
+    - Se execută Instructiune<br>
+    - Se reia pasul 1.<br>
+    3. Dacă rezultatul este false, se trece la instrucțiunea de după while.
+</p>
+
+<p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main ()<br>
+    {<br>
+    int n;<br>
+    cin >> n;<br>
+    int S = 0;<br>
+    int i = 1;<br>
+    while(i <= n)<br>
+    {<br>
+    S += i;<br>
+    i ++;<br>
+    }<br>
+    cout << S << endl;<br>
+    return 0;<br>
+    }
+</p>
+
+<h2>Instrucțiunea do...while</h2>
+<p>Instrucțiunea do ... while este o structură repetitivă cu număr necunoscut de pași și test final.</p>
+<p class="codeblock">
+    do<br>
+    Instructiune<br>
+    while ( Expresie );
+</p>
+<p>Mod de execuție</p>
+<p class="codeblock">
+    1. Se execută Instructiune<br>
+    2. Se evaluează Expresie. Rezultatul se convertește la bool.<br>
+    3. Dacă rezultatul este true, se reia pasul 1.<br>
+    4. Dacă rezultatul este false, se trece la instrucțiunea de după do ... while.
+</p>
+<p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main ()<br>
+    {<br>
+    int n;<br>
+    cin >> n;<br>
+    int S = 0;<br>
+    int i = 1;<br>
+    do<br>
+    {<br>
+    S += i;<br>
+    i ++;<br>
+    }<br>
+    while(i <= n);<br>
+    cout << S << endl;<br>
+    return 0;<br>
+    }
+</p>
+
+<h2>Instrucțiunea for</h2>
+<p>Instrucțiunea for este o structură repetitivă cu număr necunoscut de pași și test inițial, echivalentă cu while.</p>
+<p class="codeblock">
+    for (Expresie_de_Initializare ; Expresie_de_Testare ; Expresie_de_Continuare)<br>
+    Instructiune
+</p>
+
+<p>Mod de execuție</p>
+<p class="codeblock">
+    1. Se evaluează Expresie_de_Initializare<br>
+    2. Se evaluează Expresie_de_Testare. Rezultatul se convertește la bool.<br>
+    3. Dacă rezultatul este true:<br>
+    - Se execută Instructiune.<br>
+    - Se evaluează Expresie_de_Continuare.<br>
+    - Se revine la pasul 2.<br>
+    4. Dacă rezultatul este false, se trece la instrucțiunea de după for.
+</p>
+
+<p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int main ()<br>
+    {<br>
+    int n;<br>
+    cin >> n;<br>
+    int S = 0;<br>
+    for(int i = 1; i <= n ; i ++)<br>
+    S += i;<br>
+    cout << S << endl;<br>
+    return 0;<br>
+    }
+</p>
+</body>

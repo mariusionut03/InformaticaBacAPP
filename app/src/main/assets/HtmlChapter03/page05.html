@@ -1,3 +1,250 @@
 <body>
+<h1>Operatori C++</h1>
 
+<p>O operație este alcătuită din operanzi și operator. Operanzii reprezintă datele cu care se fac operațiile, iar operatorul este simbolul care stabilește ce operație se face cu operanzii.</p>
+
+<p class="codeblock">
+    1. Operatorii aritmetici
+    2. Operatorii aritmetici unari
+    3. Operatorii aritmetici binari
+    4. Operatorii relaționali
+    5. Operatorii logici
+    6. Operatorul de atribuire
+    7. Operatorii de atribuire compusă
+    8. Operatorii ++, --
+    9. Operatorul condițional ?
+    10. Operatorul virgulă ,
+    11. Operatorul de conversie explicită
+    12. Alți operatori
+</p>
+
+<h2>1. Operatorii aritmetici</h2>
+<p>Aceștia sunt: +, -, *, /, %. În exemplele de mai jos, considerăm variabilele:</p>
+<p class="codeblock">
+    int N = 11, M = 3; <br>
+    double X = 11, Y = -3.5;
+    <span class="comments">// Retinem aceste 4 variabile si le vom folosi sa explicam fiecare operator in parte.</span></p>
+</p>
+
+<h2>2. Operatorii aritmetici unari</h2>
+<p>În C++ există operațiile unare + și -:<br>
+    + returnează valoarea operandului<br>
+    - returnează valoarea operandului cu semn schimbat.</p>
+<p class="codeblock">
+    X = +X <span class="comments">// Schimba valoarea in 11</span><br>
+    Y = -Y <span class="comments">// Schimba valoarea in 3.5</span><br>
+    N = -+N <span class="comments">// Schimba valoarea in -11</span>
+</p>
+
+<h2>3. Operatorii aritmetici binari</h2>
+<p><span class="functions">+</span> : <span class="functions">adunarea</span> a două numere;<br>
+    <span class="functions">-</span> : <span class="functions">scăderea</span> a două numere;<br>
+    <span class="functions">*</span> : <span class="functions">înmulțirea</span> a două numere;<br>
+    <span class="functions">/</span> : <span class="functions">împărțirea</span> a două numere;<br>
+    <span class="functions">%</span> : <span class="functions">restul împărțirii</span> a două numere întregi (modulo);<br>
+    În C++ nu există un operator pentru <span class="functions">ridicarea la putere</span>!</p>
+
+<p>Împărțirea întreagă și împărțirea zecimală</p>
+<p>Dacă operanzii sunt de tip întreg (int, short, char, etc.), se va realiza împărțirea întreagă, iar rezultatul operației / este câtul împărțirii întregi.<br>
+    Dacă operanzii sunt de tip real (float, double, long double), se va realiza împărțirea zecimală, iar rezultatul operației / este rezultatul acestei împărțiri, “cu virgulă”.</p>
+
+<p class="codeblock">
+    N = 11; M = 3; X = 11; Y = -3.5<br>
+    N / M = 3<br>
+    X / Y = -3.14286<br>
+    X / 2.0 = 5.5<br>
+    M / 2 = 1<br>
+    M / 2.0 = 1.5
+</p>
+
+<p>Ultima împărțire este deosebită. Cei doi operanzi au tipuri diferite: M = 3 este de tip int, iar 2.0 este de tip double. Aici intervine operația de conversie implicită: în mod automat, valoarea operandului M se consideră ca fiind de tip double, împărțirea este împărțire reală și are rezultatul 1.5.</p>
+
+<p>Operatorul modulo %</p>
+<p>Operația modulo are sens numai dacă ambii operanzi sunt de tip întreg – împărțirea cu rest are sens numai în această situație. Iată câteva exemple:</p>
+<p class="codeblock">
+    N % M = 2 : restul împărțirii lui 11 la 3 este 2<br>
+    30 % 10 = 0
+</p>
+
+<p>Operatorul modulo este util în multe situații. El poate fi utilizat pentru a afla ultima cifră a unui număr natural: ultima cifră a lui 276 este 276 % 10 adică 6, sau pentru a verifica dacă un număr N este divizor al lui M. În caz afirmativ, M % N este 0.</p>
+
+<h2>4. Operatorii relaționali</h2>
+
+<p>Sunt: <, >, <=, >=, ==, != .<br>
+    Un operatori relațional stabilește dacă între două numere (operanzii) are loc o anumită relație. Rezultatul acestei operații este adevărat sau fals. Rezultatul operațiilor relaționale poate fi 0 sau 1:<br>
+    - rezultatul este 1 dacă relația este adevărată<br>
+    - rezultatul este 0 dacă relația este falsă
+</p>
+
+<p>Fie N = 11 și M = 3. Operațiile relaționale sunt:</p>
+<p class="codeblock">
+    a) operații de comparare (comparații)<br>
+    mai mic <; N < M este fals, adică 0<br>
+    mai mare >; N > M este adevărat, adică 1<br>
+    mai mic sau egal <=; M <= N este 1<br>
+    mai mare sau egal >=; M >= N este 0<br>
+    b) operația de egalitate == ; <br>
+    N == M este fals, adică 0<br>
+    c) operația de neegalitate (diferit, not egal) !=; <br>
+    N != M este adevărat, adică 1.
+</p>
+
+<p>Important! Una dintre cele mai frecvente erori este folosirea pentru operația de egalitate a operatorului =, în loc de ==. Operatorul = reprezintă operația de atribuire!</p>
+
+<h2>5. Operatorii logici</h2>
+<p>
+    Sunt: !, ||, &&.<br>
+    Operatorii logici au operanzi de tip valori de adevăr și rezultat valori de adevăr.<br>
+    În C++, operatorii logici pot fi aplicați oricăror valori numerice, și au ca rezultat una din valorile 0 sau 1. În exemplele de mai jos vom folosi literalii true și false, de tip bool.
+</p>
+
+<p>Negația: !</p>
+<p class="codeblock">
+    ! true este false. Orice valoare nenulă negată devine 0.<br>
+    ! false este true. 0 negat devine 1.
+</p>
+
+<p>Disjuncția: ||</p>
+<p class="codeblock">
+    false || false → false<br>
+    false || true → true<br>
+    true || false → true<br>
+    true || true → true
+</p>
+
+<p>Conjuncția: &&</p>
+<p class="codeblock">
+    false && false → false<br>
+    false && true → false<br>
+    true && false → false<br>
+    true && true → true
+</p>
+
+<p>Legile lui De Morgan</p>
+<p class="codeblock">
+    !(p && q) == !p || !q
+    !(p || q) == !p && !q
+
+    Exemplu: Expresia (x ≥ a && x ≤ b) este echivalenta cu expresia (!(x ≥ a) || !(x ≤ b))
+</p>
+
+
+<h2>6. Operatorul de atribuire</h2>
+<p>Atribuirea este operația prin care o variabilă primește valoarea unei expresii:<br>
+    variabila = expresie</p>
+
+<p class="codeblock">
+    int n , m; // valori aleatorii<br>
+    double x , y; // valori aleatorii<br>
+    n = 5; // valoare lui n devine 5<br>
+    m = n + 2; // valoare lui m devine 7<br>
+    n = n + 3; // valoarea lui n devine 5 + 3, adica 8<br>
+    x = m / 5; // valoarea lui x devine 8 / 5, adica 1. ATENTIE! este impartire intreaga<br>
+    y = 5; // valoarea lui y devine 5, de tip double. Are loc conversia lui 5 de tip int la double<br>
+    x = m / y; // valoarea lui x devine 1.4, deoarece impartirea este zecimala. Are loc conversia valorii lui m la double, apoi se face impartirea
+</p>
+
+
+<h2>7. Operatorii de atribuire compusă</h2>
+<p>
+    Sunt: +=, -=, *=, /=, %=.<br>
+    În programare sunt foarte frecvente atribuirile de forma:
+</p>
+<p class="codeblock">x = x * 5;</p>
+<p>var OP= expresie, echivalentă cu var = var OP expresie<br>
+    Deci, expresia devine:
+</p>
+<p class="codeblock">x *= 5;</p>
+
+
+
+
+<h2>8. Operatorii ++, --</h2>
+
+<p>
+    Se numesc operatori de de incrementare (++) și decrementare (--).<br>
+    Prin incrementarea unei variabile se înțelege mărirea valorii sale cu 1. Similar, prin decrementarea unei variabilă se înțelege micșorarea valorii sale cu 1.<br>
+    postincrementare: X ++. Prima data efectuam calculul, dupa care marim valoarea lui X cu 1.
+    preincrementare: ++ X. Prima data marim valoarea lui X cu 1, dupa care efectuam calculul.
+</p>
+<p class="codeblock">
+    int A = 1, B;<br>
+    A++; // Valoarea lui A devine 2.<br>
+    B = --A; // Valoarea lui B devine 1 (Valoarea lui A este 2, avem predecrementare, deci B = A - 1);<br>
+    B = A++; // Valoarea lui B devine 2 (Valoarea lui A este 2, avem postincrementare, deci B = A);
+</p>
+
+
+<h2>9. Operatorul condițional ?</h2>
+
+<p>Operatorul condițional este singurul operator ternar (cu trei operanzi) din C++. Sintaxa lui este:</p>
+
+<p class="codeblock">expresie1 ? expresie2 : expresie3</p>
+
+<p>și se evaluează astfel:</p>
+
+<p class="codeblock">
+    1. se evaluează expresie1<br>
+    2. dacă rezultatul lui expresie1 este nenul (adevărat), se evaluează expresie2 și rezultatul acestei expresii va fi rezultatul operației ?<br>
+    3. dacă rezultatul lui expresie1 este nul (fals), se evaluează expresie3 și rezultatul acestei expresii va fi rezultatul operației ?</p>
+<p>expresie2 și expresie3 trebuie să aibă rezultate de același tip, sau de tipuri compatibile.</p>
+
+<p class="codeblock">
+    int x;<br>
+    cin >> x;<br>
+    cout << (x % 2 == 0? "par" : "impar");
+</p>
+
+<h2>10. Operatorul virgulă ,</h2>
+
+<p>În anumite situații, regulile de sintaxă ale limbajului C++ solicită prezența unei singure operații, dar logica programului cere prezența mai multor operații. Acestea pot fi grupate cu ajutorul operatorului ,. Sintaxa acestei operații este:</p>
+<p class="codeblock">
+    expresie1 , expresie2
+</p>
+<p>Modul de evaluare este:</p>
+<p class="codeblock">
+    1. se evaluează mai întâi expresie1, apoi expresie2<br>
+    2. rezultatul operației este rezultatul lui expresie2
+</p>
+
+<p>Exemple:</p>
+<p class="codeblock">
+    int x , y , z;<br>
+    x = 1 , y = 2 , z = 3;<br>
+    x ++, y = x + 2, z -= x; <span class="comments">// este semnificativa ordinea in care s-au evaluat cele trei expresii</span><br>
+    cout << x << " " << y << " " << z; <span class="comments">// 2 4 1</span><br>
+</p>
+
+
+<h2>11. Operatorul de conversie explicită</h2>
+<p>În anumite situații trebuie să considerăm o expresie de un anumit tip ca fiind de alt tip. Acest lucru poate fi realizat prin operatorul de conversie:
+</p>
+<p class="codeblock">(tip_nou) expresie</p>
+
+<p>Exemple:</p>
+<p class="codeblock">
+int x = 2;<br>
+cout << 7 / x << endl; // 3 - este impartire intreaga<br>
+cout << 7 / (double) x; // 3.5 - este impartire zecimala
+</p>
+<p class="codeblock">
+char p = 'a';<br>
+cout << (int)p << endl; // 97, codul ASCII al lui 'a'<br>
+cout << p - 32 << endl; // 65<br>
+cout << (char)(p - 32); // A - carcaterul cu codul ASCII 65
+</p>
+<h2>12. Alți operatori</h2>
+
+<p>Limbajul C++ conține și alți operatori, dintre care:</p>
+
+<p class="codeblock">
+    ( ) – modificarea priorității unei operații, apel de funcție<br>
+    [ ] – indexarea unui tablou<br>
+    ., -> – acces la membrii unei structuri<br>
+    &, * – referențiere (determinarea adresei unei variabile), dereferențiere (accesare variabilei de la o adresă)<br>
+    new, delete – alocare și dealocarea memoriei<br>
+    <<, >> – inserare și extragere din stream<br>
+    :: operatorul de rezoluție</p>
 </body>
+
+
