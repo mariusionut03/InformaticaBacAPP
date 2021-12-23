@@ -1,0 +1,70 @@
+<body>
+    <h1>b. CMMDC și CMMMC. Algoritmul lui Euclid</h1>
+    <p>Fie a și b două numere naturale. Un număr natural d se numește cel mai mare divizor comun (pe scurt cmmdc) al lui a și b dacă îndeplinește condițiile:</p>
+    <p>
+        1. d|a și d|b;
+        2. dacă c|a și c|b, atunci c|d.
+    </p>
+    <p>Cel mai mare divizor comun al numerelor a și b se notează (a,b).</p>
+    <p>Dacă (a,b)=1, spunem că a și b sunt prime între ele sau relativ prime, sau că a este prim cu b.</p>
+    <h2>Determinarea celui mai mare divizor comun</h2>
+    <p>Cel mai mare divizor comun al două numere naturale n și m poate fi determinat folosind descompunerea în factori primi a celor două numere. Această metodă este mai dificil de implementat. Există o metodă mai simplu de implementat într-un program, numită algoritmul lui Euclid.</p>
+    <p>Sunt două variante ale algoritmului lui Euclid: cu scăderi și cu împărțiri.</p>
+    <h2>Algoritmul lui Euclid cu scăderi</h2>
+    <p>Algoritmul lui Euclid cu scăderi se bazează pe ideea că cele mai mare divizor a două numere divide și diferența acestora. Algoritmul este:</p>
+    <p>- Cât timp numerele sunt diferite, se scade numărul mai mic din numărul mai mare.<br>
+        - Când numerele devin egale, valoare comună este cel mai mare divizor comun al valorilor inițiale.<br>
+        - Algoritmul nu poate fi aplicat dacă unul dintre numere este 0.</p>
+    <p>Exemplu: </p>
+    <p>
+        Fie n=32 și m=24.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, n = n - m = 32 - 24 = 8.<br>
+        Acum n = 8 și m = 24.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, m = m - n = 24 - 8 = 16.<br>
+        Acum n = 8 și m =16.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, m = m - n = 16 - 8 = 8.<br>
+        Acum n = 8 și m = 8.<br>
+        Numerele sunt egale. Valoarea comună, 8, este cel mai mare divizor comun al valorilor inițiale, 32 și 24
+    </p>
+
+    <p class="codeblock">
+        #include <span><</span>iostream><br>
+        using namespace std;<br>
+        int main()<br>
+        {<br>
+        int n , m;<br>
+        cin >> n >> m;<br>
+        while(n != m)<br>
+        if(n > m)<br>
+        n -= m;<br>
+        else<br>
+        m -= n;<br>
+        cout << n << std :: endl;<br>
+        return 0;<br>
+        }
+    </p>
+
+<h1>Cel mai mic multiplu comun</h1>
+<p>
+    Fie a și b două numere naturale. De numește cel mai mic multiplu comun (pe scurt cmmmc) al lui a și b cel mai mic număr natural nenul cu proprietatea că se divide atât cu a cât și cu b.<br>
+    Cel mai mic multiplu comun al numerelor a și b se notează [a,b].
+</p>
+
+<h2>Determinarea cmmmc</h2>
+    <p>Pentru a determina cel mai mic multiplu comun se pot folosi mai multe metode:</p>
+    <h3>Determinarea cmmmc folosind cmmdc</h3>
+<p>Produsul a două numere naturale nenule este egal cu produsul dintre cel mai mare divizor comun al lor și cel mai mic multiplu comun al lor.</p>
+<p>a⋅b = (a,b) ⋅ [a,b]</p>
+
+<h3>Determinarea cmmmc folosind un algoritm de tip Euclid</h3>
+<p>
+    Fie a și b valorile date. Vom construi valorile m și n, astfel:
+
+    1. inițial n ← a, m ← b;
+    2. cât timp m ≠ n:
+    - dacă n < m, atunci n crește cu valoarea lui a: n ← n + a
+    - dacă n > m, atunci m crește cu valoarea lui b: m ← m + b
+    3. valoarea finală, comună, a lui n și m este cel mai mic multiplu comun pentru a și b
+    Observație: Algoritmul poate fi aplicat similar pentru trei sau mai multe numere!
+</p>
+</body>

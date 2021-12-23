@@ -30,6 +30,12 @@
     <string-array name="urlChapter5">
         <item>HtmlChapter05/page01.html</item>
         <item>HtmlChapter05/page02.html</item>
+        <item>HtmlChapter05/page03.html</item>
+        <item>HtmlChapter05/page04.html</item>
+        <item>HtmlChapter05/page05.html</item>
+        <item>HtmlChapter05/page06.html</item>
+        <item>HtmlChapter05/page07.html</item>
+        <item>HtmlChapter05/page08.html</item>
     </string-array>
     <string-array name="urlChapter6">
         <item>HtmlChapter06/page01.html</item>

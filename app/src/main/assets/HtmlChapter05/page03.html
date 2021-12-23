@@ -1,0 +1,58 @@
+<body>
+    <h1>2. Cifrele unui numar</h1>
+    <p>Să ne gândim la un număr (natural), n = 274 – aici n este o variabilă de tip int.<br>
+        Care dintre cifrele sale poate fi determinată cu o simplă operație aritmetică? Constatăm că putem determina ultima cifră a numărului cu operația C++ % 10 – restul împărțirii la 10. Într-adevăr, 274 % 10 este 4, adică ultima cifră (a unităților) a lui 274.<br>
+        Cum putem determina cifra zecilor? Sigur, o soluție ar fi n % 100 / 10. Într-adevăr, n % 100 este 74, iar 74 /10 este 7. Ne amintim că, dacă operanzii sunt întregi, operația / reprezintă câtul împărțirii întregi.<br>
+        Dar mai există o variantă, mai utilă pe termen lung :). Știm că n % 10 reprezintă cifra unităților lui n și vrem să determinăm cifra zecilor. Putem să modificăm mai întâi valoarea lui n, astfel: n = n / 10, și să determinăm ultima cifră a acestui număr. Este cifra unităților pentru valoarea curentă a lui n și cifra zecilor pentru valoarea inițială.</p>
+
+    <p class="codeblock">int n = 274;<br>
+        cout << n % 10; // se va afisa 4<br>
+        n = n / 10; // n devine 27<br>
+        cout << n % 10; // se va afisa 7</p>
+
+    <p>Astfel, se conturează următorul program pentru determinarea cifrelor unui număr:</p>
+    <p class="codeblock">
+        #include <span><</span>iostream><br>
+        using namespace std;<br>
+        int main()<br>
+        {<br>
+        int n;<br>
+        cin >> n;<br>
+        while(n != 0) // cat timp n este nenul - mai are cifre<br>
+        {<br>
+        int uc = n % 10; //determinam ultima cifra a lui n<br>
+        cout << uc << " "; // prelucram ultima cifra<br>
+        n /= 10;    //  eliminam ultima cifra (trunchiem numarul)<br>
+        }<br>
+        return 0;<br>
+        }
+    </p>
+    <p>Daca n = 274, programul va afisa: </p>
+    <p class="codeblock">// Output: 4 7 2</p>
+
+    <h2>Construirea unui număr cu cifre date</h2>
+
+    <p>
+        Să considerăm următorul șir de cifre, în ordine: 2 8 5 3<br>
+        Cu ele se poate construi un număr, astfel:<br>
+        - pornim de la valoarea R = 0;<br>
+        - cifrele se adaugă în ordine.<br><br>
+
+        Dacă cifrele se adaugă la sfârșit, procedăm astfel:<br>
+        1. R = 0<br>
+        2. c = 2. R = 10 * R + c, adică R devine 10 * 0 + 2 = 2<br>
+        3. c = 8. R = 10 * R + c, adică R devine 10 * 2 + 8 = 28<br>
+        4. c = 5. R = 10 * R + c, adică R devine 10 * 28 + 5 = 285<br>
+        5. c = 3. R = 10 * R + c, adică R devine 10 * 285 + 3 = 2853<br><br>
+
+        Dacă cifrele se inserează la început, procedăm astfel:<br>
+        1. R = 0<br>
+        2. c = 2. R = R + 1 * c, adică R devine 0 + 1 * 2 = 2<br>
+        3. c = 8. R = R + 10 * c, adică R devine 2 + 8 * 10 = 82<br>
+        4. c = 5. R = R + 100 * c, adică R devine 82 + 100 * 5 = 582<br>
+        5. c = 3. R = R + 1000 * c, adică R devine 582 +1000 * 3 = 3582<br><br>
+
+        Ambele metode folosesc de fapt scrierea zecimală a numărului:<br>
+        3582 = 0 + 1 * 2 + 10 * 8 + 100 * 5 + 1000 * 3
+    </p>
+</body>
