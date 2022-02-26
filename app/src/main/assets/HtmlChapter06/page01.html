@@ -1,1 +1,73 @@
-<body><h1>Tablouri unidimensionale</h1></body>
+<body>
+<h1>Tablouri unidimensionale</h1>
+<p>Tablourile unidimensionale sunt declarate astfel: </p>
+<p class="codeblock">
+    tipDeBază denumire[Dimensiune];<br>
+    de exemplu:
+    int X[4];
+</p>
+
+<p>Ne putem imagina tablourile unidimensionale ca un sir de valori.<br>
+Dimensiunea tabloului declarat mai sus, adica X[4], este 4.<br>
+Acest tablou poate lua 10 valori numerotate de la 0 la 3.</p>
+
+<table>
+    <tr>
+        <td>Element</td>
+        <td>17</td>
+        <td>23</td>
+        <td>5</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Indice</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
+
+<p>Accesarea unui element se face prin operatorul de indexare [].</p>
+<p class="codeblock">
+    cout << X[0]; // Afiseaza 17<br>
+    cout << X[3]; // Afiseaza 0<br>
+    cout << X[4]; // Eroare
+</p>
+
+<h2>Scrierea unui tablou intr-un program</h2>
+<p class="codeblock">
+    int main()<br>
+    {<br>
+    int A[100]; // Declaram un tablou cu maxim 100 de elemente<br>
+    int n; cin >> n; // n reprezinta numarul elementelor pe care le vom citi<br>
+    for(int i = 0; i < n; i++)<br>
+    cin >> A[n];
+</p>
+<p>Programul o sa citeasca de la tastatura, pe rand, elementele lui A de la 0 la n-1.</p>
+<p>Important! n trebuie sa fie mai mic decat dimensiunea lui A, adica 100.</p>
+
+<h2>Afisarea unui vector</h2>
+<p>Important! Nu se poate face afisarea cu "cout << X;". Trebuie specificat indexul. Varianta corecta este:</p>
+<p class="codeblock">
+    for(int i = 0; i < n; i++)<br>
+    cout << X[i] << ' ';
+</p>
+
+<p>sau in ordine descrescatoare:</p>
+<p class="codeblock">
+    for(int i = n-1; i >= 0; i--)<br>
+    cout << X[i] << ' ';
+</p>
+
+<h2>Initializarea elementelor unui tablou</h2>
+<p>Declararea unui tablou se poate face specificand si elementele.</p>
+<p class="codeblock">
+    int A[] = {10 , 20 , 30 , 40};<br>
+    int B[10] = {10 , 20 , 30 , 40};<br>
+    int C[10] = {0};
+</p>
+<p>A va avea patru elemente, cu valorile A[0] = 10, A[1] = 20, A[2] = 30, A[3] = 40.<br>
+    B va avea zece elemente; primele patru vor avea valorile B[0] = 10, B[1] = 20, B[2] = 30, B[3] = 40, celelalte vor avea valoarea 0!!!<br>
+    C va avea zece elemente. Toate vor avea valoarea 0!!!</p>
+</body>

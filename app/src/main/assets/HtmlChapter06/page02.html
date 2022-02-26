@@ -1,1 +1,79 @@
-<body><h1>Chapter 6</h1></body>
+<body>
+<h1>Ștergeri și inserări de elemente</h1>
+<h2>Ștergerea</h2>
+<p>Se dă un șir X cu n elemente întregi și un număr p. Să se șteargă din șirul X elementul aflat pe poziția p.</p>
+<p>Să considerăm următorul vector cu n=10 elemente și p=4.</p>
+<table>
+    <tr>
+        <td>Element</td>
+        <td>7</td>
+        <td>23</td>
+        <td>12</td>
+        <td>17</td>
+        <td>34</td>
+        <td>65</td>
+        <td>0</td>
+        <td>32</td>
+        <td>16</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td>Indice</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+</table>
+<p>Dorim sa-l eliminam pe X[4]=34. Tabloul va deveni: </p>
+<table>
+    <tr>
+        <td>Element</td>
+        <td>7</td>
+        <td>23</td>
+        <td>12</td>
+        <td>17</td>
+        <td>65</td>
+        <td>0</td>
+        <td>32</td>
+        <td>16</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td>Indice</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+</table>
+
+<p>Proces: Elementele cu indici p+1, p+2, ..., n-1 se muta spre stanga cu o pozitie. Dimensiunea n se micsoreaza cu 1.</p>
+
+<p class="codeblock">
+    for(int i = p ; i < n - 1; i ++)<br>
+    X[i] = X[i+1];<br>
+    n --;
+</p>
+
+
+<h2>Adaugarea</h2>
+<p>Similar cu algoritmul de ștergere a unui element dintr-un vector, și cel de inserare presupune modificarea elementelor din dreapta lui X[p]. De data aceasta elementele vor fi mutate spre dreapta, începând cu ultimul.</p>
+<p class="codeblock">
+    for(int i = n - 1 ; i >= p ; i --)<br>
+    X[i+1] = X[i];<br>
+    X[p] = val;<br>
+    n ++;
+</p>
+</body>
