@@ -1,0 +1,30 @@
+<body>
+<h1>Transmiterea parametrilor</h1>
+
+<p>Am vazut pe paginile anterioare cum putem transmite parametri catre subprograme.</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream;
+    using namespace std;
+
+    int cmmdc(int x, int y)
+    {
+    while(x != y)
+    if(x > y)
+    x -= y;
+    else
+    y -= x;
+    return x;
+    }
+
+    int main()
+    {
+    int a, b;
+    cin >> a >> b;
+    cout << a << ' ' << b;
+
+
+    }
+</p>
+
+</body>

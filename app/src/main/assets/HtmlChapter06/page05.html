@@ -1,0 +1,46 @@
+<body>
+    <h1>Cautarea intr-un vector</h1>
+
+<p>Căutarea unei valori într-un vector se poate face în două moduri:
+
+    -> secvențial – presupune analizarea fiecărui element al vectorului într-o anumită ordine (de obicei de la stânga la dreapta). Când se găsește valoarea căutată parcurgerea vectorului se poate opri. În cel mai rău caz, pentru un vector cu n elemente parcurgerea face n pași, complexitatea timp a căutării secvențiale este O(n)
+    -> binar. Căutarea binară se poate face într-un vector numai dacă elementele acestuia sunt în ordine (de obicei crescătoare) după un anumit criteriu (de obicei criteriul este chiar relația de ordine naturală între numere, cuvinte, etc). Căutarea binară presupune împărțirea vectorului în secvențe din ce în ce mai mici, înjumătățindu-le și continuând cu jumătatea în care se poate afla valoarea dorită (conform ordinii elementelor din vector).</p>
+    Algoritm pseudocod
+    Algoritmul căutării binare este următorul:
+
+    Date de intrare:
+
+    un vector v[] cu n elemente, indexate de la 1 la n, ordonate crescător și o valoare x care se va căuta.
+    Date de ieșire:
+
+    un indice poz dacă valoarea x apare în vectorul v[] sau 0 în caz contrar.
+    Algoritm pseudocod:
+<p class="codeblock">
+    st ← 1
+    dr ← n
+    poz ← 0
+    CÂTTIMP st < dr SI poz=0 EXECUTĂ
+                  m ← (st + dr) DIV 2
+                  DACĂ v[m] = x ATUNCI
+                  poz = m
+                  ALTFEL
+                  DACĂ v[m] < x ATUNCI
+    st ← m + 1
+    ALTFEL
+    dr ← m -1
+    SFDACĂ
+    SFDACĂ
+    SFCÂTTIMP
+
+    DACĂ poz≠0 ATUNCI
+    // x apare în vector pe poziția poz
+    ALTFEL
+    // x nu apare în vector
+    SFDACĂ
+</p>
+    Notă: În algoritmul de mai sus a DIV b reprezintă câtul împărțirii lui a la b, iar cu V ← EXPR s-a notat atribuirea la variabila V a rezultatului expresiei EXPR.
+
+
+
+
+</body>

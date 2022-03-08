@@ -1,3 +1,278 @@
 <body>
     <h1>Sortarea vectorilor</h1>
+
+    metoda bulelor se bazează pe următoare idee:
+
+    fie un vector X[] cu n elemente
+    parcurgem vectorul și pentru oricare două elemente învecinate care nu sunt în ordinea dorită, le interschimbăm valorile
+    după o singură parcurgere, vectorul nu se va sorta, dar putem repeta parcurgerea
+    dacă la o parcurgere nu se face nicio interschimbare, vectorul este sortat
+    O reprezentare a algoritmului este:
+
+    cat timp vectorul nu este sortat
+    presupunem că vectorul este sortat
+    parcurgem vectorul
+    dacă două elemente învecinate nu sunt în ordinea dorită
+    le interschimbăm
+    schimbăm presupunerea inițială
+    Exemplu: Să ordonăm următorul vector, în care n=5:
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>Element</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+    </table>
+
+    După prima parcurgere vectorul are următoarea structură:
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VII</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+
+
+    După o nouă parcurgere, vectorul este:
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+    Îl parcurgem din nou:
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+
+
+
+
+
+    O secvență C++:
+
+<p class="codeblock">
+    int n, v[100];<br>
+    //citire v[] cu n elemente<br>
+    bool sortat;<br>
+    do<br>
+    {<br>
+    sortat = true;<br>
+    for(int i = 0 ; i < n - 1 ; i ++)<br>
+    if(v[i] > v[i+1])<br>
+    {<br>
+    int aux = v[i];<br>
+    v[i] = v[i+1];<br>
+    v[i+1] = aux;<br>
+    sortat = false;<br>
+    }<br>
+    }<br>
+    while(!sortat);
+</p>
+
+
+    Observație: La fiecare parcurgere cel puțin un element ajunge pe poziția sa finală:
+
+    la prima parcurgere cel mai mare element al vectorului ajunge pe poziția sa finală;
+    la a doua parcurgere următorul cel mai mare element ajunge pe poziția finală;
+    Observăm că nu mai are rost să parcurgem aceste elemente, fixate. Astfel, putem parcurge vectorul numai până la indicele unde s-a făcut ultima interschimbare la parcurgerea anterioară.
+
+Parcurgere 1:
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VII</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+Parcurgere 2
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+
+Parcurgere 3
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+    O secvență C++:
+
+<p class="codeblock">
+    int n, v[100];<br>
+    //citire v[] cu n elemente<br>
+    bool sortat;<br>
+    int m = n;<br>
+    do<br>
+    {<br>
+    sortat = true;<br>
+    int p = m;<br>
+    for(int i = 0 ; i < p - 1 ; i ++)<br>
+    if(v[i] > v[i+1])<br>
+    {<br>
+    int aux = v[i];<br>
+    v[i] = v[i+1];<br>
+    v[i+1] = aux;<br>
+    sortat = false;<br>
+    m = i + 1;<br>
+    }<br>
+    }<br>
+    while(!sortat);
+</p>
 </body>

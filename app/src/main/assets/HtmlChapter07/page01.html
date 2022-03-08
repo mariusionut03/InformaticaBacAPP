@@ -1,1 +1,26 @@
-<body><h1>Chapter 7</h1></body>
+<body><h1>Tablouri bidimensionale</h1>
+
+Declararea tablourilor bidimensionale (matrice) face în C/C++ similar cu a tablourilor unidimensionale, dar trebuie precizate două dimensiuni fizice, maximale: numărul maxim de linii și numărul maxim de coloane ale matricei:
+
+<p class="codeblock">tipDeBază denumire[NumarLinii][NumarColoane];</p>
+de exemplu:
+
+<p class="codeblock">int A[5][10];</p>
+Mai sus s-a declarat un tablou bidimensional (o matrice) cu 5 linii și 10 coloane. Ni-l putem imagina astfel (valorile sunt aleatorii):
+
+
+Matricea are:
+
+5 • 10 = 50 de elemente;
+5 linii, indexate (numerotate) de la 0 la 4 – mai jos sunt evidențiate liniile cu indici 1 și 3;
+10 coloane, indexate de la 0 la 9 – mai jos sunt evidențiate coloanele cu indici 0, 4 și 9;
+
+
+Referirea elementelor se face prin intermediul operatorului C++ de indexare [], la fel ca în cazul vectorilor, dar trebuie precizați doi indici – cel de linie și cel de coloană. Astfel, A[2][4] reprezintă elementul matricei aflat pe linia 2 și pe coloana 4 – la intersecția dintre linia 2 și coloana 4. Astfel primul indice al unui element este cel de linie, iar al doilea indice este cel de coloană.
+
+
+
+
+
+
+</body>

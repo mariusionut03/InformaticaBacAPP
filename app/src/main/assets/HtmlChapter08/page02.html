@@ -1,1 +1,61 @@
-<body><h1>Chapter 8</h1></body>
+<body><h1>Structura unei functii</h1>
+<p>O sa rescriem functia de pe pagina anterioara si o sa explicam ce inseamna fiecare lucru: </p>
+
+<p class="codeblock">
+    int subprogram(int a, int b)<br>
+    {<br>
+    int c = a + b;<br>
+    return c;<br>
+    }
+</p>
+
+<p>1. Observam ca functia este declarata cu 'int'(numar intreg). Acesta reprezinta tipul de dată ce este returnata si poate fi inlocuit cu majoriatatea tipurilor de date pe care le cunoastem('char', 'double', 'float' etc.).</p>
+<p>Daca nu vrem sa returnam nimic, folosim tipul 'void'. Un exemplu este o functie care doar afiseaza ceva pe ecran, ea va fi declarata cu 'void'.</p>
+<p>2. 'subprogram' este numele functiei si poate fi editat dupa placul nostru.</p>
+<p>3. '(int a, int b)' sunt parametrii functiei, doua numere de tip intreg si trebuie precizate la chemarea functiei. O functie poate fi lipsita de parametri, in cazul nostru am fi definit-o 'int subprogram()', fara niciun text intre paranteze.</p>
+<p>4. '{ }' parantezele delimiteaza instructiunile.</p>
+<p>5. Scriem instructiunile functiei intre paranteze.</p>
+
+
+<h2>Prototipul unei functii</h2>
+
+<p class="codeblock">
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    int main()<br>
+    {<br>
+    g();<br>
+    return 0;<br>
+    }<br>
+    <br>
+    void g()<br>
+    {<br>
+    cout << "Salutare!"<br>
+    }<br>
+    <br>
+    // Eroare
+</p>
+
+<p>Acest program va da eroare. Functia 'g()' este chemata in 'main()' inainte ca ea sa fie definita.</p>
+<p>Totul se rezolva mentionand functia 'g()' la inceputul programului.</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    void g(); // Acest <br>
+    <br>
+    int main()<br>
+    {<br>
+    g();<br>
+    return 0;<br>
+    }<br>
+    <br>
+    void g()<br>
+    {<br>
+    cout << "Salutare!"<br>
+    }
+</p>
+
+</body>

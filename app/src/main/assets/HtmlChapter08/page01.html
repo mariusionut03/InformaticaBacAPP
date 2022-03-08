@@ -1,1 +1,35 @@
-<body><h1>Chapter 8</h1></body>
+<body><h1>Subprograme</h1>
+
+<p>Un subprogram este o colecție de tipuri de date, variabile, instrucțiuni care îndeplinesc o anumită sarcină (calcule, citiri, afișări), atunci când este apelat de un program sau de un alt subprogram.</p>
+<p>Subprogramele sunt utile in programele unde o serie de instructiuni este repetata de mai multe ori, asa ca o scriem o singura data si, dupa, o chemam de fiecare data cand avem nevoie.</p>
+<p>Pentru a intelege conceptul, cel mai bine dam un exemplu in C++:</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    int subprogram(int a, int b)<br>
+    {<br>
+    int c = a + b;<br>
+    return c;<br>
+    }<br>
+    <br>
+    int main()<br>
+    {<br>
+    int m, n;<br>
+    cin >> m >> n;<br>
+    cout << subprogram(m, n);<br>
+    return 0;<br>
+    }
+</p>
+
+<p>
+    In codul de mai sus avem definita inca o functie pe langa 'main', numita 'subprogram'. Ea primeste 2 valori, retinute cu numele 'a' si 'b'. La apelarea functiei 'subprogram', se va face suma celor doua numere ce se va retine in variabila 'c', urmand sa fie returnata inapoi in main. Observam ca apelarea functiei se face in comanda 'cout', asa ca valoarea returnata va fi afisata pe ecran.
+</p>
+
+
+
+
+
+
+</body>

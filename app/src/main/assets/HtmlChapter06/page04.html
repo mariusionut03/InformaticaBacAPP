@@ -1,3 +1,57 @@
 <body>
-    <h1>Interclasare</h1>
+    <h1>Interclasarea tablourilor</h1>
+
+    Considerăm două tablouri unidimensionale cu elemente numere întregi ordonate crescător. Se dorește construirea unui alt tablou, care să conțină valorile din cele două tablouri, în ordine.
+    O soluție foarte eficientă este interclasarea:
+
+    considerăm două tablouri, cu n, respectiv m elemente, ordonate crescător
+    cele două tablouri se parcurg concomitent;
+    se alege valoarea mai mică dintre cele două elemente curente
+    se adaugă în al treilea tablou
+    se avansează numai în tabloul din care am ales valoarea de adăugat
+    parcurgerea unuia dintre cele două tablouri se încheie
+    toate elementele din celălalt tablou, neparcurse încă, sunt adăugate în tabloul destinație
+    tabloul destinație are p = n + m elemente
+
+
+    <table>
+        <tr>
+            <td>Tabloul 1</td>
+            <td>4</td><td>6</td><td>12</td><td>17</td>
+        </tr>
+        <tr>
+            <td>Tabloul 2</td>
+            <td>2</td><td>4</td><td>6</td><td>6</td><td>9</td><td>12</td><td>17</td>
+        </tr>
+        <tr>
+            <td>Tabloul 3</td>
+            <td>2</td><td>6</td><td>9</td>
+        </tr>
+    </table>
+
+
+    Secvență C++:
+<p class="codeblock">
+    int n,a[100000], m , b[100000], p, c[200000];<br>
+
+    //citire a[] cu n elemente<br>
+    //citire b[] cu m elemente<br>
+
+    int i = 0 , j = 0;<br>
+    p = 0;<br>
+    while(i < n && j < m)<br>
+    if(a[i] < b[j])<br>
+    c[p ++] = a[i ++];<br>
+    else<br>
+    c[p ++] = b[j ++];<br>
+    while(i < n)<br>
+    c[p ++] = a[i ++];<br>
+    while(j < m)<br>
+    c[p ++] = b[j ++];
+</p>
+
+    Observație: Doar una dintre instrucțiunile while(i < n)... și while(j < m)... se va executa, deoarece exact una dintre condițiile i < n și j < m este adevărată. În prima structură repetitivă, la fiecare pas, doar una dintre variabilele i și j se mărește, deci la final una dintre condiții este adevărată și una este falsă.
+
+    Algoritmul de interclasare este foarte eficient. El are complexitate O(n+m). De asemenea, este posibilă și interclasarea valorilor din două fișiere, singura condiție este ca valorile să fie ordonate.
+
 </body>

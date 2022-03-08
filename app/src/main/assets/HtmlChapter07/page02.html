@@ -1,1 +1,69 @@
-<body><h1>Chapter 7</h1></body>
+<body><h1>Parcurgerea tablourilor bidimensionale</h1>
+
+Dimensiunile unei matrice
+La fel ca în cazul tablourilor unidimensionale, și tablourile bidimensionale au două categorii de dimensiuni:
+
+dimensiunile fizice, maxime – numărul maxim de linii, respectiv coloane pe care le poate avea tabloul; de regula se precizează în enunțul problemei
+dimensiunile logice, curente – numărul de linii linii și de coloane pe care le are matricea la un moment dat, pe parcursul execuției programului. Nu pot să depășească dimensiunile fizice.
+Datorită existenței acestor dimensiuni logice, într-un program C/C++ care folosește tablouri bidimensionale, pe lângă variabila care reprezintă tabloul propriu-zis este necesară prezența a încă două variabile, de regulă notate cu n și m, care reprezintă numărul curent de linii, respectiv coloane ale tabloului.
+
+
+<p class="codeblock">int A[100][100], n , m;</p>
+
+Indexarea de la 0 și indexarea de la 1
+Implicit, tablourile bidimensionale, la fel ca cele unidimensionale sunt indexate de a 0 (liniile sunt indexate de la 0 la n-1 și coloanele de la 0 la m-1).
+
+Putem însă să ignorăm prima linie și prima coloană, și să considerăm tabloul indexat de la 1, adică liniile sunt indexate de la 1 la n, iar coloanele de la 1 la m. În această situație matricea trebuie declarată corespunzător.
+
+De exemplu, pentru o matrice cu 100 de linii și 100 de coloane indexată de la 0 declararea va fi:
+
+<p class="codeblock">int A[100][100], n , m;</p>
+
+iar pentru o matrice similară indexată de la 1 declararea va fi:
+
+<p class="codeblock">int A[101][101], n , m;</p>
+
+Parcurgerea matricei
+Parcurgerea presupune accesarea elementelor curente ale matricei, într-o anumită ordine – de regulă aceasta se face pe linii, de sus în jos și de la stânga la dreapta:
+
+<p class="codeblock">
+    int n, m, A[100][100];<br>
+    ...<br>
+    for(int i = 0 ; i < n ; i ++)<br>
+    {<br>
+    // linia i<br>
+    for(int j = 0 ; j < m ; j ++)<br>
+    // A[i][j]<br>
+    // .....<br>
+    }
+</p>
+
+Citirea unei matrice
+De regulă, elementele matricei se dau în ordine: de sus în jos și de la stânga la dreapta. Citirea presupune nu doar citirea elementelor matricei, dar și citirea dimensiunilor n și m:
+
+<p class="codeblock">
+    cin >> n >> m;
+    for(int i = 0 ; i < n ; i ++)
+    for(int j = 0 ; j < m ; j ++)
+    cin >> A[i][j];
+</p>
+
+Afișarea unei matrice
+Pentru a obține aspectul specific tabloului bidimensional, după afișarea elementelor de fiecare linie vom trece la linia următoare a ecranului. Elementele fiecărei linii sunt de regulă separate printr-un spațiu:
+
+<p class="codeblock">
+    for(int i = 0 ; i < n ; i ++)
+    {
+    for(int j = 0 ; j < m ; j ++)
+    cout << A[i][j] << " ";
+    cout << "\n";
+    }
+</p>
+
+
+
+
+
+
+
+</body>

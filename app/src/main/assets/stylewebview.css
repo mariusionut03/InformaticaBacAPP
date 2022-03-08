@@ -33,6 +33,7 @@ h2 {
 
 p {
 	font-family: 'monda', sans-serif;
+  font-size: 14px;
 }
 
 .codeblock {
@@ -44,6 +45,7 @@ p {
 	align: center;
 	color: white;
 	background-color: #1f1f1f;
+  font-size: 14px;
 }
 
 .functions {
@@ -66,7 +68,12 @@ p {
 }
 
 
-
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  font-size: 14px;
+}
 
 
 
