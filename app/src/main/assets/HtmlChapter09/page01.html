@@ -1,1 +1,21 @@
-<body><h1>Chapter 9</h1></body>
+<body><h1>Siruri de caractere</h1>
+<h2>Codul ASCII</h2>
+<p>Caracterele in C++ sunt reprezentate prin codul ASCII. Calculatoarele functioneaza cu numere, astfel fiecare caracter este reprezentat de un numar in codul ASCII.</p>
+<p class="codeblock">
+    Important!
+    De retinut intervalele urmatoare:
+    65 -> 90 (A -> Z)
+    97 -> 122 (a -> z)
+</p>
+
+<p>Observam ca intre caracterul 'A' si 'a' este o diferenta de 32. Acest lucru se aplica pentru oricare cifra din alfabet. Astfel, pentru a transforma din litera mica in litera mare('b' in 'B') scadem valoarea 32 din caracter. Pentru a inversa procesul, adunam valoarea 32.</p>
+
+<p class="codeblock">
+    int main()<br>
+    {
+    char m = 'A';
+    char n = 65;
+    }
+</p>
+<p> Mai sus avem modul de declararea a caracterelor in doua moduri. Variabila m este EGALA cu variabila n. Daca trecem caracterul intre ghilimele simple(exemplu: 'A'), el va fi convertit automat in valoarea din tabelul ASCII, numar intreg.</p>
+</body>

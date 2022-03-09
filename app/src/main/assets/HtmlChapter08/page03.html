@@ -4,27 +4,54 @@
 <p>Am vazut pe paginile anterioare cum putem transmite parametri catre subprograme.</p>
 
 <p class="codeblock">
-    #include <span><</span>iostream;
-    using namespace std;
+    #include <span><</span>iostream;<br>
+    using namespace std;<br>
 
-    int cmmdc(int x, int y)
-    {
-    while(x != y)
-    if(x > y)
-    x -= y;
-    else
-    y -= x;
-    return x;
+    int cmmdc(int x, int y)<br>
+    {<br>
+    while(x != y)<br>
+    if(x > y)<br>
+    x -= y;<br>
+    else<br>
+    y -= x;<br>
+    return x;<br>
+    }<br>
+    <br>
+    int main()<br>
+    {<br>
+    int a, b;<br>
+    cin >> a >> b; // Introducem: 12 18<br>
+    cout << a << ' ' << b << endl; // Afiseaza: 12 18<br>
+    cout << cmmdc(a,b) << endl; // Afiseaza 6<br>
+    cout << a << ' ' << b; // Afiseaza 12 18<br>
+    return 0;<br>
     }
-
-    int main()
-    {
-    int a, b;
-    cin >> a >> b;
-    cout << a << ' ' << b;
+</p>
+<p>In programul de mai sus, dam valorile 12 si 18 pentru a si b. (a=12, b=18).</p>
+<p>Dupa chemarea subprogramului 'cmmdc' cu parametrii a si b, valoarea lor nu se schimba dupa rularea comenzilor din subprogram. Cand afisam cele doua variabile la final, valorile lor raman tot 12 si 18.</p>
 
 
+<p class="codeblock">
+    int cmmdc(int x, int y)<br>
+    {<br>
+    while(x != y)<br>
+    if(x > y)<br>
+    x -= y;<br>
+    else<br>
+    y -= x;<br>
+    return x;<br>
+    }<br>
+    <br>
+    int main()<br>
+    {<br>
+    cout << cmmdc(2, 6) << endl; // Afiseaza 2<br>
+    cout << cmmdc(13, 7) << endl; // Afiseaza 1<br>
+    cout << cmmdc(12, 36) << endl; // Afiseaza 12<br>
+    cout << cmmdc(26, 39) << endl; // Afiseaza 13<br>
+    cout << cmmdc(8.5 , 12.56) << endl; // Afiseaza 4<br>
+    return 0;<br>
     }
 </p>
 
+<p>Putem chema subprogramul de cate ori vrem noi. Parametrii sunt de tip 'int', deci valorile '8.5' si '12.56' din ultima chemare, vor fi convertite automat in '8' si '12'.</p>
 </body>

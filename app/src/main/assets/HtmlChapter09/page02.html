@@ -1,1 +1,52 @@
-<body><h1>Chapter 9</h1></body>
+<body><h1>Siruri de caractere in C++</h1>
+<p>Un sir de caractere este un tablou unidimensional(vector) ce contine caractere.</p>
+<p>Astfel, pentru reprezentarea în C/C++ a cuvântului copil, care are 5 caractere, se vor folosi 6 octeți, cu valorile: 'c', 'o', 'p', 'i', 'l', '\0'.</p>
+<p>În reprezentarea internă, după ultimul caracter (byte, octet) valid din șir se află caracterul '\0' – caracterul cu codul ASCII 0, numit și caracter nul. Toate sirurile de caracter il contin la final, el marcand sfarsitul. Astfel, cand vrem sa reprezentam un cuvant de maxim 10 litere, vom declara vectorul cu maxim 11.</p>
+
+<h2>Declararea unui șir de caractere</h2>
+<p class="codeblock">
+    char s[11]; // putem memora in sir maxim 10 caractere
+    char s[11] = "copil"; // Se folosesc doar 6 caractere (5 + cel nul)
+    char t[]="copil"; // se aloca automat 6 octeti
+    char x[6]={'c','o','p','i','l','\0'};
+    char z[]={'c','o','p','i','l','\0'}; // se aloca automat 6 octeti pentru sir
+</p>
+
+<h2>Afișarea unui șir de caractere</h2>
+<p class="codeblock">
+    cout << s << endl;
+</p>
+<h2>Citirea unui șir de caractere</h2>
+<p class="codeblock">
+    cin >> s;
+</p>
+<p>Nu se poate citi un sir cu spatii daca folosim operatorul '>>'.</p>
+<p>Pentru a citi șiruri care conțin spații, putem folosi metoda 'getline'.</p>
+
+<p class="codeblock">cin.getline(s , 11);</p>
+
+<p>Un exemplu in C++:</p>
+<p class="codeblock">
+    #include <span><</span>iostream>
+    using namespace std;
+    int main(){
+    char nume1[31], nume2[31];
+    cout << "Cum te cheama? (nume, prenume) ";
+    cin.getline(nume1, 31);
+    cout << "Cum il cheama pe prietenule tau? ";
+    cin.getline(nume2 , 31);
+    cout << "Te numesti " << nume1 << endl;
+    cout << "Esti prieten cu " << nume2 << endl;
+    return 0;
+    }
+</p>
+
+<h2>Referirea unui caracter din șir</h2>
+<p>Deoarece șirurile de caractere sunt de fapt tablouri, pentru referirea unui caracter din șir se folosește operatorul [], ca în exemplul următor:</p>
+<p class="codeblock">
+    char s[]="abac"; // sirul consta din 5 caractere: cele 4 litere si caracterul nul '\0'
+    cout << s[3]; // c
+    s[1] = 'r';
+    cout << s; // arac
+</p>
+</body>

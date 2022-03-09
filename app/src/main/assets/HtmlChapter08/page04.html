@@ -1,0 +1,33 @@
+<body>
+<h1>Recursivitatea</h1>
+<p>Recursivitatea reprezintă proprietatea unor noțiuni de a se defini prin ele însele.</p>
+
+<p>Să scriem o funcție C++ care returnează factorialul unui număr natural transmis ca parametru. Varianta nerecursivă (iterativă) este următoarea:</p>
+<p class="codeblock">
+    int fact(int n){<br>
+    int p = 1;<br>
+    for(int i = 1 ; i <= n ; i ++)<br>
+    p = p * i;<br>
+    return p;<br>
+    }
+</p>
+
+<p>O variantă recursivă pentru determinarea lui n!:</p>
+<p class="codeblock">
+    int fact(int n){<br>
+    if(n == 0)<br>
+    return 1;<br>
+    else<br>
+    return n * fact(n-1);<br>
+    }
+</p>
+
+<h2>Cum functioneaza recursivitatea?</h2>
+<p>Chemam subprogramul 'fact' de mai sus cu n = 4.</p>
+<p>Dupa verificarea valorii lui 4, va trebui sa returnam 4 * fact(3).</p>
+<p>Astfel, calculam fact(3) si va trebui sa returnam 3 * fact(2).</p>
+<p>Dupa, calculam fact(2) si va trebui returnat 2 * fact(1).</p>
+<p>Dupa, calculam fact(1) si va trebui returnat 1 * fact(0).</p>
+<p>Acum, fact(0) stim ca este 1. Acum putem face calculele.</p>
+<p>fact(1) este 1 * 1 = 2; fact(2) este 2 * 1 = 2; fact(3) este 3*2 = 6 si fact(4) este 4 * 6 = 24.</p>
+</body>

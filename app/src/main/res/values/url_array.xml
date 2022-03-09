@@ -40,14 +40,21 @@
     <string-array name="urlChapter6">
         <item>HtmlChapter06/page01.html</item>
         <item>HtmlChapter06/page02.html</item>
+        <item>HtmlChapter06/page03.html</item>
+        <item>HtmlChapter06/page04.html</item>
+        <item>HtmlChapter06/page05.html</item>
+        <item>HtmlChapter06/page06.html</item>
     </string-array>
     <string-array name="urlChapter7">
         <item>HtmlChapter07/page01.html</item>
         <item>HtmlChapter07/page02.html</item>
+        <item>HtmlChapter07/page03.html</item>
     </string-array>
     <string-array name="urlChapter8">
         <item>HtmlChapter08/page01.html</item>
         <item>HtmlChapter08/page02.html</item>
+        <item>HtmlChapter08/page03.html</item>
+        <item>HtmlChapter08/page04.html</item>
     </string-array>
     <string-array name="urlChapter9">
         <item>HtmlChapter09/page01.html</item>
