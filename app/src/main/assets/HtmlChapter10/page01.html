@@ -1,1 +1,52 @@
-<body><h1>Chapter 10</h1></body>
+<body>
+<h1>Structuri de date neomogene în C++</h1>
+<p>Cateodata avem nevoie de o sortare mai eficienta a datelor intr-un program. Spre exemplu, daca vrem sa facem un program ce reprezinta o lista de persoane, avem nevoie de mai multe date ce sunt legate intre ele:
+<br>-nume
+<br>-prenume
+<br>-localitate
+<br>-varsta
+<br>-salariu
+<br>-etc.
+<br>Pentru aceste situatii, s-a creat tipul 'struct'.</p>
+
+<h2>Declararea unei structuri</h2>
+<p class="codeblock">
+    struct [NUME_STRUCTURĂ]<br>
+    {<br>
+    [TIP_1] [NUME_CAMP_1], [NUME_CAMP_2], ... [NUME_CAMP_N];<br>
+    [TIP_2] [NUME_CAMP_1], [NUME_CAMP_2], ... [NUME_CAMP_N];<br>
+    [...]<br>
+    [TIP_N] [NUME_CAMP_1], [NUME_CAMP_2], ... [NUME_CAMP_N];<br>
+    } [LISTA VARIABILE];
+</p>
+
+<p>Cel mai probabil nu intelegi nimic din lista de mai sus, asa ca o sa dam exemplul cu numerele de telefon de mai sus:</p>
+<p class="codeblock">
+    struct Persoane<br>
+    {<br>
+        char nume[21], prenume[21], localitate[21];<br>
+        int varsta;<br>
+        double salariu;<br>
+    } A, B, v[100];
+</p>
+
+<p>Campul [LISTA VARIABILE] poate fi lasat liber, iar declararea variabilelor se poate face mai tarziu in program astfel:</p>
+<p class="codeblock">
+    Persoane A, B;<br>
+    // sau<br>
+    struct Persoane A, B;
+</p>
+
+<h2>Accesarea datelor</h2>
+
+<p>Observati ca in lista de variabile am adaugat un vector, v[100]. Astfel, putem retine in structura Persoane cel mult 100 de persoane astfel:</p>
+<p class="codeblock">
+    cin >> v[1].varsta; // Introducem de la tastatura varsta primei persoane;<br>
+    cout << v[20].nume; // Afisam numele celei de-a 20-a persoana;<br>
+    cout << v[20].nume[0]; // Prima litera din numele celei de-a 20-a persoana;<br>
+    cin >> v[100].localitate[0]; // Citim prima litera din numele localitatii ultimei persoane;
+</p>
+
+
+
+</body>

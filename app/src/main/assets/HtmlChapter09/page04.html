@@ -1,0 +1,30 @@
+<body>
+<h1>Eliminarea și inserarea unui caracter într-un șir</h1>
+
+<p>Acestea sunt operații frecvente și pot fi realizate cu ajutorul funcției strcpy. Deoarece comportamentul funcției strcpy este impredictibil dacă parametri se suprapun, este necesară utilizarea unui șir suplimentar.</p>
+
+
+<h2>Eliminarea unui caracter dintr-un sir</h2>
+<p>Următoarea secvență elimină din șirul s (presupus citit) caracterul de poziția x.</p>
+
+<p class="codeblock">
+    char s[256], t[256];<br>
+    int x;<br>
+    // ...<br>
+    //eliminarea<br>
+    strcpy(t , s + x + 1);<br>
+    strcpy(s + x , t);
+</p>
+
+<h2>Inserarea unui caracter într-un sir</h2>
+<p>Următoarea secvență inserează în șirul s (presupus citit) de poziția x caracterul 'A'.</p>
+<p class="codeblock">
+    char s[256], t[256];<br>
+    int x;<br>
+    // ...<br>
+    //inserarea<br>
+    strcpy(t , s + x);<br>
+    strcpy(s + x + 1 , t);<br>
+    s[x] = 'A'; // echivalent, *(s+x) = 'A';
+</p>
+</body>

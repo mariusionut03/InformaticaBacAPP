@@ -1,1 +1,98 @@
-<body><h1>Chapter 12</h1></body>
+<body>
+<h1>Coada</h1>
+
+<p>Coada (queue) este o structură de date abstractă în care operația de adăugare se realizează la un capăt, iar cea de eliminare se realizează la celălalt capăt.
+<br><br>
+    În timpul operațiilor cu coada avem acces la un singur element, cel aflat la începutul cozii – elementul care urmează să se elimine.</p>
+
+<h2>Operații cu coada</h2>
+<p class="codeblock">
+    Cu o coadă se pot face următoarele operații:<br><br>
+
+    - inițializarea cozii – crearea unei cozi vide;<br>
+    - verificarea faptului că o coadă este sau nu vidă;<br>
+    - adăugarea unui nou element în coadă. Operația se numește push;<br>
+    - eliminarea unui element din coadă. Operația se numește pop;<br>
+    - identificarea valorii elementului de la începutul cozii – accesul la acel element Operația se numește front.
+</p>
+
+<p>Operațiile cu coada sunt similare cu modul în care funcționează coada la casa de bilete a unui cinematograf. Spectatorii vin și se așează în ordine la coadă, ordinea în care cumpără biletele este aceea în care au sosit.
+<br><br>
+    Deoarece operațiile de eliminare se fac în aceeași ordine ca cele de adăugare, coada este o structură de date de tip FIFO – First In First Out.</p>
+
+<h2>Cum folosim coada?</h2>
+<p>Vom folosi coada atunci când trebuie să prelucrăm informații într-o ordine precisă, pe măsură ce acestea sunt identificate. Uneori, informațiile noi sunt determinate pe baza celor vechi, deja existente în coadă. Mecanismul se numește expandare a cozii și constă în următoarele:
+<br><br>
+- adăugăm în coadă informații inițiale<br>
+- cât timp coada este nevidă (sau până când am determinat rezultatul căutat) <br>
+    - - scoatem din coadă un element<br>
+    - - cu ajutorul său identificăm noi informații pe care le adăugăm în coadă<br>
+În informatică se folosește coada în numeroase situații:<br>
+    <br>
+- tipărirea documentelor la imprimantă se face printr-o coadă de așteptare – fiecare document se adaugă în coadă imprimantei, iar tipărirea propriu-zisă se face în momentul eliminări din coadă<br>
+- evaluarea soluțiilor la probleme pe pbinfo.ro se face pe principiul cozii, în ordinea în care au fost postate</p>
+
+<h2>Modalități de implementare a cozii</h2>
+
+<p>
+    La fel ca stiva, și coada poate fi implementată în limbajul C++ în mai multe moduri:<br><br>
+
+- implementare statică, prin intermediul tablourilor;<br>
+- implementare dinamică, prin intermediul listelor alocate dinamic;<br>
+- folosirea containerului queue din STL.<br>
+    Acest articol prezintă implementarea statică și folosirea STL.</p>
+
+<h2>Implementarea statică a cozii</h2>
+
+<p>
+    Vom folosi un tablou unidimensional alocat static Q și două variabile simple prin care identificăm începutul (st) și sfârșitul stivei (dr). Numele variabilelor provine de la stânga și dreapta, deoarece adăugarea unui element în coadă se face adăugând un element în tabloul suport Q, iar eliminare se face mărind variabila st – ignorând elementele din față, fără a le șterge efectiv.
+<br><br>
+    În continuare considerăm o coadă cu elemente întregi.
+</p>
+
+<p class="codeblock">
+    // Declarații<br>
+    const int DIM = 1000;<br>
+    int Q[DIM], st, dr;<br>
+    <br>
+    // Inițializarea cozii – crearea unei cozi vide<br>
+    st = 1 , dr = 0;<br>
+    <br>
+    // Verificarea faptului că este vidă coada<br>
+    st > dr // stivă vidă<br>
+    st <= dr // stivă nevidă<br>
+    <br>
+    // Adăugarea unui element – PUSH<br>
+    Q[++dr] = _VALOARE ;<br>
+    <br>
+    // Eliminarea unui element – POP<br>
+    st ++;<br>
+    <br>
+    // Identificarea valorii de la începutul cozii – TOP<br>
+    Q[st];
+</p>
+
+<h2>Folosirea containerului STL stack</h2>
+<p>Standard Template Library pune la dispoziție un container adaptor specializat pentru gestionarea unei cozi, numit queue. Un obiect de tip queue încapsulează toate operațiile specifice cozii:</p>
+
+<p class="codeblock">
+    // Declarații<br>
+    #include <span><</span>queue><br>
+    <br>
+    // Inițializarea cozii – crearea unei cozi vide<br>
+    queue<span><</span>int> Q;<br>
+    <br>
+    // Verificarea faptului că este vidă coada<br>
+    Q.empty() // true dacă este vidă, false în caz contrar<br>
+    <br>
+    // Adăugarea unui element – PUSH<br>
+    Q.push( _VALOARE );<br>
+    <br>
+    // Eliminarea unui element – POP<br>
+    Q.pop();<br>
+    <br>
+    // Identificarea valorii de la începutul cozii – TOP<br>
+    Q.top();
+</p>
+
+</body>

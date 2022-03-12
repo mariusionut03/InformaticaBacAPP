@@ -1,4 +1,54 @@
 <body>
 <h1>Vectorul de frecventa</h1>
-<p></p>
+<p>Problema: Sa se afle de cate ori apare fiecare cifra in numarul n citit de la tastatura.</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream>
+    using namespace std;
+    int main()
+    {
+    int frecv[10];
+    int n; cin >> n;
+    while(n != 0)
+    {
+    frecv[n%10]++;
+    n /= 10;
+    }
+    return 0;
+    }
+</p>
+<p>Pentru n = 122224433980, vectorul de frecventa va arata astfel: </p>
+
+<table>
+    <tr>
+        <td>Index</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Valoare</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<p>Interpretare: Elementul cu index-ul 2 din vector, are valoarea 4, numarul aparitiilor cifrei 2 in numarul n.</p>
+
+<p>Acesta este modul de functionare a vectorului de frecventa. El este folosit foarte des la subiectul 3, exercitiul 3 la examenul de bacalaureat deoarece este foarte eficient fata de alte modalitati de rezolvare.</p>
 </body>

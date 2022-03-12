@@ -49,4 +49,28 @@
     s[1] = 'r';
     cout << s; // arac
 </p>
+
+<h2>Parcurgerea unui sir de caractere</h2>
+<p>Sunt unele probleme unde trebuie sa parcurgem tot sirul de caractere pentru a verifica anumite caractere sau pentru a edita fiecare caracter in parte. Avem momente cand nu stim cate caractere contine sirul. Mai jos avem doua variante:</p>
+<p class="codeblock">
+    char s[11];
+    cin.getline(s);
+    int i = 0;
+    while(s[i] != '\0')
+    {
+    // Instructiuni asupra caracterului de pe pozitia i;
+    i ++;
+    }
+</p>
+
+<p>Sau, putem folosi functia 'strlen', care returneaza lungimea sirului:</p>
+<p class="codeblock">
+    #include <span><</span>iostream>;
+    #include <span><</span>cstring>;
+    [...] // Includem la inceputul programului libraria 'cstring' pentru a putea accesa comanda 'strlen'
+    for(int i = 0; i < strlen(s); i++)
+    {
+    //Instrunctiuni asupra caracterului de pe pozitia i, accesat cu s[i];
+    }
+</p>
 </body>
