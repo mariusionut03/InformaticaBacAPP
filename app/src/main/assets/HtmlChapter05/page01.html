@@ -1,14 +1,67 @@
 <body>
-<h1>Algoritmi elementari</h1>
-<p>In informatica exista foarte multe tipuri de probleme, dar in multe dintre ele o sa avem nevoie de urmatorii algoritmi:</p>
+<h1>Citirea din fisiere</h1>
+
+<p>
+    <span class="functions">-</span> deschiderea fișierului/asocierea fișierului cu un flux de date;<br>
+    <span class="functions">-</span> citirea din fișier/scrierea în fișir;<br>
+    <span class="functions">-</span> închiderea fișierului/fluxului de date
+</p>
+
+<h2>Deschiderea fișierului</h2>
+<p>
+    <span class="functions">-</span> ostream pentru fluxurile de ieșire – asociate cu fișierele în care vom scrie;<br>
+    <span class="functions">-</span> istream pentru fluxurile de intrare – asociate cu fișierele din care vom citi;
+</p>
+
 <p class="codeblock">
-    1. Maxime si minime<br>
-    2. Cifrele unui numar<br>
-    3. Divizibilitate<br>
-    - Divizorii unui număr<br>
-    - Algoritmul lui Euclid CMMDC CMMMC<br>
-    - Numere prime<br>
-    - Descompunerea în factori primi<br>
-    4. Șirul lui Fibonacci
+    #include <span><</span>fstream><br><br>
+
+    ifstream <span class="numbers">fin</span>(NUME_FISIER_INTRARE);<br>
+    ofstream <span class="numbers">fout</span>(NUME_FISIER_IESIRE);<br><br>
+
+    //Exemple:<br>
+    ifstream <span class="numbers">fin</span>(<span class="strings">"fisier.in"</span>);<br>
+    ofstream <span class="numbers">fout</span>(<span class="strings">"fisier.out"</span>);<br>
+</p>
+
+<h2>Citirea din fișier/scrierea în fișier</h2>
+<p>
+    Pentru citirea propiu-zisă a datelor din fișier/scrierea datelor în fișier se folosesc operatorii de extracție din flux/inserare în flux.
+</p>
+
+<p class="codeblock">
+    int <span class="numbers">x</span>;<br>
+    <span class="numbers">fin</span> >> <span class="numbers">x</span>;<br>
+    <span class="numbers">fout</span> << 2 * <span class="numbers">x</span>;
+</p>
+
+<h2>Închiderea fișierelor</h2>
+<p class="codeblock">
+    <span class="numbers">fin</span>.close();<br>
+    <span class="numbers">fout</span>.close();
+</p>
+
+<h2>Un exemplu complet</h2>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    #include <span><</span>fstream><br><br>
+
+    using namespace std;<br><br>
+
+    ifstream <span class="numbers">fin</span>(<span class="strings">"sum.in"</span>);<br>
+    ofstream <span class="numbers">fout</span>(<span class="strings">"sum.out"</span>);<br><br>
+
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">a</span> , <span class="numbers">b</span>, <span class="numbers">s</span>;<br>
+    &emsp;&emsp;<span class="numbers">fin</span> >> <span class="numbers">a</span> >> <span class="numbers">b</span>;<br>
+    &emsp;&emsp;<span class="numbers">fin</span>.close();<br>
+    &emsp;&emsp;<span class="numbers">s</span> = <span class="numbers">a</span> + <span class="numbers">b</span>;<br><br>
+
+    &emsp;&emsp;<span class="numbers">fout</span> << <span class="numbers">s</span>;<br>
+    &emsp;&emsp;<span class="numbers">fout</span>.close();<br><br>
+
+    &emsp;&emsp;return 0;<br>
+    }
 </p>
 </body>

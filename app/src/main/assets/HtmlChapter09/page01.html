@@ -1,21 +1,35 @@
-<body><h1>Siruri de caractere</h1>
-<h2>Codul ASCII</h2>
-<p>Caracterele in C++ sunt reprezentate prin codul ASCII. Calculatoarele functioneaza cu numere, astfel fiecare caracter este reprezentat de un numar in codul ASCII.</p>
-<p class="codeblock">
-    Important!
-    De retinut intervalele urmatoare:
-    65 -> 90 (A -> Z)
-    97 -> 122 (a -> z)
-</p>
+<body><h1><span class="functions">Subprograme</span></h1>
 
-<p>Observam ca intre caracterul 'A' si 'a' este o diferenta de 32. Acest lucru se aplica pentru oricare cifra din alfabet. Astfel, pentru a transforma din litera mica in litera mare('b' in 'B') scadem valoarea 32 din caracter. Pentru a inversa procesul, adunam valoarea 32.</p>
+<p>Un <span class="functions">subprogram</span> este o colecție de tipuri de date, variabile, instrucțiuni care îndeplinesc o anumită sarcină (calcule, citiri, afișări), atunci când este apelat de un program sau de un alt subprogram.</p>
+<p>Subprogramele sunt utile in programele unde o serie de instructiuni este repetata de mai multe ori, asa ca o scriem o singura data si, dupa, o chemam de fiecare data cand avem nevoie.</p>
+<p>Pentru a intelege conceptul, cel mai bine dam un exemplu in C++:</p>
 
 <p class="codeblock">
-    int main()<br>
-    {
-    char m = 'A';
-    char n = 65;
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    int <span class="functions">subprogram</span>(int <span class="numbers">a</span>, int <span class="numbers">b</span>)<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">c</span> = <span class="numbers">a</span> + <span class="numbers">b</span>;<br>
+    &emsp;&emsp;return <span class="numbers">c</span>;<br>
+    }<br>
+    <br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">m</span>, <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">m</span> >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cout << <span class="functions">subprogram</span>(<span class="numbers">m</span>, <span class="numbers">n</span>);<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
-<p> Mai sus avem modul de declararea a caracterelor in doua moduri. Variabila m este EGALA cu variabila n. Daca trecem caracterul intre ghilimele simple(exemplu: 'A'), el va fi convertit automat in valoarea din tabelul ASCII, numar intreg.</p>
+
+<p>
+    In codul de mai sus avem definita inca o functie pe langa <span class="strings">'main'</span>, numita <span class="strings">'subprogram'</span>. Ea primeste 2 valori, retinute cu numele <span class="strings">'a'</span> si <span class="strings">'b'</span>. La apelarea functiei <span class="strings">'subprogram'</span>, se va face suma celor doua numere ce se va retine in variabila <span class="strings">'c'</span>, urmand sa fie returnata inapoi in main. Observam ca apelarea functiei se face in comanda <span class="strings">'cout'</span>, asa ca valoarea returnata va fi afisata pe ecran.
+</p>
+
+
+
+
+
+
 </body>

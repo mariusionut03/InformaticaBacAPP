@@ -5,35 +5,37 @@
 
 <h2>Variabile</h2>
 
-<p>O variabilă reprezintă o locație de memorie unde se află o valoare de un anumit tip.
+<p>O <span class="functions">variabilă</span> reprezintă o locație de memorie unde se află o valoare de un anumit tip.
 <br>În C++, variabilele trebuie declarate, precizând tipul și identificatorul. Sintaxa este:</p>
 <p class="codeblock">
-    Tip_data Lista_Identificatori;
+    <span class="functions">Tip_data</span> Lista_Nume;
 </p>
-<p>unde Tip_data poate fi orice tip de date in C++ (vezi pagina anterioara), iar Lista_identificatori se face o lista cu unul sau mai multe nume, ce ne vor reprezenta variabilele.</p>
+<p>unde:
+    <br>- <span class="functions">Tip_data</span> poate fi orice tip de date in C++ (vezi pagina anterioara)
+    <br>- <span class="functions">Lista_Nume</span> se face o lista cu unul sau mai multe nume, ce ne vor reprezenta variabilele</p>
 
 <p class="codeblock">
-    int a, x;<br>
-    // Am declarat doua variabile fara valori.
+    int <span class="numbers">a</span>, <span class="numbers">x</span>;<br>
+    <span class="comments">// Am declarat doua variabile fara valori</span>
 </p>
 <p class="codeblock">
-    int a = 1, x=6;<br>
-    // Am declarat doua variabile cu valori.
+    int <span class="numbers">a</span> = 1, <span class="numbers">x</span> = 6;<br>
+    <span class="comments">// Am declarat doua variabile cu valori</span>
 </p>
-<p> Urmatorii identificatori C++ sunt corecti: a, numar, Numar, alt_numar, a2b, _suma, un_nume_de_variabila_foarte_lung.</p>
-<p> Urmatorii identificatori C++ sunt incorecti: 2a (Incepe cu cifra), alt numar (contine spatiu), un-numar (contine minus), număr (contine diacritice, identificatorii pot contine numai litere ASCII).</p>
+<p> Urmatoarele nume de variabile sunt <span class="adevaratcolor">corecte</span>: a, numar, Numar, alt_numar, a2b, _suma, un_nume_de_variabila_foarte_lung.</p>
+<p> Urmatoarele nume de variabile sunt <span class="falscolor">incorecte</span>: 2a (Incepe cu cifra), alt numar (contine spatiu), un-numar (contine minus), număr (contine diacritice, identificatorii pot contine numai litere ASCII).</p>
 
 
 <h2>Constante</h2>
-<p>Constantele sunt date care nu isi modifica valoarea in timpul executiei programului.</p>
+<p><span class="functions">Constantele</span> sunt date care nu isi modifica valoarea in timpul executiei programului.</p>
 <p>Ele se declara prin doua moduri: </p>
 <p class="codeblock">
     <span class="comments">// Prin directiva define: </span><br>
-    #define ABC 123<br>
+    #define <span class="numbers">ABC</span> 123<br>
     <span class="comments">// Prin modificatorul const: </span><br>
-    const int ABC = 123;
+    const int <span class="numbers">ABC</span> = 123;
 </p>
-<p>La declararea constantelor este obligatorie initializarea.</p>
+<p>La declararea constantelor este obligatorie specificarea unei valori.</p>
 <br>
 <p>O categorie aparte de caractere constă în secvențele ESCAPE. O secvență escape este alcătuită din două caractere, dintre care primul este backslash: \. Reprezintă caractere care nu pot fi scrise ca atare sau au un înțeles special. Din punct de vedere sintactic sunt caractere, fiind delimitate prin aprostrof. Probabil cea mai cunoscută secvență escape este '\n' – new line (enter).</p>
 <p class="codeblock">

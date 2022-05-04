@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Info Bac</string>
+    <string name="app_name">Memorator Informatica</string>
 
 
     <string-array name="titlesArrayRes">
@@ -7,6 +7,7 @@
         <item>Pseudocod</item>
         <item>Bazele C++</item>
         <item>Structuri de control</item>
+        <item>Fișierele in C++</item>
         <item>Algoritmi elementari</item>
         <item>Vectori (T. unidimensionale)</item>
         <item>Matrici (T. bidimensionale)</item>
@@ -18,21 +19,22 @@
         <item>Backtracking</item>
         <item>Teoria grafurilor</item>
     </string-array>
-    
+
     <string-array name="pagesArrayRes">
         <item>2</item>
         <item>5</item>
         <item>6</item>
         <item>6</item>
+        <item>1</item>
         <item>8</item>
         <item>6</item>
         <item>3</item>
         <item>4</item>
         <item>4</item>
         <item>1</item>
+        <item>1</item>
         <item>2</item>
-        <item>2</item>
-        <item>2</item>
+        <item>1</item>
         <item>2</item>
     </string-array>
 

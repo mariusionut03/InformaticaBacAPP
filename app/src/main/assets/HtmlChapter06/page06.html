@@ -1,54 +1,56 @@
 <body>
-<h1>Vectorul de frecventa</h1>
-<p>Problema: Sa se afle de cate ori apare fiecare cifra in numarul n citit de la tastatura.</p>
+<h1><span class="functions">c. Numere prime</span></h1>
+<p>
+    Un număr natural <span class="numbers">p</span>>1 este se numește prim dacă:<br>
+    <span class="numbers">p</span>|<span class="numbers">ab</span>⇒<span class="numbers">p</span>|<span class="numbers">a</span> sau <span class="numbers">p</span>|<span class="numbers">b</span><br>
+    Un număr natural <span class="numbers">p</span>>1 este se numește indecompozabil (sau ireductibil) dacă:<br>
+    <span class="numbers">d</span>|<span class="numbers">p</span>⇒<span class="numbers">d</span>=1 sau <span class="numbers">d</span>=<span class="numbers">p</span>
+</p>
+<h2>Observații</h2>
+<p>
+<span class="functions">-</span> Pentru orice număr natural <span class="numbers">p</span>>1, <span class="numbers">p</span> este prim dacă și numai dacă este indecompozabil.<br>
+<span class="functions">-</span> Cei doi divizori ai unui număr indecompozabil (prim) sunt 1 și însuși numărul.<br>
+<span class="functions">-</span> Conform definiției, numerele 0 și 1 nu sunt prime!<br>
+<span class="functions">-</span> Un număr natural mai mare decât 1 care nu este prim se numește compus sau decompozabil sau reductibil.
+</p>
+
+<h2>Verificarea primalității</h2>
+<p>
+    Pentru a stabili dacă un număr <span class="numbers">p</span> este prim:<br>
+
+    <span class="functions">-</span> numărăm divizorii săi. Dacă sunt 2 divizori, <span class="numbers">p</span> este prim.<br>
+    <span class="functions">-</span> determinăm suma divizorilor. Dacă suma este <span class="numbers">p</span> + 1, numărul este prim.<br>
+    <span class="functions">-</span> căutăm divizori ai săi diferiți de 1 și de el însuși. Dacă nu găsim, numărul este prim.<br>
+
+    Cum verificăm algoritmic dacă un număr natural <span class="numbers">n</span> este prim?<br>
+
+    <span class="functions">-</span> presupunem că numărul este prim;<br>
+    <span class="functions">-</span> verificăm cazurile particulare; dacă <span class="numbers">n</span> este 0 sau 1, schimbăm presupunerea<br>
+    <span class="functions">-</span> căutăm un divizor în intervalul <span class="functions">[2,&#8730;n]</span>, parcurgând numerele din interval<br>
+    <span class="functions">-</span> dacă îl găsim, schimbăm presupunerea
+</p>
+<p>
+    Observație: Deoarece divizorii unui număr <span class="numbers">n</span> sunt în pereche, dacă nu găsim divizor în intervalul <span class="functions">[2,&#8730;n]</span>, nu vom găsi nici în intervalul <span class="functions">[&#8730;n,n)</span>.
+</p>
 
 <p class="codeblock">
-    #include <span><</span>iostream>
-    using namespace std;
-    int main()
-    {
-    int frecv[10];
-    int n; cin >> n;
-    while(n != 0)
-    {
-    frecv[n%10]++;
-    n /= 10;
-    }
-    return 0;
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;bool <span class="numbers">prim</span> = true; <span class="comments">// presupunem ca n este prim</span><br>
+    &emsp;&emsp;if(<span class="numbers">n</span> < 2)<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">prim</span> = false; <span class="comments">// 0 si 1 nu sunt prime</span><br>
+    &emsp;&emsp;for(int <span class="numbers">d</span> = 2 ; <span class="numbers">d</span> * <span class="numbers">d</span> <= <span class="numbers">n</span> ; <span class="numbers">d</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">n</span> % <span class="numbers">d</span> == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">prim</span> = false;<br>
+    &emsp;&emsp;if(<span class="numbers">prim</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">n</span> << <span class="strings">" este prim"</span>;<br>
+    &emsp;&emsp;else<br>
+    &emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">n</span> << <span class="strings">" nu este prim"</span>;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
-<p>Pentru n = 122224433980, vectorul de frecventa va arata astfel: </p>
-
-<table>
-    <tr>
-        <td>Index</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-    </tr>
-    <tr>
-        <td>Valoare</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        <td>2</td>
-        <td>2</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-</table>
-
-<p>Interpretare: Elementul cu index-ul 2 din vector, are valoarea 4, numarul aparitiilor cifrei 2 in numarul n.</p>
-
-<p>Acesta este modul de functionare a vectorului de frecventa. El este folosit foarte des la subiectul 3, exercitiul 3 la examenul de bacalaureat deoarece este foarte eficient fata de alte modalitati de rezolvare.</p>
 </body>

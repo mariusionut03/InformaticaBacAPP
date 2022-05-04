@@ -88,7 +88,7 @@ public class LearnFragment extends Fragment {
         else {
             paramsBtn.addRule(RelativeLayout.BELOW, (i-nrOfAttributes));
         }
-        paramsBtn.setMargins(0, 65, 0, 0);
+        paramsBtn.setMargins(0, 30, 0, 0);
         btn.setLayoutParams(paramsBtn);
         btn.setHeight(275);
         btn.setBackgroundResource(R.drawable.style_bg_light_ripple);

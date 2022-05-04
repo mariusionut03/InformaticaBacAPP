@@ -1,57 +1,417 @@
 <body>
-<h1>Transmiterea parametrilor</h1>
+    <h1>Tablouri patratice</h1>
 
-<p>Am vazut pe paginile anterioare cum putem transmite parametri catre subprograme.</p>
+    <p>Un tablou bidimensional este tablou pătratic sau matrice pătratică dacă numărul de linii este egal cu numărul de coloane.<br>
 
-<p class="codeblock">
-    #include <span><</span>iostream;<br>
-    using namespace std;<br>
+        În această situație folosim pentru ambele dimensiuni o singură variabilă, de regulă n:</p>
 
-    int cmmdc(int x, int y)<br>
-    {<br>
-    while(x != y)<br>
-    if(x > y)<br>
-    x -= y;<br>
-    else<br>
-    y -= x;<br>
-    return x;<br>
-    }<br>
-    <br>
-    int main()<br>
-    {<br>
-    int a, b;<br>
-    cin >> a >> b; // Introducem: 12 18<br>
-    cout << a << ' ' << b << endl; // Afiseaza: 12 18<br>
-    cout << cmmdc(a,b) << endl; // Afiseaza 6<br>
-    cout << a << ' ' << b; // Afiseaza 12 18<br>
-    return 0;<br>
-    }
-</p>
-<p>In programul de mai sus, dam valorile 12 si 18 pentru a si b. (a=12, b=18).</p>
-<p>Dupa chemarea subprogramului 'cmmdc' cu parametrii a si b, valoarea lor nu se schimba dupa rularea comenzilor din subprogram. Cand afisam cele doua variabile la final, valorile lor raman tot 12 si 18.</p>
+    <p class="codeblock">int <span class="numbers">n</span>, <span class="numbers">A</span>[100][100];</p>
+    <div align="center">
+    <table>
+        <tr>
+            <td>Index</td>
+            <td><span class="strings">0</span></td>
+            <td><span class="strings">1</span></td>
+            <td><span class="strings">2</span></td>
+            <td><span class="strings">3</span></td>
+            <td><span class="strings">4</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">0</span></td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>51</td>
+        </tr>
+        <tr>
+            <td><span class="strings">1</span></td>
+            <td>43</td>
+            <td>21</td>
+            <td>16</td>
+            <td>5</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td><span class="strings">2</span></td>
+            <td>57</td>
+            <td>51</td>
+            <td>5</td>
+            <td>17</td>
+            <td>64</td>
+        </tr>
+        <tr>
+            <td><span class="strings">3</span></td>
+            <td>5</td>
+            <td>64</td>
+            <td>64</td>
+            <td>4</td>
+            <td>71</td>
+        </tr>
+        <tr>
+            <td><span class="strings">4</span></td>
+            <td>46</td>
+            <td>7</td>
+            <td>5</td>
+            <td>68</td>
+            <td>14</td>
+        </tr>
+    </table>
+    </div>
+<p>Într-o matrice pătratică se disting o categorie specială de elemente, diagonalele. Un element al matricei aparține sau nu diagonalelor sau zonelor delimitate de acestea dacă respectă anumite reguli, în care intervin indicii elementului, nu valoarea elementului. În cele ce urmează, pentru un element oarecare al matricei vom nota cu i indicele de linie și cu j indicele de coloană.</p>
+
+<h2>Diagonala principală<br>(i == j)</h2>
+<div align="center">
+    <table>
+        <tr>
+            <td>Index</td>
+            <td><span class="strings">0</span></td>
+            <td><span class="strings">1</span></td>
+            <td><span class="strings">2</span></td>
+            <td><span class="strings">3</span></td>
+            <td><span class="strings">4</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">0</span></td>
+            <td><span class="functions">10</span></td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>51</td>
+        </tr>
+        <tr>
+            <td><span class="strings">1</span></td>
+            <td>43</td>
+            <td><span class="functions">21</span></td>
+            <td>16</td>
+            <td>5</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td><span class="strings">2</span></td>
+            <td>57</td>
+            <td>51</td>
+            <td><span class="functions">5</span></td>
+            <td>17</td>
+            <td>64</td>
+        </tr>
+        <tr>
+            <td><span class="strings">3</span></td>
+            <td>5</td>
+            <td>64</td>
+            <td>64</td>
+            <td><span class="functions">4</span></td>
+            <td>71</td>
+        </tr>
+        <tr>
+            <td><span class="strings">4</span></td>
+            <td>46</td>
+            <td>7</td>
+            <td>5</td>
+            <td>68</td>
+            <td><span class="functions">14</span></td>
+        </tr>
+    </table>
+</div>
+<h2>Diagonala secundară<br>(i + j == n - 1)</h2>
+<div align="center">
+    <table>
+        <tr>
+            <td>Index</td>
+            <td><span class="strings">0</span></td>
+            <td><span class="strings">1</span></td>
+            <td><span class="strings">2</span></td>
+            <td><span class="strings">3</span></td>
+            <td><span class="strings">4</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">0</span></td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td><span class="functions">51</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">1</span></td>
+            <td>43</td>
+            <td>21</td>
+            <td>16</td>
+            <td><span class="functions">5</span></td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td><span class="strings">2</span></td>
+            <td>57</td>
+            <td>51</td>
+            <td><span class="functions">5</span></td>
+            <td>17</td>
+            <td>64</td>
+        </tr>
+        <tr>
+            <td><span class="strings">3</span></td>
+            <td>5</td>
+            <td><span class="functions">64</span></td>
+            <td>64</td>
+            <td>4</td>
+            <td>71</td>
+        </tr>
+        <tr>
+            <td><span class="strings">4</span></td>
+            <td><span class="functions">46</span></td>
+            <td>7</td>
+            <td>5</td>
+            <td>68</td>
+            <td>14</td>
+        </tr>
+    </table>
+</div>
 
 
-<p class="codeblock">
-    int cmmdc(int x, int y)<br>
-    {<br>
-    while(x != y)<br>
-    if(x > y)<br>
-    x -= y;<br>
-    else<br>
-    y -= x;<br>
-    return x;<br>
-    }<br>
-    <br>
-    int main()<br>
-    {<br>
-    cout << cmmdc(2, 6) << endl; // Afiseaza 2<br>
-    cout << cmmdc(13, 7) << endl; // Afiseaza 1<br>
-    cout << cmmdc(12, 36) << endl; // Afiseaza 12<br>
-    cout << cmmdc(26, 39) << endl; // Afiseaza 13<br>
-    cout << cmmdc(8.5 , 12.56) << endl; // Afiseaza 4<br>
-    return 0;<br>
-    }
-</p>
 
-<p>Putem chema subprogramul de cate ori vrem noi. Parametrii sunt de tip 'int', deci valorile '8.5' si '12.56' din ultima chemare, vor fi convertite automat in '8' si '12'.</p>
+
+
+
+<h1>Elementele delimitate de diagonala principală</h1>
+<h2>Deasupra diagonalei<br>(i < j)</h2>
+<div align="center">
+    <table>
+        <tr>
+            <td>Index</td>
+            <td><span class="strings">0</span></td>
+            <td><span class="strings">1</span></td>
+            <td><span class="strings">2</span></td>
+            <td><span class="strings">3</span></td>
+            <td><span class="strings">4</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">0</span></td>
+            <td><span class="numbers">10</span></td>
+            <td><span class="functions">11</span></td>
+            <td><span class="functions">12</span></td>
+            <td><span class="functions">13</span></td>
+            <td><span class="functions">51</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">1</span></td>
+            <td>43</td>
+            <td><span class="numbers">21</span></td>
+            <td><span class="functions">16</span></td>
+            <td><span class="functions">5</span></td>
+            <td><span class="functions">7</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">2</span></td>
+            <td>57</td>
+            <td>51</td>
+            <td><span class="numbers">5</span></td>
+            <td><span class="functions">17</span></td>
+            <td><span class="functions">64</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">3</span></td>
+            <td>5</td>
+            <td>64</td>
+            <td>64</td>
+            <td><span class="numbers">4</span></td>
+            <td><span class="functions">71</span></td>
+        </tr>
+        <tr>
+            <td><span class="strings">4</span></td>
+            <td>46</td>
+            <td>7</td>
+            <td>5</td>
+            <td>68</td>
+            <td><span class="numbers">14</span></td>
+        </tr>
+    </table>
+
+</div>
+
+
+    <h2>Sub diagonală<br>(i > j)</h2>
+
+    <div align="center">
+        <table>
+            <tr>
+                <td>Index</td>
+                <td><span class="strings">0</span></td>
+                <td><span class="strings">1</span></td>
+                <td><span class="strings">2</span></td>
+                <td><span class="strings">3</span></td>
+                <td><span class="strings">4</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">0</span></td>
+                <td><span class="numbers">10</span></td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>51</td>
+            </tr>
+            <tr>
+                <td><span class="strings">1</span></td>
+                <td><span class="functions">43</span></td>
+                <td><span class="numbers">21</span></td>
+                <td>16</td>
+                <td>5</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td><span class="strings">2</span></td>
+                <td><span class="functions">57</span></td>
+                <td><span class="functions">51</span></td>
+                <td><span class="numbers">5</span></td>
+                <td>17</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td><span class="strings">3</span></td>
+                <td><span class="functions">5</span></td>
+                <td><span class="functions">64</span></td>
+                <td><span class="functions">64</span></td>
+                <td><span class="numbers">4</span></td>
+                <td>71</td>
+            </tr>
+            <tr>
+                <td><span class="strings">4</span></td>
+                <td><span class="functions">46</span></td>
+                <td><span class="functions">7</span></td>
+                <td><span class="functions">5</span></td>
+                <td><span class="functions">68</span></td>
+                <td><span class="numbers">14</span></td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <h1>Elementele delimitate de diagonala secundară</h1>
+    <h2>Deasupra diagonalei<br>(i + j < n - 1)</h2>
+    <div align="center">
+        <table>
+            <tr>
+                <td>Index</td>
+                <td><span class="strings">0</span></td>
+                <td><span class="strings">1</span></td>
+                <td><span class="strings">2</span></td>
+                <td><span class="strings">3</span></td>
+                <td><span class="strings">4</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">0</span></td>
+                <td><span class="functions">10</span></td>
+                <td><span class="functions">11</span></td>
+                <td><span class="functions">12</span></td>
+                <td><span class="functions">13</span></td>
+                <td><span class="numbers">51</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">1</span></td>
+                <td><span class="functions">43</span></td>
+                <td><span class="functions">21</span></td>
+                <td><span class="functions">16</span></td>
+                <td><span class="numbers">5</span></td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td><span class="strings">2</span></td>
+                <td><span class="functions">57</span></td>
+                <td><span class="functions">51</span></td>
+                <td><span class="numbers">5</span></td>
+                <td>17</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td><span class="strings">3</span></td>
+                <td><span class="functions">5</span></td>
+                <td><span class="numbers">64</span></td>
+                <td>64</td>
+                <td>4</td>
+                <td>71</td>
+            </tr>
+            <tr>
+                <td><span class="strings">4</span></td>
+                <td><span class="numbers">46</span></td>
+                <td>7</td>
+                <td>5</td>
+                <td>68</td>
+                <td>14</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    <h2>Sub diagonala<br>(i + j > n - 1)</h2>
+    <div align="center">
+        <table>
+            <tr>
+                <td>Index</td>
+                <td><span class="strings">0</span></td>
+                <td><span class="strings">1</span></td>
+                <td><span class="strings">2</span></td>
+                <td><span class="strings">3</span></td>
+                <td><span class="strings">4</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">0</span></td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td><span class="numbers">51</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">1</span></td>
+                <td>43</td>
+                <td>21</td>
+                <td>16</td>
+                <td><span class="numbers">5</span></td>
+                <td><span class="functions">7</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">2</span></td>
+                <td>57</td>
+                <td>51</td>
+                <td><span class="numbers">5</span></td>
+                <td><span class="functions">17</span></td>
+                <td><span class="functions">64</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">3</span></td>
+                <td>5</td>
+                <td><span class="numbers">64</span></td>
+                <td><span class="functions">64</span></td>
+                <td><span class="functions">4</span></td>
+                <td><span class="functions">71</span></td>
+            </tr>
+            <tr>
+                <td><span class="strings">4</span></td>
+                <td><span class="numbers">46</span></td>
+                <td><span class="functions">7</span></td>
+                <td><span class="functions">5</span></td>
+                <td><span class="functions">68</span></td>
+                <td><span class="functions">14</span></td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>

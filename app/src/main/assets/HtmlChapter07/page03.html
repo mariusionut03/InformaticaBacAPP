@@ -1,41 +1,276 @@
 <body>
-    <h1>Tablouri patratice</h1>
+<h1><span class="functions">Sortarea vectorilor</span></h1>
 
-    Un tablou bidimensional este tablou pătratic sau matrice pătratică dacă numărul de linii este egal cu numărul de coloane.
+<p><span class="functions">Metoda bulelor</span> se bazează pe următoare idee:<br><br>
 
-    În această situație folosim pentru ambele dimensiuni o singură variabilă, de regulă n:
+    <span class="functions">-</span> fie un vector <span class="numbers">X</span>[] cu <span class="numbers">n</span> elemente<br>
+    <span class="functions">-</span> parcurgem vectorul și pentru oricare două elemente învecinate care nu sunt în ordinea dorită, le interschimbăm valorile<br>
+    <span class="functions">-</span> după o singură parcurgere, vectorul nu se va sorta, dar putem repeta parcurgerea<br>
+    <span class="functions">-</span> dacă la o parcurgere nu se face nicio interschimbare, vectorul este sortat<br><br>
 
-<p class="codeblock">int n, A[100][100];</p>
+    <span class="functions">-</span> O reprezentare a algoritmului este:<br><br>
+
+    Cat timp vectorul nu este sortat<br>
+    <span class="functions">-</span> presupunem că vectorul este sortat<br>
+    <span class="functions">-</span> parcurgem vectorul<br>
+    <span class="functions">-</span> dacă două elemente învecinate nu sunt în ordinea dorită le interschimbăm<br>
+    <br>
+        Exemplu: Să ordonăm următorul vector, în care n=5:</p>
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>Element</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+    </table>
+
+    <p>După prima parcurgere vectorul are următoarea structură:</p>
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VII</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+
+
+    <p>După o nouă parcurgere, vectorul este:</p>
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+    <p>Îl parcurgem din nou:</p>
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
 
 
 
 
 
 
+    <p>O secvență C++:</p>
+
+<p class="codeblock">
+    int <span class="numbers">n</span>, <span class="numbers">v</span>[100];<br>
+    <span class="comments">// citire v[] cu n elemente</span><br>
+        bool <span class="numbers">sortat</span>;<br>
+    do<br>
+    {<br>
+    &emsp;&emsp;<span class="numbers">sortat</span> = true;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 0 ; <span class="numbers">i</span> < <span class="numbers">n</span> - 1 ; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">v</span>[<span class="numbers">i</span>] > <span class="numbers">v</span>[<span class="numbers">i</span>+1])<br>
+    &emsp;&emsp;&emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int <span class="numbers">aux</span> = <span class="numbers">v</span>[<span class="numbers">i</span>];<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">v</span>[<span class="numbers">i</span>] = <span class="numbers">v</span>[<span class="numbers">i</span>+1];<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">v</span>[<span class="numbers">i</span>+1] = <span class="numbers">aux</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">sortat</span> = false;<br>
+    &emsp;&emsp;&emsp;&emsp;}<br>
+    } while(!<span class="numbers">sortat</span>);
+</p>
 
 
+    <p>Observație: La fiecare parcurgere cel puțin un element ajunge pe poziția sa finală:<br><br>
+
+        <span class="functions">-</span> la prima parcurgere cel mai mare element al vectorului ajunge pe poziția sa finală;<br>
+        <span class="functions">-</span> la a doua parcurgere următorul cel mai mare element ajunge pe poziția finală;<br>
+    Observăm că nu mai are rost să parcurgem aceste elemente, fixate. Astfel, putem parcurge vectorul numai până la indicele unde s-a făcut ultima interschimbare la parcurgerea anterioară.<br><br>
+
+        Parcurgere 1:</p>
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
+        </tr>
+        <tr>
+            <td>VI</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>VII</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+    </table>
+
+    <p>Parcurgere 2</p>
+
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>IV</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
 
 
+<p>Parcurgere 3</p>
 
+    <table>
+        <tr>
+            <td>Indice</td>
+            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>II</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+        <tr>
+            <td>III</td>
+            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
+        </tr>
+    </table>
 
+    <p>O secvență C++:</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p class="codeblock">
+    int <span class="numbers">n</span>, <span class="numbers">v</span>[100];<br>
+    <span class="comments">//citire v[] cu n elemente</span><br>
+    bool <span class="numbers">sortat</span>;<br>
+    int <span class="numbers">m</span> = <span class="numbers">n</span>;<br>
+    do<br>
+    {<br>
+    &emsp;&emsp;<span class="numbers">sortat</span> = true;<br>
+    &emsp;&emsp;int <span class="numbers">p</span> = <span class="numbers">m</span>;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 0 ; <span class="numbers">i</span> < <span class="numbers">p</span> - 1 ; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">v</span>[<span class="numbers">i</span>] > <span class="numbers">v</span>[<span class="numbers">i</span>+1])<br>
+    &emsp;&emsp;&emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;int <span class="numbers">aux</span> = <span class="numbers">v</span>[<span class="numbers">i</span>];<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">v</span>[<span class="numbers">i</span>] = <span class="numbers">v</span>[<span class="numbers">i</span>+1];<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">v</span>[<span class="numbers">i</span>+1] = <span class="numbers">aux</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">sortat</span> = false;<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">m</span> = <span class="numbers">i</span> + 1;<br>
+    &emsp;&emsp;&emsp;&emsp;}<br>
+    } while(!<span class="numbers">sortat</span>);
+</p>
 </body>

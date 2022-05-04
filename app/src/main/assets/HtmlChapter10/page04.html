@@ -1,0 +1,30 @@
+<body>
+<h1>Eliminarea și inserarea unui caracter într-un șir</h1>
+
+<p>Acestea sunt operații frecvente și pot fi realizate cu ajutorul funcției <span class="functions">strcpy</span>. Deoarece comportamentul funcției <span class="functions">strcpy</span> este impredictibil dacă parametri se suprapun, este necesară utilizarea unui șir suplimentar.</p>
+
+
+<h2>Eliminarea unui caracter dintr-un sir</h2>
+<p>Următoarea secvență elimină din șirul <span class="numbers">s</span> (presupus citit) caracterul de poziția <span class="numbers">x</span>.</p>
+
+<p class="codeblock">
+    char <span class="numbers">s</span>[256], <span class="numbers">t</span>[256];<br>
+    int <span class="numbers">x</span>;<br>
+    <span class="comments">// ...</span><br>
+    <span class="comments">//eliminarea</span><br>
+    strcpy(<span class="numbers">t</span> , <span class="numbers">s</span> + <span class="numbers">x</span> + 1);<br>
+    strcpy(<span class="numbers">s</span> + <span class="numbers">x</span> , <span class="numbers">t</span>);
+</p>
+
+<h2>Inserarea unui caracter într-un sir</h2>
+<p>Următoarea secvență inserează în șirul <span class="numbers"></span> (presupus citit) de poziția <span class="numbers">x</span> caracterul <span class="strings">'A'</span>.</p>
+<p class="codeblock">
+    char <span class="numbers">s</span>[256], <span class="numbers">t</span>[256];<br>
+    int <span class="numbers">x</span>;<br>
+    <span class="comments">// ...</span><br>
+    <span class="comments">//inserarea</span><br>
+    strcpy(<span class="numbers">t</span> , <span class="numbers">s</span> + <span class="numbers">x</span>);<br>
+    strcpy(<span class="numbers">s</span> + <span class="numbers">x</span> + 1 , <span class="numbers">t</span>);<br>
+    <span class="numbers">s</span>[<span class="numbers">x</span>] = <span class="strings">'A'</span>; <span class="comments">// echivalent, *(s+x) = 'A'</span>;
+</p>
+</body>

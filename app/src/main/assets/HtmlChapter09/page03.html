@@ -1,280 +1,57 @@
 <body>
-<h1>Functii pentru caractere</h1>
+<h1><span class="functions">Transmiterea parametrilor</span></h1>
+
+<p>Am vazut pe paginile anterioare cum putem transmite parametri catre subprograme.</p>
 
 <p class="codeblock">
-    Header-ul <span><</span>cctype>:<br>
-    - isalnum (alfanumeric)<br>
-    - isalpha (alfabetic)<br>
-    - islower (litera mica)<br>
-    - isupper (litera mare)<br>
-    - isdigit (cifra)<br>
-    - tolower (conversie)<br>
-    - toupper (conversie)<br>
-    <br>
-    Header-ul <span><</span>cstring>:<br>
-    - strlen (lungime)<br>
-    - strcpy (copiere in alt sir)<br>
-    - strncpy ( ... primele n caractere)<br>
-    - strcat (lipeste 2 siruri)<br>
-    - strchr (cauta un caracter intr-un sir)<br>
-    - strstr (cauta un sir intr-un sir)<br>
-    - strcmp (compara 2 siruri)<br>
-    - strtok (extrage subsiruri dintr-un sir)
-</p>
+    #include <span><</span>iostream;<br>
+    using namespace std;<br>
 
-<h1>#include <span><</span>cctype></h1>
-
-<p> Următoarele funcții au ca parametri valori numerice, reprezentând codul ASCII al unor caractere. Prototipul lor se află în header-ul cctype.</p>
-
-<h2>isalnum</h2>
-<p class="codeblock">
-    int isalnum( int ch );
-</p>
-<p>
-    Verifică dacă un caracter este alfanumeric (cifră, literă mare, literă mică). Returnează o valoare diferită de zero dacă parametrul este alfanumeric, 0 în caz contrar.
-</p>
-
-
-<h2>isalpha</h2>
-<p class="codeblock">
-    int isalpha( int ch );
-</p>
-<p>
-    Verifică dacă un caracter este alfabetic (literă mare, literă mică). Returnează o valoare diferită de zero dacă parametrul este alfabetic, 0 în caz contrar.
-</p>
-
-
-<h2>islower</h2>
-<p class="codeblock">
-    int islower( int ch );
-</p>
-<p>
-    Verifică dacă un caracter este literă mică. Returnează o valoare diferită de zero dacă parametrul este literă mică, 0 în caz contrar.
-</p>
-
-
-<h2>isupper</h2>
-<p class="codeblock">
-    int isupper( int ch );
-</p>
-<p>
-    Verifică dacă un caracter este literă mare. Returnează o valoare diferită de zero dacă parametrul este literă mare, 0 în caz contrar.
-</p>
-
-
-<h2>isdigit</h2>
-<p class="codeblock">
-    int isdigit( int ch );
-</p>
-<p>
-    Verifică dacă un caracter este cifră. Returnează o valoare diferită de zero dacă parametrul este cifră, 0 în caz contrar.
-</p>
-
-
-<h2>tolower</h2>
-<p class="codeblock">
-    int tolower( int ch );
-</p>
-<p>
-    Convertește parametrul la literă mică. Dacă parametrul este literă mare, returnează valoarea convertită, în caz contrar returnează valoarea inițială a parametrului.
-</p>
-
-
-<h2>toupper</h2>
-<p class="codeblock">
-    int toupper( int ch );
-</p>
-<p>
-    Convertește parametrul la literă mare. Dacă parametrul este literă mică, returnează valoarea convertită, în caz contrar returnează valoarea inițială a parametrului.
-</p>
-
-
-<h1>#include <span><</span>cstring></h1>
-
-<p>Următoarele funcții prelucrează șiruri de caractere. Dacă nu se precizează altfel, prototipul lor se află în header-ul cstring.</p>
-
-
-
-<h2>strlen</h2>
-<p class="codeblock">
-    strlen( char* str );
-</p>
-<p>
-    Returnează lungimea șirului str, adică numărul de caractere din șirul al cărui prim caracter se află la adresa memorată în str. Caracterul nul nu se numără.
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    cout << strlen("pbinfo"); // 6<br>
-    char s[10]="copil";<br>
-    cout << strlen(s); // 5<br>
-    cout << strlen(s + 2); //3
-</p>
-
-
-
-<h2>strcpy</h2>
-<p class="codeblock">
-    char* strcpy( char* dest, const char* src );
-</p>
-<p>
-    Copiază caracterele din șirul aflat la adresa src, inclusiv caracterul nul, în șirul al cărui prim element se află la adresa din dest.<br>
-
-    Funcția returnează adresa dest.<br>
-
-    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[21], t[21] = "copil";<br>
-    strcpy(s , "pbinfo");<br>
-    cout << s; // pbinfo<br>
-    strcpy(s , t);<br>
-    cout << s; // copil<br>
-    strcpy(s , t + 2);<br>
-    cout << s; // pil<br>
-    strcpy(s + 2 , t);<br>
-    cout << s; // picopil
-</p>
-
-
-
-<h2>strncpy</h2>
-<p class="codeblock">
-    char *strncpy( char *dest, const char *src, int count );
-</p>
-<p>
-    Copiază cel mult count caractere din șirul aflat la adresa src, în șirul al cărui prim element se află la adresa din dest.<br>
-
-    În șirul dest nu se va plasa caracterul nul după cele count caractere copiate.<br>
-
-    Funcția returnează adresa dest.<br>
-
-    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.<br>
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[100]="abcdefghjkl";<br>
-    strncpy(s, "poveste", 3);<br>
-    cout << s; // povdefghjkl
-</p>
-
-
-
-<h2>strcat</h2>
-<p class="codeblock">
-    char *strcat( char *dest, const char *src );
-</p>
-<p>
-    Adaugă (concatenează) caracterele din șirul aflat la adresa src, inclusiv caracterul nul, la șirul al cărui prim element se află la adresa din dest.<br>
-
-    Funcția returnează adresa dest.<br>
-
-    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[21]="pbinfo", t[21] = "copil";<br>
-    strcat(s , t);<br>
-    cout << s; // pbinfocopil<br>
-    strcat(s , t + 2);<br>
-    cout << s; // pbinfocopilpil
-</p>
-
-
-
-<h2>strchr</h2>
-<p class="codeblock">
-    char *strchr( char * str, char ch );
-</p>
-<p>
-    Caută caracterul ch în șirul al cărui prim caracter se află în memorie la adresa din str.<br>
-
-    Funcția returnează adresa NULL, dacă caracterul ch nu apare în șirul str, respectiva adresa primei apariții al lui ch în str, dacă ch apare în str.
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[21]="pbinfo";<br>
-    char * p = strchr(s , 'i');<br>
-    cout << p; // info
-</p>
-<p class="codeblock">
-    char ch = 'i';<br>
-    if(strchr("aeiou" , ch) != NULL)<br>
-    cout << "DA"<br>
-    else<br>
-    cout << "NU";<br>
-    //se va afisa DA
-</p>
-
-
-
-<h2>strstr</h2>
-<p class="codeblock">
-    char *strstr( char * s, char * t );
-</p>
-<p>
-    Caută șirul t în șirul al cărui prim caracter se află în memorie la adresa din s.<br>
-
-    Funcția returnează adresa NULL, dacă șirul t nu apare în șirul s, respectiva adresa primei apariții al lui t în s, dacă t apare în s.
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[21]="pbinfo";<br>
-    char * p = strstr(s , "inf");<br>
-    cout << p; // info
-</p>
-
-
-
-<h2>strcmp</h2>
-<p class="codeblock">
-    int strcmp( char * s, char * t );
-</p>
-<p>
-    Compară lexicografic cele două șiruri de caractere:<br>
-<br>
-    - dacă șirul s este lexicografi mai mic decât t funcția va returna o valoare negativă<br>
-    - dacă șirul s este lexicografi mai mare decât t funcția va returna o valoare pozitivă<br>
-    - dacă cele două șiruri sunt identice funcția va returna valoarea 0<br>
-
-    Standardul C/C++ stabilește doar semnul rezultatului, nu și valoarea acestuia. Valorile returnate pot fi, dar nu trebuie să fie, -1 0 1.
-
-</p>
-<h3>Exemple:</h3>
-<p class="codeblock">
-    char s[21]="abur", t[21]="abecedar";<br>
-    if(strcmp(s , t) < 0)<br>
-    cout << "Da"<br>
-    else<br>
-    cout << "Nu";<br>
-    // se va afisa Nu; cuvantul "abur" este lexicografic dupa "abecedar"
-</p>
-
-
-
-<h2>strtok</h2>
-<p class="codeblock">
-    char *strtok( char *str, const char *sep );
-</p>
-<p>
-    Funcția strtok extrage dintr-un sir de caractere câte un subșir (cuvânt) delimitat de caractere din șirul sep. Funcția se apelează în două moduri:<br>
-<br>
-    - primul apel are ca parametri șirul din care se face extragerea și șirul separatorilor<br>
-    - la următoarele apeluri primul parametru este NULL.<br>
-    <br>
-    Rezultatul funcției strtok este adresa de început a subșirului curent extras, sau NULL dacă nu se mai poate extrage niciun subșir din șirul dat.<br>
-<br>
-    Șirul din care se face extragerea se modifică în urma apelurilor. Dacă este nevoie de el mai târziu trebuie să-i facem o copie.
-</p>
-<h3>Exemple:</h3>
-<p>Secvența de mai jos extrage dintr-un șir s cuvintele (separate prin caractere din mulțimea {' ', ',', '.'}) și le afișează pe linii diferite. Șirul s se presupune declarat și citit.</p>
-<p class="codeblock">
-    char sep[]=" .,";<br>
-    char * p = strtok(s , sep);<br>
-    while(p != NULL)<br>
+    int <span class="functions">cmmdc</span>(int <span class="numbers">x</span>, int <span class="numbers">y</span>)<br>
     {<br>
-    cout << p << endl;<br>
-    p = strtok(NULL , sep);<br>
+    &emsp;&emsp;while(<span class="numbers">x</span> != <span class="numbers">y</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">x</span> > <span class="numbers">y</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">x</span> -= <span class="numbers">y</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;else<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">y</span> -= <span class="numbers">x</span>;<br>
+    &emsp;&emsp;return <span class="numbers">x</span>;<br>
+    }<br>
+    <br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">a</span>, <span class="numbers">b</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">a</span> >> <span class="numbers">b</span>; <span class="comments">// Introducem: 12 18</span><br>
+    &emsp;&emsp;cout << <span class="numbers">a</span> << <span class="strings">' '</span> << <span class="numbers">b</span> << endl; <span class="comments">// Afiseaza: 12 18</span><br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(<span class="numbers">a</span>,<span class="numbers">b</span>) << endl; <span class="comments">// Afiseaza 6</span><br>
+    &emsp;&emsp;cout << <span class="numbers">a</span> << <span class="strings">' '</span> << <span class="numbers">b</span>; <span class="comments">// Afiseaza 12 18</span><br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
+<p>In programul de mai sus, dam valorile 12 si 18 pentru <span class="numbers">a</span> si <span class="numbers">b</span>. (<span class="numbers">a</span>=12, <span class="numbers">b</span>=18).</p>
+<p>Dupa chemarea subprogramului <span class="strings">'cmmdc'</span> cu parametrii <span class="numbers">a</span> si <span class="numbers">b</span>, valoarea lor nu se schimba dupa rularea comenzilor din subprogram. Cand afisam cele doua variabile la final, valorile lor raman tot 12 si 18.</p>
+
+
+<p class="codeblock">
+    int <span class="functions">cmmdc</span>(int <span class="numbers">x</span>, int <span class="numbers">y</span>)<br>
+    {<br>
+    &emsp;&emsp;while(<span class="numbers">x</span> != <span class="numbers">y</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">x</span> > <span class="numbers">y</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">x</span> -= <span class="numbers">y</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;else<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">y</span> -= <span class="numbers">x</span>;<br>
+    &emsp;&emsp;return <span class="numbers">x</span>;<br>
+    }<br>
+    <br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(2, 6) << endl; <span class="comments">// Afiseaza 2</span><br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(13, 7) << endl; <span class="comments">// Afiseaza 1</span><br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(12, 36) << endl; <span class="comments">// Afiseaza 12</span><br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(26, 39) << endl; <span class="comments">// Afiseaza 13</span><br>
+    &emsp;&emsp;cout << <span class="functions">cmmdc</span>(8.5 , 12.56) << endl; <span class="comments">// Afiseaza 4</span><br>
+    &emsp;&emsp;return 0;<br>
+    }
+</p>
+
+<p>Putem chema subprogramul de cate ori vrem noi. Parametrii sunt de tip <span class="strings">'int'</span>, deci valorile <span class="strings">'8.5'</span> si <span class="strings">'12.56'</span> din ultima chemare, vor fi convertite automat in <span class="strings">'8'</span> si <span class="strings">'12'</span>.</p>
 </body>

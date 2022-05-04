@@ -4,36 +4,36 @@
 <p>O operație este alcătuită din operanzi și operator. Operanzii reprezintă datele cu care se fac operațiile, iar operatorul este simbolul care stabilește ce operație se face cu operanzii.</p>
 
 <p class="codeblock">
-    1. Operatorii aritmetici
-    2. Operatorii aritmetici unari
-    3. Operatorii aritmetici binari
-    4. Operatorii relaționali
-    5. Operatorii logici
-    6. Operatorul de atribuire
-    7. Operatorii de atribuire compusă
-    8. Operatorii ++, --
-    9. Operatorul condițional ?
-    10. Operatorul virgulă ,
-    11. Operatorul de conversie explicită
-    12. Alți operatori
+    <span class="functions">1.</span> Operatorii aritmetici<br>
+    <span class="functions">2.</span> Operatorii aritmetici unari<br>
+    <span class="functions">3.</span> Operatorii aritmetici binari<br>
+    <span class="functions">4.</span> Operatorii relaționali<br>
+    <span class="functions">5.</span> Operatorii logici<br>
+    <span class="functions">6.</span> Operatorul de atribuire<br>
+    <span class="functions">7.</span> Operatorii de atribuire compusă<br>
+    <span class="functions">8.</span> Operatorii <span class="functions">++</span>, <span class="functions">--</span><br>
+    <span class="functions">9.</span> Operatorul condițional <span class="functions">?</span><br>
+    <span class="functions">10.</span> Operatorul virgulă <span class="functions">,</span><br>
+    <span class="functions">11.</span> Operatorul de conversie explicită<br>
+    <span class="functions">12.</span> Alți operatori
 </p>
 
 <h2>1. Operatorii aritmetici</h2>
-<p>Aceștia sunt: +, -, *, /, %. În exemplele de mai jos, considerăm variabilele:</p>
+<p>Aceștia sunt: <span class="functions">+</span>, <span class="functions">-</span>, <span class="functions">*</span>, <span class="functions">/</span>, <span class="functions">%</span>. În exemplele de mai jos, considerăm variabilele:</p>
 <p class="codeblock">
-    int N = 11, M = 3; <br>
-    double X = 11, Y = -3.5;
+    int <span class="numbers">N</span> = 11, <span class="numbers">M</span> = 3; <br>
+    double <span class="numbers">X</span> = 11, <span class="numbers">Y</span> = -3.5;<br>
     <span class="comments">// Retinem aceste 4 variabile si le vom folosi sa explicam fiecare operator in parte.</span></p>
 </p>
 
 <h2>2. Operatorii aritmetici unari</h2>
-<p>În C++ există operațiile unare + și -:<br>
-    + returnează valoarea operandului<br>
-    - returnează valoarea operandului cu semn schimbat.</p>
+<p>În C++ există operațiile unare <span class="functions">+</span> și <span class="functions">-</span>:<br>
+    <span class="functions">+</span> returnează valoarea operandului<br>
+    <span class="functions">-</span> returnează valoarea operandului cu semn schimbat.</p>
 <p class="codeblock">
-    X = +X <span class="comments">// Schimba valoarea in 11</span><br>
-    Y = -Y <span class="comments">// Schimba valoarea in 3.5</span><br>
-    N = -+N <span class="comments">// Schimba valoarea in -11</span>
+    <span class="numbers">X</span> = <span class="functions">+</span><span class="numbers">X</span> <span class="comments">// Schimba valoarea in 11</span><br>
+    <span class="numbers">Y</span> = <span class="functions">-</span><span class="numbers">Y</span> <span class="comments">// Schimba valoarea in 3.5</span><br>
+    <span class="numbers">N</span> = <span class="functions">-+</span><span class="numbers">N</span> <span class="comments">// Schimba valoarea in -11</span>
 </p>
 
 <h2>3. Operatorii aritmetici binari</h2>
@@ -49,20 +49,20 @@
     Dacă operanzii sunt de tip real (float, double, long double), se va realiza împărțirea zecimală, iar rezultatul operației / este rezultatul acestei împărțiri, “cu virgulă”.</p>
 
 <p class="codeblock">
-    N = 11; M = 3; X = 11; Y = -3.5<br>
-    N / M = 3<br>
-    X / Y = -3.14286<br>
-    X / 2.0 = 5.5<br>
-    M / 2 = 1<br>
-    M / 2.0 = 1.5
+    <span class="numbers">N</span> = 11; <span class="numbers">M</span> = 3; <span class="numbers">X</span> = 11; <span class="numbers">Y</span> = -3.5<br>
+    <span class="numbers">N</span> / <span class="numbers">M</span> = 3<br>
+    <span class="numbers">X</span> / <span class="numbers">Y</span> = -3.14286<br>
+    <span class="numbers">X</span> / 2.0 = 5.5<br>
+    <span class="numbers">M</span> / 2 = 1<br>
+    <span class="numbers">M</span> / 2.0 = 1.5
 </p>
 
 <p>Ultima împărțire este deosebită. Cei doi operanzi au tipuri diferite: M = 3 este de tip int, iar 2.0 este de tip double. Aici intervine operația de conversie implicită: în mod automat, valoarea operandului M se consideră ca fiind de tip double, împărțirea este împărțire reală și are rezultatul 1.5.</p>
 
-<p>Operatorul modulo %</p>
+<p>Operatorul modulo <span class="functions">%</span></p>
 <p>Operația modulo are sens numai dacă ambii operanzi sunt de tip întreg – împărțirea cu rest are sens numai în această situație. Iată câteva exemple:</p>
 <p class="codeblock">
-    N % M = 2 : restul împărțirii lui 11 la 3 este 2<br>
+    <span class="numbers">N</span> % <span class="numbers">M</span> = 2 <span class="comments">//restul împărțirii lui 11 la 3 este 2</span><br>
     30 % 10 = 0
 </p>
 
@@ -70,62 +70,62 @@
 
 <h2>4. Operatorii relaționali</h2>
 
-<p>Sunt: <, >, <=, >=, ==, != .<br>
-    Un operatori relațional stabilește dacă între două numere (operanzii) are loc o anumită relație. Rezultatul acestei operații este adevărat sau fals. Rezultatul operațiilor relaționale poate fi 0 sau 1:<br>
-    - rezultatul este 1 dacă relația este adevărată<br>
-    - rezultatul este 0 dacă relația este falsă
+<p>Sunt: <span class="functions"><</span>, <span class="functions">></span>, <span class="functions"><=</span>, <span class="functions">>=</span>, <span class="functions">==</span>, <span class="functions">!=</span>.<br>
+    <br>Un operatori relațional stabilește dacă între două numere (operanzii) are loc o anumită relație. Rezultatul acestei operații este adevărat sau fals. Rezultatul operațiilor relaționale poate fi 0 sau 1:<br>
+    <span class="functions">-</span> rezultatul este 1 dacă relația este <span class="adevaratcolor">adevărată</span><br>
+    <span class="functions">-</span> rezultatul este 0 dacă relația este <span class="falscolor">falsă</span>
 </p>
 
-<p>Fie N = 11 și M = 3. Operațiile relaționale sunt:</p>
+<p>Fie <span class="numbers">N</span> = 11 și <span class="numbers">M</span> = 3. Operațiile relaționale sunt:</p>
 <p class="codeblock">
-    a) operații de comparare (comparații)<br>
-    mai mic <; N < M este fals, adică 0<br>
-    mai mare >; N > M este adevărat, adică 1<br>
-    mai mic sau egal <=; M <= N este 1<br>
-    mai mare sau egal >=; M >= N este 0<br>
-    b) operația de egalitate == ; <br>
-    N == M este fals, adică 0<br>
-    c) operația de neegalitate (diferit, not egal) !=; <br>
-    N != M este adevărat, adică 1.
+    <span class="functions">a)</span> operații de comparare (comparații)<br>
+    mai mic <span class="functions"><</span>; <span class="numbers">N</span> <span class="functions"><</span> <span class="numbers">M</span> este fals, adică 0<br>
+    mai mare <span class="functions">></span>; <span class="numbers">N</span> <span class="functions">></span> <span class="numbers">M</span> este adevărat, adică 1<br>
+    mai mic sau egal <span class="functions"><=</span>; <span class="numbers">M</span> <span class="functions"><=</span> <span class="numbers">N</span> este 1<br>
+    mai mare sau egal <span class="functions">>=</span>; <span class="numbers">M</span> <span class="functions">>=</span> <span class="numbers">N</span> este 0<br>
+    <span class="functions">b)</span> operația de egalitate <span class="functions">==</span>; <br>
+    <span class="numbers">N</span> <span class="functions">==</span> <span class="numbers">M</span> este fals, adică 0<br>
+    <span class="functions">c)</span> operația de neegalitate (diferit, not egal) <span class="functions">!=</span>; <br>
+    <span class="numbers">N</span> <span class="functions">!=</span> <span class="numbers">M</span> este adevărat, adică 1.
 </p>
 
-<p>Important! Una dintre cele mai frecvente erori este folosirea pentru operația de egalitate a operatorului =, în loc de ==. Operatorul = reprezintă operația de atribuire!</p>
+<p><span class="functions">Important!</span> Una dintre cele mai frecvente erori este folosirea operatorului <span class="functions">=</span>, în loc de <span class="functions">==</span>. Operatorul <span class="functions">=</span> reprezintă operația de atribuire!</p>
 
 <h2>5. Operatorii logici</h2>
 <p>
-    Sunt: !, ||, &&.<br>
+    Sunt: <span class="functions">!</span>, <span class="functions">||</span>, <span class="functions">&&</span>.<br>
     Operatorii logici au operanzi de tip valori de adevăr și rezultat valori de adevăr.<br>
     În C++, operatorii logici pot fi aplicați oricăror valori numerice, și au ca rezultat una din valorile 0 sau 1. În exemplele de mai jos vom folosi literalii true și false, de tip bool.
 </p>
 
-<p>Negația: !</p>
+<p>Negația: <span class="functions">!</span></p>
 <p class="codeblock">
-    ! true este false. Orice valoare nenulă negată devine 0.<br>
-    ! false este true. 0 negat devine 1.
+    <span class="functions">!</span> <span class="adevaratcolor">true</span> este <span class="falscolor">false</span>. Orice valoare nenulă negată devine 0.<br>
+    <span class="functions">!</span> <span class="falscolor">false</span> este <span class="adevaratcolor">true</span>. 0 negat devine 1.
 </p>
 
-<p>Disjuncția: ||</p>
+<p>Disjuncția: <span class="functions">||</span></p>
 <p class="codeblock">
-    false || false → false<br>
-    false || true → true<br>
-    true || false → true<br>
-    true || true → true
+    false <span class="functions">||</span> <span class="falscolor">false</span> → <span class="falscolor">false</span><br>
+    false <span class="functions">||</span> <span class="adevaratcolor">true</span> → <span class="adevaratcolor">true</span><br>
+    <span class="adevaratcolor">true</span> <span class="functions">||</span> <span class="falscolor">false</span> → <span class="adevaratcolor">true</span><br>
+    <span class="adevaratcolor">true</span> <span class="functions">||</span> <span class="adevaratcolor">true</span> → <span class="adevaratcolor">true</span>
 </p>
 
-<p>Conjuncția: &&</p>
+<p>Conjuncția: <span class="functions">&&</span></p>
 <p class="codeblock">
-    false && false → false<br>
-    false && true → false<br>
-    true && false → false<br>
-    true && true → true
+    false <span class="functions">&&</span> <span class="falscolor">false</span> → <span class="falscolor">false</span><br>
+    false <span class="functions">&&</span> <span class="adevaratcolor">true</span> → <span class="falscolor">false</span><br>
+    true <span class="functions">&&</span> <span class="falscolor">false</span> → <span class="falscolor">false</span><br>
+    true <span class="functions">&&</span> <span class="adevaratcolor">true</span> → <span class="adevaratcolor">true</span>
 </p>
 
 <p>Legile lui De Morgan</p>
 <p class="codeblock">
-    !(p && q) == !p || !q
-    !(p || q) == !p && !q
+    <span class="functions">!</span>(p <span class="functions">&&</span> q) == <span class="functions">!</span>p <span class="functions">||</span> <span class="functions">!</span>q<br>
+    <span class="functions">!</span>(p <span class="functions">||</span> q) == <span class="functions">!</span>p <span class="functions">&&</span> <span class="functions">!</span>q<br>
 
-    Exemplu: Expresia (x ≥ a && x ≤ b) este echivalenta cu expresia (!(x ≥ a) || !(x ≤ b))
+    <span class="functions">Exemplu</span>: Expresia (x ≥ a && x ≤ b) este echivalenta cu expresia (!(x ≥ a) || !(x ≤ b))
 </p>
 
 
@@ -134,85 +134,85 @@
     variabila = expresie</p>
 
 <p class="codeblock">
-    int n , m; // valori aleatorii<br>
-    double x , y; // valori aleatorii<br>
-    n = 5; // valoare lui n devine 5<br>
-    m = n + 2; // valoare lui m devine 7<br>
-    n = n + 3; // valoarea lui n devine 5 + 3, adica 8<br>
-    x = m / 5; // valoarea lui x devine 8 / 5, adica 1. ATENTIE! este impartire intreaga<br>
-    y = 5; // valoarea lui y devine 5, de tip double. Are loc conversia lui 5 de tip int la double<br>
-    x = m / y; // valoarea lui x devine 1.4, deoarece impartirea este zecimala. Are loc conversia valorii lui m la double, apoi se face impartirea
+    int <span class="numbers">n</span>, <span class="numbers">m</span>; <span class="comments">// valori aleatorii</span><br>
+    double <span class="numbers">x</span>, <span class="numbers">y</span>; <span class="comments">// valori aleatorii</span><br>
+    <span class="numbers">n</span> = 5; <span class="comments">// valoare lui n devine 5</span><br>
+    <span class="numbers">m</span> = <span class="numbers">n</span> + 2; <span class="comments">// valoare lui m devine 7</span><br>
+    <span class="numbers">n</span> = <span class="numbers">n</span> + 3; <span class="comments">// valoarea lui n devine 5 + 3, adica 8</span><br>
+    <span class="numbers">x</span> = <span class="numbers">m</span> / 5; <span class="comments">// valoarea lui x devine 8 / 5, adica 1. ATENTIE! este impartire intreaga</span><br>
+    <span class="numbers">y</span> = 5; <span class="comments">// valoarea lui y devine 5, de tip double. Are loc conversia lui 5 de tip int la double</span><br>
+    <span class="numbers">x</span> = <span class="numbers">m</span> / <span class="numbers">y</span>; <span class="comments">// valoarea lui x devine 1.4, deoarece impartirea este zecimala. Are loc conversia valorii lui m la double, apoi se face impartirea</span>
 </p>
 
 
 <h2>7. Operatorii de atribuire compusă</h2>
 <p>
-    Sunt: +=, -=, *=, /=, %=.<br>
+    Sunt: <span class="functions">+=</span>, <span class="functions">-=</span>, <span class="functions">*=</span>, <span class="functions">/=</span>, <span class="functions">%=</span>.<br>
     În programare sunt foarte frecvente atribuirile de forma:
 </p>
-<p class="codeblock">x = x * 5;</p>
+<p class="codeblock"><span class="numbers">x</span> = <span class="numbers">x</span> * 5;</p>
 <p>var OP= expresie, echivalentă cu var = var OP expresie<br>
     Deci, expresia devine:
 </p>
-<p class="codeblock">x *= 5;</p>
+<p class="codeblock"><span class="numbers">x</span> *= 5;</p>
 
 
 
 
-<h2>8. Operatorii ++, --</h2>
+<h2>8. Operatorii <span class="functions">++</span>, <span class="functions">--</span></h2>
 
 <p>
-    Se numesc operatori de de incrementare (++) și decrementare (--).<br>
+    Se numesc operatori de de incrementare (<span class="functions">++</span>) și decrementare (<span class="functions">--</span>).<br>
     Prin incrementarea unei variabile se înțelege mărirea valorii sale cu 1. Similar, prin decrementarea unei variabilă se înțelege micșorarea valorii sale cu 1.<br>
-    postincrementare: X ++. Prima data efectuam calculul, dupa care marim valoarea lui X cu 1.
-    preincrementare: ++ X. Prima data marim valoarea lui X cu 1, dupa care efectuam calculul.
+    <span class="functions">-</span> postincrementare: <span class="numbers">X</span> <span class="functions">++</span>. Prima data efectuam calculul, dupa care marim valoarea lui X cu 1.<br>
+    <span class="functions">-</span> preincrementare: <span class="functions">++</span> <span class="numbers">X</span>. Prima data marim valoarea lui <span class="numbers">X</span> cu 1, dupa care efectuam calculul.
 </p>
 <p class="codeblock">
-    int A = 1, B;<br>
-    A++; // Valoarea lui A devine 2.<br>
-    B = --A; // Valoarea lui B devine 1 (Valoarea lui A este 2, avem predecrementare, deci B = A - 1);<br>
-    B = A++; // Valoarea lui B devine 2 (Valoarea lui A este 2, avem postincrementare, deci B = A);
+    int <span class="numbers">A</span> = 1, <span class="numbers">B</span>;<br>
+    <span class="numbers">A</span>++; <span class="comments">// Valoarea lui A devine 2.</span><br>
+    <span class="numbers">B</span> = --<span class="numbers">A</span>; <span class="comments">// Valoarea lui B devine 1 (Valoarea lui A este 2, avem predecrementare, deci B = A - 1);</span><br>
+    <span class="numbers">B</span> = <span class="numbers">A</span>++; <span class="comments">// Valoarea lui B devine 2 (Valoarea lui A este 2, avem postincrementare, deci B = A);</span>
 </p>
 
 
-<h2>9. Operatorul condițional ?</h2>
+<h2>9. Operatorul condițional <span class="functions">?</span></h2>
 
 <p>Operatorul condițional este singurul operator ternar (cu trei operanzi) din C++. Sintaxa lui este:</p>
 
-<p class="codeblock">expresie1 ? expresie2 : expresie3</p>
+<p class="codeblock"><span class="functions">expresie1</span> ? <span class="functions">expresie2</span> : <span class="functions">expresie3</span></p>
 
 <p>și se evaluează astfel:</p>
 
 <p class="codeblock">
-    1. se evaluează expresie1<br>
-    2. dacă rezultatul lui expresie1 este nenul (adevărat), se evaluează expresie2 și rezultatul acestei expresii va fi rezultatul operației ?<br>
-    3. dacă rezultatul lui expresie1 este nul (fals), se evaluează expresie3 și rezultatul acestei expresii va fi rezultatul operației ?</p>
-<p>expresie2 și expresie3 trebuie să aibă rezultate de același tip, sau de tipuri compatibile.</p>
+    <span class="functions">1</span>. se evaluează <span class="functions">expresie1</span><br>
+    <span class="functions">2</span>. dacă rezultatul lui <span class="functions">expresie1</span> este nenul (<span class="adevaratcolor">adevărat</span>), se evaluează <span class="functions">expresie2</span> și rezultatul acestei expresii va fi rezultatul operației <span class="functions">?</span><br>
+    <span class="functions">3</span>. dacă rezultatul lui <span class="functions">expresie1</span> este nul (<span class="falscolor">fals</span>), se evaluează <span class="functions">expresie3</span> și rezultatul acestei expresii va fi rezultatul operației <span class="functions">?</span></p>
+<p><span class="functions">expresie2</span> și <span class="functions">expresie3</span> trebuie să aibă rezultate de același tip, sau de tipuri compatibile.</p>
 
 <p class="codeblock">
-    int x;<br>
-    cin >> x;<br>
-    cout << (x % 2 == 0? "par" : "impar");
+    int <span class="numbers">x</span>;<br>
+    cin >> <span class="numbers">x</span>;<br>
+    cout << (<span class="numbers">x</span> % 2 == 0? <span class="strings">"par"</span> : <span class="strings">"impar"</span>);
 </p>
 
-<h2>10. Operatorul virgulă ,</h2>
+<h2>10. Operatorul virgulă <span class="functions">,</span></h2>
 
-<p>În anumite situații, regulile de sintaxă ale limbajului C++ solicită prezența unei singure operații, dar logica programului cere prezența mai multor operații. Acestea pot fi grupate cu ajutorul operatorului ,. Sintaxa acestei operații este:</p>
+<p>În anumite situații, regulile de sintaxă ale limbajului C++ solicită prezența unei singure operații, dar logica programului cere prezența mai multor operații. Acestea pot fi grupate cu ajutorul operatorului <span class="functions">,</span>. Sintaxa acestei operații este:</p>
 <p class="codeblock">
-    expresie1 , expresie2
+    <span class="functions">expresie1</span> , <span class="functions">expresie2</span>
 </p>
 <p>Modul de evaluare este:</p>
 <p class="codeblock">
-    1. se evaluează mai întâi expresie1, apoi expresie2<br>
-    2. rezultatul operației este rezultatul lui expresie2
+    <span class="functions">1</span>. se evaluează mai întâi <span class="functions">expresie1</span>, apoi <span class="functions">expresie2</span><br>
+    <span class="functions">2</span>. rezultatul operației este rezultatul lui <span class="functions">expresie2</span>
 </p>
 
 <p>Exemple:</p>
 <p class="codeblock">
-    int x , y , z;<br>
-    x = 1 , y = 2 , z = 3;<br>
-    x ++, y = x + 2, z -= x; <span class="comments">// este semnificativa ordinea in care s-au evaluat cele trei expresii</span><br>
-    cout << x << " " << y << " " << z; <span class="comments">// 2 4 1</span><br>
+    int <span class="numbers">x</span> , <span class="numbers">y</span> , <span class="numbers">z</span>;<br>
+    <span class="numbers">x</span> = 1 , <span class="numbers">y</span> = 2 , <span class="numbers">z</span> = 3;<br>
+    <span class="numbers">x</span> ++, <span class="numbers">y</span> = <span class="numbers">x</span> + 2, <span class="numbers">z</span> -= <span class="numbers">x</span>; <span class="comments">// este semnificativa ordinea in care s-au evaluat cele trei expresii</span><br>
+    cout << <span class="numbers">x</span> << " " << <span class="numbers">y</span> << " " << <span class="numbers">z</span>; <span class="comments">// 2 4 1</span><br>
 </p>
 
 
@@ -223,28 +223,28 @@
 
 <p>Exemple:</p>
 <p class="codeblock">
-int x = 2;<br>
-cout << 7 / x << endl; // 3 - este impartire intreaga<br>
-cout << 7 / (double) x; // 3.5 - este impartire zecimala
+int <span class="numbers">x</span> = 2;<br>
+cout << 7 / <span class="numbers">x</span> << endl; <span class="comments">// 3 - este impartire intreaga</span><br>
+cout << 7 / (double) <span class="numbers">x</span>; <span class="comments">// 3.5 - este impartire zecimala</span>
 </p>
 <p class="codeblock">
-char p = 'a';<br>
-cout << (int)p << endl; // 97, codul ASCII al lui 'a'<br>
-cout << p - 32 << endl; // 65<br>
-cout << (char)(p - 32); // A - carcaterul cu codul ASCII 65
+char <span class="numbers">p</span> = 'a';<br>
+cout << (int)<span class="numbers">p</span> << endl; <span class="comments">// 97, codul ASCII al lui 'a'</span><br>
+cout << <span class="numbers">p</span> - 32 << endl; <span class="comments">// 65</span><br>
+cout << (char)(<span class="numbers">p</span> - 32); <span class="comments">// A - carcaterul cu codul ASCII 65</span>
 </p>
 <h2>12. Alți operatori</h2>
 
 <p>Limbajul C++ conține și alți operatori, dintre care:</p>
 
 <p class="codeblock">
-    ( ) – modificarea priorității unei operații, apel de funcție<br>
-    [ ] – indexarea unui tablou<br>
-    ., -> – acces la membrii unei structuri<br>
-    &, * – referențiere (determinarea adresei unei variabile), dereferențiere (accesare variabilei de la o adresă)<br>
-    new, delete – alocare și dealocarea memoriei<br>
-    <<, >> – inserare și extragere din stream<br>
-    :: operatorul de rezoluție</p>
+    <span class="functions">( )</span> – modificarea priorității unei operații, apel de funcție<br>
+    <span class="functions">[ ]</span> – indexarea unui tablou<br>
+    <span class="functions">.</span>, <span class="functions">-></span> – acces la membrii unei structuri<br>
+    <span class="functions">&</span>, <span class="functions">*</span> – referențiere (determinarea adresei unei variabile), dereferențiere (accesare variabilei de la o adresă)<br>
+    <span class="functions">new</span>, <span class="functions">delete</span> – alocare și dealocarea memoriei<br>
+    <span class="functions"><<</span>, <span class="functions">>></span> – inserare și extragere din stream<br>
+    <span class="functions">:: operatorul de rezoluție</p>
 </body>
 
 

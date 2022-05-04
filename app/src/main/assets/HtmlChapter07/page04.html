@@ -1,0 +1,57 @@
+<body>
+    <h1><span class="functions">Interclasarea tablourilor</span></h1>
+
+    <p>Considerăm două <span class="functions">tablouri unidimensionale</span> cu elemente numere întregi ordonate crescător. Se dorește construirea unui alt tablou, care să conțină valorile din cele două tablouri, în ordine.
+    O soluție foarte eficientă este interclasarea:
+
+    considerăm două tablouri, cu <span class="numbers">n</span>, respectiv <span class="numbers">m</span> elemente, ordonate crescător
+    cele două tablouri se parcurg concomitent;
+    se alege valoarea mai mică dintre cele două elemente curente
+    se adaugă în al treilea tablou
+    se avansează numai în tabloul din care am ales valoarea de adăugat
+    parcurgerea unuia dintre cele două tablouri se încheie
+    toate elementele din celălalt tablou, neparcurse încă, sunt adăugate în tabloul destinație
+    tabloul destinație are <span class="numbers">p</span> = <span class="numbers">n</span> + <span class="numbers">m</span> elemente</p>
+
+
+    <table>
+        <tr>
+            <td>Tabloul 1</td>
+            <td>4</td><td>6</td><td>12</td><td>17</td>
+        </tr>
+        <tr>
+            <td>Tabloul 2</td>
+            <td>2</td><td>4</td><td>6</td><td>6</td><td>9</td><td>12</td><td>17</td>
+        </tr>
+        <tr>
+            <td>Tabloul 3</td>
+            <td>2</td><td>6</td><td>9</td>
+        </tr>
+    </table>
+
+
+    <p>Secvență C++:</p>
+<p class="codeblock">
+    int <span class="numbers">n</span>,<span class="numbers">a</span>[100000], <span class="numbers">m</span> , <span class="numbers">b</span>[100000], <span class="numbers">p</span>, <span class="numbers">c</span>[200000];<br>
+
+    <span class="comments">//citire a[] cu n elemente</span><br>
+    <span class="comments">//citire b[] cu m elemente</span><br>
+
+    int <span class="numbers">i</span> = 0 , <span class="numbers">j</span> = 0;<br>
+    <span class="numbers">p</span> = 0;<br>
+    while(<span class="numbers">i</span> < <span class="numbers">n</span> && <span class="numbers">j</span> < <span class="numbers">m</span>)<br>
+    &emsp;&emsp;if(<span class="numbers">a</span>[<span class="numbers">i</span>] < <span class="numbers">b</span>[<span class="numbers">j</span>])<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">c</span>[<span class="numbers">p</span> ++] = <span class="numbers">a</span>[<span class="numbers">i</span> ++];<br>
+    &emsp;&emsp;else<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">c</span>[<span class="numbers">p</span> ++] = <span class="numbers">b</span>[<span class="numbers">j</span> ++];<br>
+    while(<span class="numbers">i</span> < <span class="numbers">n</span>)<br>
+    &emsp;&emsp;<span class="numbers">c</span>[<span class="numbers">p</span> ++] = <span class="numbers">a</span>[<span class="numbers">i</span> ++];<br>
+    while(<span class="numbers">j</span> < <span class="numbers">m</span>)<br>
+    &emsp;&emsp;<span class="numbers">c</span>[<span class="numbers">p</span> ++] = <span class="numbers">b</span>[<span class="numbers">j</span> ++];
+</p>
+
+    <p>Observație: <br>Doar una dintre instrucțiunile while(<span class="numbers">i</span> < <span class="numbers">n</span>)... și while(<span class="numbers">j</span> < <span class="numbers">m</span>)... se va executa, deoarece exact una dintre condițiile <span class="numbers">i</span> < <span class="numbers">n</span> și <span class="numbers">j</span> < <span class="numbers">m</span> este adevărată. <br>În prima structură repetitivă, la fiecare pas, doar una dintre variabilele <span class="numbers">i</span> și <span class="numbers">j</span> se mărește, deci la final una dintre condiții este adevărată și una este falsă.
+<br>
+    Algoritmul de interclasare este foarte eficient. El are complexitate O(<span class="numbers">n</span>+<span class="numbers">m</span>). De asemenea, este posibilă și interclasarea valorilor din două fișiere, singura condiție este ca valorile să fie ordonate.
+    </p>
+</body>

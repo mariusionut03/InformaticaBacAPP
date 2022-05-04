@@ -1,107 +1,107 @@
 <body>
-<h1>Instrucțiunile repetitive</h1>
-<h2>Instrucțiunea while</h2>
-<p>Instrucțiunea while este o structură repetitivă cu număr necunoscut de pași și test inițial.</p>
+<h1>Instrucțiunile <span class="functions">repetitive</span></h1>
+<h2>Instrucțiunea <span class="functions">while</span></h2>
+<p><span class="functions">Instrucțiunea while</span> este o structură repetitivă cu număr necunoscut de pași și test inițial.</p>
 <p class="codeblock">
-    while (Expresie)<br>
-    Instructiune
+    while (<span class="functions">Expresie</span>)<br>
+    &emsp;&emsp;<span class="numbers">Instructiune</span>
 </p>
 
 <p>Mod de execuție</p>
 <p class="codeblock">
-    1. Se evaluează Expresie, iar rezultatul se convertește la bool<br>
-    2. Dacă rezultatul este true<br>
-    - Se execută Instructiune<br>
-    - Se reia pasul 1.<br>
-    3. Dacă rezultatul este false, se trece la instrucțiunea de după while.
+    <span class="functions">1</span>. Se evaluează Expresie, iar rezultatul se convertește la bool<br>
+    <span class="functions">2</span>. Dacă rezultatul este true<br>
+    &emsp;&emsp;<span class="functions">-</span> Se execută Instructiune<br>
+    &emsp;&emsp;<span class="functions">-</span> Se reia pasul 1.<br>
+    <span class="functions">3</span>. Dacă rezultatul este false, se trece la instrucțiunea de după while.
 </p>
 
 <p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
 <p class="codeblock">
     #include <span><</span>iostream><br>
     using namespace std;<br>
-    int main ()<br>
+    int <span class="functions">main</span> ()<br>
     {<br>
-    int n;<br>
-    cin >> n;<br>
-    int S = 0;<br>
-    int i = 1;<br>
-    while(i <= n)<br>
-    {<br>
-    S += i;<br>
-    i ++;<br>
-    }<br>
-    cout << S << endl;<br>
-    return 0;<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">S</span> = 0;<br>
+    &emsp;&emsp;int <span class="numbers">i</span> = 1;<br>
+    &emsp;&emsp;while(<span class="numbers">i</span> <= <span class="numbers">n</span>)<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">S</span> += <span class="numbers">i</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">i</span> ++;<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;cout << <span class="numbers">S</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
 
-<h2>Instrucțiunea do...while</h2>
-<p>Instrucțiunea do ... while este o structură repetitivă cu număr necunoscut de pași și test final.</p>
+<h2>Instrucțiunea <span class="functions">do...while</span></h2>
+<p><span class="functions">Instrucțiunea do ... while</span> este o structură repetitivă cu număr necunoscut de pași și test final.</p>
 <p class="codeblock">
     do<br>
-    Instructiune<br>
-    while ( Expresie );
+    &emsp;&emsp;<span class="numbers">Instructiune</span><br>
+    while ( <span class="functions">Expresie</span> );
 </p>
 <p>Mod de execuție</p>
 <p class="codeblock">
-    1. Se execută Instructiune<br>
-    2. Se evaluează Expresie. Rezultatul se convertește la bool.<br>
-    3. Dacă rezultatul este true, se reia pasul 1.<br>
-    4. Dacă rezultatul este false, se trece la instrucțiunea de după do ... while.
+    <span class="functions">1</span>. Se execută Instructiune<br>
+    <span class="functions">2</span>. Se evaluează Expresie. Rezultatul se convertește la bool.<br>
+    <span class="functions">3</span>. Dacă rezultatul este true, se reia pasul 1.<br>
+    <span class="functions">4</span>. Dacă rezultatul este false, se trece la instrucțiunea de după do ... while.
 </p>
 <p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
 <p class="codeblock">
     #include <span><</span>iostream><br>
     using namespace std;<br>
-    int main ()<br>
+    int <span class="functions">main</span> ()<br>
     {<br>
-    int n;<br>
-    cin >> n;<br>
-    int S = 0;<br>
-    int i = 1;<br>
-    do<br>
-    {<br>
-    S += i;<br>
-    i ++;<br>
-    }<br>
-    while(i <= n);<br>
-    cout << S << endl;<br>
-    return 0;<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">S</span> = 0;<br>
+    &emsp;&emsp;int <span class="numbers">i</span> = 1;<br>
+    &emsp;&emsp;do<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">S</span> += <span class="numbers">i</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">i</span> ++;<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;while(<span class="numbers">i</span> <= <span class="numbers">n</span>);<br>
+    &emsp;&emsp;cout << <span class="numbers">S</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
 
-<h2>Instrucțiunea for</h2>
-<p>Instrucțiunea for este o structură repetitivă cu număr necunoscut de pași și test inițial, echivalentă cu while.</p>
+<h2>Instrucțiunea <span class="functions">for</span></h2>
+<p>Instrucțiunea <span class="functions">for</span> este o structură repetitivă cu număr necunoscut de pași și test inițial, echivalentă cu while.</p>
 <p class="codeblock">
-    for (Expresie_de_Initializare ; Expresie_de_Testare ; Expresie_de_Continuare)<br>
-    Instructiune
+    for (<span class="functions">Expresie_de_Initializare</span> ; <span class="functions">Expresie_de_Testare</span> ; <span class="functions">Expresie_de_Continuare</span>)<br>
+    &emsp;&emsp;<span class="numbers">Instructiune</span>
 </p>
 
 <p>Mod de execuție</p>
 <p class="codeblock">
-    1. Se evaluează Expresie_de_Initializare<br>
-    2. Se evaluează Expresie_de_Testare. Rezultatul se convertește la bool.<br>
-    3. Dacă rezultatul este true:<br>
-    - Se execută Instructiune.<br>
-    - Se evaluează Expresie_de_Continuare.<br>
-    - Se revine la pasul 2.<br>
-    4. Dacă rezultatul este false, se trece la instrucțiunea de după for.
+    <span class="functions">1</span>. Se evaluează Expresie_de_Initializare<br>
+    <span class="functions">2</span>. Se evaluează Expresie_de_Testare. Rezultatul se convertește la bool.<br>
+    <span class="functions">3</span>. Dacă rezultatul este true:<br>
+    &emsp;&emsp;<span class="functions">-</span> Se execută Instructiune.<br>
+    &emsp;&emsp;<span class="functions">-</span> Se evaluează Expresie_de_Continuare.<br>
+    &emsp;&emsp;<span class="functions">-</span> Se revine la pasul 2.<br>
+    <span class="functions">4</span>. Dacă rezultatul este false, se trece la instrucțiunea de după for.
 </p>
 
 <p>Exemplu: Următorul program citește valoarea variabilei n și calculează suma primelor n numere naturale.</p>
 <p class="codeblock">
     #include <span><</span>iostream><br>
     using namespace std;<br>
-    int main ()<br>
+    int <span class="functions">main</span> ()<br>
     {<br>
-    int n;<br>
-    cin >> n;<br>
-    int S = 0;<br>
-    for(int i = 1; i <= n ; i ++)<br>
-    S += i;<br>
-    cout << S << endl;<br>
-    return 0;<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">S</span> = 0;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 1; <span class="numbers">i</span> <= <span class="numbers">n</span> ; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">S</span> += <span class="numbers">i</span>;<br>
+    &emsp;&emsp;cout << <span class="numbers">S</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
 </body>

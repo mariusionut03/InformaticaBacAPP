@@ -1,278 +1,58 @@
 <body>
-    <h1>Sortarea vectorilor</h1>
+    <h1><span class="functions">2. Cifrele unui numar</span></h1>
+    <p>Să ne gândim la un număr (natural), <span class="numbers">n</span> = 274.<br>
+        Constatăm că putem determina ultima cifră a numărului cu operația % 10 – restul împărțirii la 10. Deci, 274 % 10 este 4, adică ultima cifră a numarului.<br>
+        Cum putem determina cifra zecilor? Sigur, o soluție ar fi <span class="numbers">n</span> % 100 / 10. <span class="numbers">n</span> % 100 este 74, iar 74 /10 este 7.<br>
+            Dar mai există o variantă, mai utilă pe termen lung. Știm că <span class="numbers">n</span> % 10 reprezintă cifra unităților lui <span class="numbers">n</span> și vrem să determinăm cifra zecilor. Putem să modificăm mai întâi valoarea lui <span class="numbers">n</span>, astfel: <span class="numbers">n</span> = <span class="numbers">n</span> / 10, și să determinăm ultima cifră a acestui număr. Este cifra unităților pentru valoarea curentă a lui <span class="numbers">n</span> și cifra zecilor pentru valoarea inițială.</p>
 
-    metoda bulelor se bazează pe următoare idee:
+    <p class="codeblock">int <span class="numbers">n</span> = 274;<br>
+        cout << <span class="numbers">n</span> % 10; <span class="comments">// se va afisa 4</span><br>
+        <span class="numbers">n</span> = <span class="numbers">n</span> / 10; <span class="comments">// n devine 27</span><br>
+        cout << <span class="numbers">n</span> % 10; <span class="comments">// se va afisa 7</span></p>
 
-    fie un vector X[] cu n elemente
-    parcurgem vectorul și pentru oricare două elemente învecinate care nu sunt în ordinea dorită, le interschimbăm valorile
-    după o singură parcurgere, vectorul nu se va sorta, dar putem repeta parcurgerea
-    dacă la o parcurgere nu se face nicio interschimbare, vectorul este sortat
-    O reprezentare a algoritmului este:
+    <p>Astfel, se conturează următorul program pentru determinarea cifrelor unui număr:</p>
+    <p class="codeblock">
+        #include <span><</span>iostream><br>
+        using namespace std;<br>
+        int <span class="functions">main</span>()<br>
+        {<br>
+        &emsp;&emsp;int <span class="numbers">n</span>;<br>
+        &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+        &emsp;&emsp;while(<span class="numbers">n</span> != 0) <span class="comments">// cat timp n este nenul - mai are cifre</span><br>
+        &emsp;&emsp;{<br>
+        &emsp;&emsp;&emsp;&emsp;int <span class="numbers">uc</span> = <span class="numbers">n</span> % 10; <span class="comments">//determinam ultima cifra a lui n</span><br>
+        &emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">uc</span> << <span class="strings">" "</span>; <span class="comments">// prelucram ultima cifra</span><br>
+        &emsp;&emsp;&emsp;&emsp;<span class="numbers">n</span> /= 10;    <span class="comments">// eliminam ultima cifra (trunchiem numarul)</span><br>
+        &emsp;&emsp;}<br>
+        &emsp;&emsp;return 0;<br>
+        }
+    </p>
+    <p>Daca n = 274, programul va afisa: </p>
+    <p class="codeblock"><span class="comments">// Output: 4 7 2</span></p>
 
-    cat timp vectorul nu este sortat
-    presupunem că vectorul este sortat
-    parcurgem vectorul
-    dacă două elemente învecinate nu sunt în ordinea dorită
-    le interschimbăm
-    schimbăm presupunerea inițială
-    Exemplu: Să ordonăm următorul vector, în care n=5:
+    <h2><span class="functions">Construirea unui număr cu cifre date</span></h2>
 
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>Element</td>
-            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-    </table>
+    <p>
+        Să considerăm următorul șir de cifre, în ordine: <span class="functions">2 8 5 3</span><br>
+        Cu ele se poate construi un număr, astfel:<br>
+        <span class="functions">-</span> pornim de la valoarea R = 0;<br>
+        <span class="functions">-</span> cifrele se adaugă în ordine.<br><br>
 
-    După prima parcurgere vectorul are următoarea structură:
+        Dacă cifrele se adaugă la sfârșit, procedăm astfel:<br>
+        <span class="functions">1</span>. R = 0<br>
+        <span class="functions">2</span>. c = 2. R = 10 * R + c, adică R devine 10 * 0 + 2 = 2<br>
+        <span class="functions">3</span>. c = 8. R = 10 * R + c, adică R devine 10 * 2 + 8 = 28<br>
+        <span class="functions">4</span>. c = 5. R = 10 * R + c, adică R devine 10 * 28 + 5 = 285<br>
+        <span class="functions">5</span>. c = 3. R = 10 * R + c, adică R devine 10 * 285 + 3 = 2853<br><br>
 
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>IV</td>
-            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>V</td>
-            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
-        </tr>
-        <tr>
-            <td>VI</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>VII</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-    </table>
+        Dacă cifrele se inserează la început, procedăm astfel:<br>
+        <span class="functions">1</span>. R = 0<br>
+        <span class="functions">2</span>. c = 2. R = R + 1 * c, adică R devine 0 + 1 * 2 = 2<br>
+        <span class="functions">3</span>. c = 8. R = R + 10 * c, adică R devine 2 + 8 * 10 = 82<br>
+        <span class="functions">4</span>. c = 5. R = R + 100 * c, adică R devine 82 + 100 * 5 = 582<br>
+        <span class="functions">5</span>. c = 3. R = R + 1000 * c, adică R devine 582 +1000 * 3 = 3582<br><br>
 
-
-
-    După o nouă parcurgere, vectorul este:
-
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>IV</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>V</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>VI</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-    </table>
-
-    Îl parcurgem din nou:
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>IV</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>V</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>VI</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-    </table>
-
-
-
-
-
-
-    O secvență C++:
-
-<p class="codeblock">
-    int n, v[100];<br>
-    //citire v[] cu n elemente<br>
-    bool sortat;<br>
-    do<br>
-    {<br>
-    sortat = true;<br>
-    for(int i = 0 ; i < n - 1 ; i ++)<br>
-    if(v[i] > v[i+1])<br>
-    {<br>
-    int aux = v[i];<br>
-    v[i] = v[i+1];<br>
-    v[i+1] = aux;<br>
-    sortat = false;<br>
-    }<br>
-    }<br>
-    while(!sortat);
-</p>
-
-
-    Observație: La fiecare parcurgere cel puțin un element ajunge pe poziția sa finală:
-
-    la prima parcurgere cel mai mare element al vectorului ajunge pe poziția sa finală;
-    la a doua parcurgere următorul cel mai mare element ajunge pe poziția finală;
-    Observăm că nu mai are rost să parcurgem aceste elemente, fixate. Astfel, putem parcurge vectorul numai până la indicele unde s-a făcut ultima interschimbare la parcurgerea anterioară.
-
-Parcurgere 1:
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>47</td><td>23</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>23</td><td>47</td><td>12</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>IV</td>
-            <td>23</td><td>12</td><td>47</td><td>17</td><td>30</td>
-        </tr>
-        <tr>
-            <td>V</td>
-            <td>23</td><td>12</td><td>17</td><td>47</td><td>30</td>
-        </tr>
-        <tr>
-            <td>VI</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>VII</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-    </table>
-
-Parcurgere 2
-
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>23</td><td>12</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>12</td><td>23</td><td>17</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>IV</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>V</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-    </table>
-
-
-Parcurgere 3
-
-    <table>
-        <tr>
-            <td>Indice</td>
-            <td>0</td><td>1</td><td>2</td><td>3</td><td>4</td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>II</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-        <tr>
-            <td>III</td>
-            <td>12</td><td>17</td><td>23</td><td>30</td><td>47</td>
-        </tr>
-    </table>
-
-    O secvență C++:
-
-<p class="codeblock">
-    int n, v[100];<br>
-    //citire v[] cu n elemente<br>
-    bool sortat;<br>
-    int m = n;<br>
-    do<br>
-    {<br>
-    sortat = true;<br>
-    int p = m;<br>
-    for(int i = 0 ; i < p - 1 ; i ++)<br>
-    if(v[i] > v[i+1])<br>
-    {<br>
-    int aux = v[i];<br>
-    v[i] = v[i+1];<br>
-    v[i+1] = aux;<br>
-    sortat = false;<br>
-    m = i + 1;<br>
-    }<br>
-    }<br>
-    while(!sortat);
-</p>
+        Ambele metode folosesc de fapt scrierea zecimală a numărului:<br>
+        3582 = 0 + 1 * 2 + 10 * 8 + 100 * 5 + 1000 * 3
+    </p>
 </body>

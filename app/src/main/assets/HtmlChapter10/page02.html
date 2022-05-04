@@ -1,0 +1,76 @@
+<body><h1>Siruri de caractere in C++</h1>
+<p>Un sir de caractere este un tablou unidimensional(vector) ce contine caractere.</p>
+<p>Astfel, pentru reprezentarea în C/C++ a cuvântului copil, care are 5 caractere, se vor folosi 6 octeți, cu valorile: <span class="strings">'c'</span>, <span class="strings">'o'</span>, <span class="strings">'p'</span>, <span class="strings">'i'</span>, <span class="strings">'l'</span>, <span class="strings">'\0'</span>.</p>
+<p>În reprezentarea internă, după ultimul caracter (byte, octet) valid din șir se află caracterul '\0' – caracterul cu codul ASCII 0, numit și caracter nul. Toate sirurile de caracter il contin la final, el marcand sfarsitul. Astfel, cand vrem sa reprezentam un cuvant de maxim 10 litere, vom declara vectorul cu maxim 11.</p>
+
+<h2>Declararea unui șir de caractere</h2>
+<p class="codeblock">
+    char <span class="numbers">s</span>[11]; <span class="comments">// putem memora in sir maxim 10 caractere</span><br>
+    char <span class="numbers">s</span>[11] = <span class="strings">"copil"</span>; <span class="comments">// Se folosesc doar 6 caractere (5 + cel nul)</span><br>
+    char <span class="numbers">t</span>[]= <span class="strings">"copil"</span>; <span class="comments">// se aloca automat 6 octeti</span><br>
+    char <span class="numbers">x</span>[6]={<span class="strings">'c'</span>, <span class="strings">'o'</span>, <span class="strings">'p'</span>, <span class="strings">'i'</span>, <span class="strings">'l'</span>, <span class="strings">'\0'</span>};<br>
+    char <span class="numbers">z</span>[]={<span class="strings">'c'</span>, <span class="strings">'o'</span>, <span class="strings">'p'</span>, <span class="strings">'i'</span>, <span class="strings">'l'</span>, <span class="strings">'\0'</span>}; <span class="comments">// se aloca automat 6 octeti pentru sir</span>
+</p>
+
+<h2>Afișarea unui șir de caractere</h2>
+<p class="codeblock">
+    cout << <span class="numbers">s</span> << endl;
+</p>
+<h2>Citirea unui șir de caractere</h2>
+<p class="codeblock">
+    cin >> <span class="numbers">s</span>;
+</p>
+<p>Nu se poate citi un sir cu spatii daca folosim operatorul <span class="strings">'>>'</span>.</p>
+<p>Pentru a citi șiruri care conțin spații, putem folosi metoda <span class="strings">'getline'</span>.</p>
+
+<p class="codeblock">cin.getline(<span class="numbers">s</span> , 11);</p>
+
+<p>Un exemplu in C++:</p>
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>{<br>
+    &emsp;&emsp;char <span class="numbers">nume1</span>[31], <span class="numbers">nume2</span>[31];<br>
+    &emsp;&emsp;cout << <span class="strings">"Cum te cheama? (nume, prenume) "</span>;<br>
+    &emsp;&emsp;cin.getline(<span class="numbers">nume1</span>, 31);<br>
+    &emsp;&emsp;cout << <span class="strings">"Cum il cheama pe prietenule tau? "</span>;<br>
+    &emsp;&emsp;cin.getline(<span class="numbers">nume2</span> , 31);<br>
+    &emsp;&emsp;cout << <span class="strings">"Te numesti "</span> << <span class="numbers">nume1</span> << endl;<br>
+    &emsp;&emsp;cout << <span class="strings">"Esti prieten cu "</span> << <span class="numbers">nume2</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
+    }
+</p>
+
+<h2>Referirea unui caracter din șir</h2>
+<p>Deoarece șirurile de caractere sunt de fapt tablouri, pentru referirea unui caracter din șir se folosește operatorul [], ca în exemplul următor:</p>
+<p class="codeblock">
+    char <span class="numbers">s</span>[]=<span class="strings">"abac"</span>; <span class="comments">// sirul consta din 5 caractere: cele 4 litere si caracterul nul '\0'</span><br>
+    cout << <span class="numbers">s</span>[3]; <span class="comments">// c</span><br>
+    <span class="numbers">s</span>[1] = <span class="strings">'r'</span>;<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// arac</span>
+</p>
+
+<h2>Parcurgerea unui sir de caractere</h2>
+<p>Sunt unele probleme unde trebuie sa parcurgem tot sirul de caractere pentru a verifica anumite caractere sau pentru a edita fiecare caracter in parte. Avem momente cand nu stim cate caractere contine sirul. Mai jos avem doua variante:</p>
+<p class="codeblock">
+    char <span class="numbers">s</span>[11];<br>
+    cin.getline(<span class="numbers">s</span>);<br>
+    int <span class="numbers">i</span> = 0;<br>
+    while(<span class="numbers">s</span>[<span class="numbers">i</span>] != <span class="strings">'\0'</span>)<br>
+    {<br>
+    &emsp;&emsp;<span class="comments">// Instructiuni asupra caracterului de pe pozitia i;</span><br>
+    &emsp;&emsp;<span class="numbers">i</span> ++;<br>
+    }
+</p>
+
+<p>Sau, putem folosi functia <span class="strings">'strlen'</span>, care returneaza lungimea sirului:</p>
+<p class="codeblock">
+    #include <span><</span>iostream>;<br>
+    #include <span><</span>cstring>;<br>
+    [...] <span class="comments">// Includem la inceputul programului libraria 'cstring' pentru a putea accesa comanda 'strlen'</span><br>
+    for(int <span class="numbers">i</span> = 0; <span class="numbers">i</span> < strlen(<span class="numbers">s</span>); <span class="numbers">i</span>++)<br>
+    {<br>
+    &emsp;&emsp;<span class="comments">//Instrunctiuni asupra caracterului de pe pozitia i, accesat cu s[i];</span><br>
+    }
+</p>
+</body>

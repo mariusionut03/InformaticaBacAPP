@@ -1,30 +1,33 @@
 <body>
-<h1>Eliminarea și inserarea unui caracter într-un șir</h1>
+<h1><span class="functions">Recursivitatea</span></h1>
+<p><span class="functions">Recursivitatea</span> reprezintă proprietatea unor noțiuni de a se defini prin ele însele.</p>
 
-<p>Acestea sunt operații frecvente și pot fi realizate cu ajutorul funcției strcpy. Deoarece comportamentul funcției strcpy este impredictibil dacă parametri se suprapun, este necesară utilizarea unui șir suplimentar.</p>
-
-
-<h2>Eliminarea unui caracter dintr-un sir</h2>
-<p>Următoarea secvență elimină din șirul s (presupus citit) caracterul de poziția x.</p>
-
+<p>Să scriem o funcție C++ care returnează factorialul unui număr natural transmis ca parametru. Varianta nerecursivă (iterativă) este următoarea:</p>
 <p class="codeblock">
-    char s[256], t[256];<br>
-    int x;<br>
-    // ...<br>
-    //eliminarea<br>
-    strcpy(t , s + x + 1);<br>
-    strcpy(s + x , t);
+    int <span class="functions">fact</span>(int <span class="numbers">n</span>)<br>{<br>
+    &emsp;&emsp;int <span class="numbers">p</span> = 1;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 1 ; <span class="numbers">i</span> <= <span class="numbers">n</span> ; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">p</span> = <span class="numbers">p</span> * <span class="numbers">i</span>;<br>
+    &emsp;&emsp;return <span class="numbers">p</span>;<br>
+    }
 </p>
 
-<h2>Inserarea unui caracter într-un sir</h2>
-<p>Următoarea secvență inserează în șirul s (presupus citit) de poziția x caracterul 'A'.</p>
+<p>O variantă recursivă pentru determinarea lui <span class="functions">n!</span>:</p>
 <p class="codeblock">
-    char s[256], t[256];<br>
-    int x;<br>
-    // ...<br>
-    //inserarea<br>
-    strcpy(t , s + x);<br>
-    strcpy(s + x + 1 , t);<br>
-    s[x] = 'A'; // echivalent, *(s+x) = 'A';
+    int <span class="functions">fact</span>(int <span class="numbers">n</span>)<br>{<br>
+    &emsp;&emsp;if(<span class="numbers">n</span> == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;return 1;<br>
+    &emsp;&emsp;else<br>
+    &emsp;&emsp;&emsp;&emsp;return <span class="numbers">n</span> * <span class="functions">fact</span>(<span class="numbers">n</span>-1);<br>
+    }
 </p>
+
+<h2><span class="functions">Cum functioneaza recursivitatea?</span></h2>
+<p>Chemam subprogramul <span class="strings">'fact'</span> de mai sus cu <span class="numbers">n</span> = 4.</p>
+<p>Dupa verificarea valorii lui 4, va trebui sa returnam 4 * <span class="functions">fact</span>(3).</p>
+<p>Astfel, calculam <span class="functions">fact</span>(3) si va trebui sa returnam 3 * <span class="functions">fact</span>(2).</p>
+<p>Dupa, calculam <span class="functions">fact</span>(2) si va trebui returnat 2 * <span class="functions">fact</span>(1).</p>
+<p>Dupa, calculam <span class="functions">fact</span>(1) si va trebui returnat 1 * <span class="functions">fact</span>(0).</p>
+<p>Acum, <span class="functions">fact</span>(0) stim ca este 1. Acum putem face calculele.</p>
+<p><span class="functions">fact</span>(1) este 1 * 1 = 2; <span class="functions">fact</span>(2) este 2 * 1 = 2; <span class="functions">fact</span>(3) este 3*2 = 6 si <span class="functions">fact</span>(4) este 4 * 6 = 24.</p>
 </body>

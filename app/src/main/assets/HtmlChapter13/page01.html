@@ -1,1 +1,54 @@
-<body><h1>Chapter 13</h1></body>
+<body>
+<h1>Structuri de date liniare</h1>
+<h2>Stiva</h2>
+
+<p><span class="functions">Stiva</span> (stack) este o structură de date liniară abstractă, pentru care sunt definite operațiile de adăugare a unui element și eliminare a unui element și aceste operații se realizează la un singur capăt al structurii, numit vârful stivei.
+<br><br>
+    În timpul operațiilor cu stiva avem acces numai la elementul din vârful stivei.</p>
+
+<h3>Operații cu stiva</h3>
+
+<p class="codeblock">
+    Cu o stivă se pot face următoarele operații:<br>
+    <span class="functions">-</span> inițializarea stivei – crearea unei stive vide;<br>
+    <span class="functions">-</span> verificarea faptului că o stivă este sau nu vidă;<br>
+    <span class="functions">-</span> adăugarea unui nou element pe stivă – elementul devine vârful stivei. Operația se numește push;<br>
+    <span class="functions">-</span> eliminarea unui element de pe stivă – se va elimina vârful stivei. Un nou element devine vârf al stivei, sau ea devine vidă. Operația se numește pop;<br>
+    <span class="functions">-</span> identificarea valorii elementului din vârful stivei – accesul la acel element Operația se numește top.
+</p>
+
+<p>Imaginati-va un pachet de gume de mestecat. Il deschidem de la un capat si avem acces doar la guma din acel capat. Ea trebuie scoasa pentru a avea acces la urmatoarea.</p>
+
+<h3>Modalități de implementare a stivei</h3>
+<p>La fel ca în cazul cozii, stiva poate fi implementată în limbajul C++ în mai multe moduri:
+<br><br>
+    <span class="functions">-</span> implementare statică, prin intermediul tablourilor;<br>
+    <span class="functions">-</span> implementare dinamică, prin intermediul listelor alocate dinamic;<br>
+    <span class="functions">-</span> folosirea containerului stack din STL.<br>
+    Acest articol prezintă implementarea statică și folosirea STL.</p>
+
+<h3>Implementarea statică a stivei</h3>
+<p>Vom folosi un tablou alocat static și o variabilă simplă prin care identificăm vârful stivei. În continuare considerăm o stivă cu elemente întregi.</p>
+
+<p class="codeblock">
+    <span class="comments">// Declaratii</span><br>
+    const int <span class="numbers">DIM</span> = 100;<br>
+    int <span class="numbers">S</span>[<span class="numbers">DIM</span>], <span class="numbers">vf</span>;<br>
+    <br>
+    <span class="comments">// Inițializarea stivei – crearea unei stive vide</span><br>
+    <span class="numbers">vf</span> = 0;<br>
+    <br>
+    <span class="comments">// Verificarea faptului că stiva este vidă</span><br>
+    <span class="numbers">vf</span> == 0 <span class="comments">// stivă vidă</span><br>
+    <span class="numbers">vf</span> > 0 <span class="comments">// stivă nevidă</span><br>
+    <br>
+    <span class="comments">// Adăugarea unui element – PUSH</span><br>
+    <span class="numbers">S</span>[<span class="numbers">vf</span>++] = <span class="numbers">_VALOARE</span> ;<br>
+    <br>
+    <span class="comments">// Eliminarea unui element – POP</span><br>
+    <span class="numbers">vf</span> --;<br>
+    <br>
+    <span class="comments">// Identificarea valorii din vârful stivei – TOP</span><br>
+    <span class="numbers">S</span>[<span class="numbers">vf</span>-1];
+</p>
+</body>

@@ -1,0 +1,54 @@
+<body>
+<h1><span class="functions">Vectorul de frecventa</span></h1>
+<p>Problema: Sa se afle de cate ori apare fiecare cifra in numarul <span class="numbers">n</span> citit de la tastatura.</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">frecv</span>[10];<br>
+    &emsp;&emsp;int <span class="numbers">n</span>; cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;while(<span class="numbers">n</span> != 0)<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">frecv</span>[<span class="numbers">n</span> % 10]++;<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">n</span> /= 10;<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;return 0;<br>
+    }
+</p>
+<p>Pentru <span class="numbers">n</span> = 122224433980, vectorul de frecventa va arata astfel: </p>
+
+<table>
+    <tr>
+        <td>Index</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+    </tr>
+    <tr>
+        <td>Valoare</td>
+        <td>1</td>
+        <td>1</td>
+        <td>4</td>
+        <td>2</td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<p>Interpretare: Elementul cu index-ul 2 din vector, are valoarea 4, numarul de aparitii a cifrei 2 in numarul <span class="numbers">n</span>.</p>
+
+<p>Acesta este modul de functionare a vectorului de frecventa. El este folosit foarte des la subiectul 3, exercitiul 3 la examenul de bacalaureat deoarece este foarte eficient fata de alte modalitati de rezolvare.</p>
+</body>

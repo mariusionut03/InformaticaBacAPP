@@ -1,0 +1,21 @@
+<body>
+<h1><span class="functions">4. Șirul lui Fibonacci</span></h1>
+<p>Numerele Fibonacci sunt numere naturale care fac parte din următorul șir, în care fiecare număr este egal cu suma celor două de dinainte:</p>
+<p>1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …</p>
+<p>Termenul <span class="numbers">F<sub>n</sub></span> este calculat prin următoarea relație de recurență:</p>
+<p><span class="numbers">F<sub>n</sub></span> = <span class="numbers">F<sub>n-1</sub></span> + <span class="numbers">F<sub>n-2</sub></span></p>
+<p>cu valorile inițiale <span class="numbers">F<sub>1</sub></span>=1, <span class="numbers">F<sub>2</sub></span>=1</p>
+<h2><span class="functions">Algoritm</span></h2>
+<p>Cum determinăm primii <span class="numbers">N</span> termeni din șirul lui Fibonacci? Vom folosi trei variabile simple <span class="numbers">a b c</span>. Două dintre ele vor reprezenta termenii anteriori <span class="numbers">F<sub>n-1</sub></span> și <span class="numbers">F<sub>n-2</sub></span>, iar a treia va reprezenta termenul curent <span class="numbers">F<sub>n</sub></span>:</p>
+<p class="codeblock">
+    <span class="numbers">a</span> ← 1<br>
+    <span class="numbers">b</span> ← 1<br>
+    scrie <span class="numbers">a</span>, <span class="numbers">b</span><br>
+    <span class="comments">┏━</span> pentru <span class="numbers">i</span> ← 3, <span class="numbers">n</span> execută<br>
+    <span class="comments">┃</span> <span class="numbers">c</span> ← <span class="numbers">a</span> + <span class="numbers">b</span><br>
+    <span class="comments">┃</span> scrie <span class="numbers">c</span><br>
+    <span class="comments">┃</span> <span class="numbers">a</span> ← <span class="numbers">b</span><br>
+    <span class="comments">┃</span> <span class="numbers">b</span> ← <span class="numbers">c</span><br>
+    <span class="comments">┗━■</span>
+</p>
+</body>

@@ -1,8 +1,8 @@
 <body>
     <h1>Intrari/Iesiri in C++</h1>
     <p>Operațiile de de intrare/ieșire sunt operațiile prin care un program primește date sau afișează rezultate.</p>
-    <p>1. Operatii de intrare: datele intra in program, programul citeste date</p>
-    <p>2. Operatii de iesire: datele ies din program, programul afiseaza date</p>
+    <p>1. <span class="functions">Operatii de intrare</span>: datele intra in program, programul <span class="functions">citeste</span> date</p>
+    <p>2. <span class="functions">Operatii de iesire</span>: datele ies din program, programul <span class="functions">afiseaza</span> date</p>
     <br>
     <p>Limbajul C++ oferă o modalitate uniformă de a realiza operațiile de intrare/ieșire. Este vorba despre stream sau flux. Stream-ul poate fi privit ca o înșiruire de caractere care sunt trimise într-o ordine bine determinată de la o sursă la o destinație. Programul va insera caractere în stream (dacă este un stream de ieșire, care afișează date) sau va extrage caractere din stream (dacă este un stream de intrare, din care se citesc date).</p>
     <br>
@@ -16,62 +16,62 @@
         <span class="strings">Ecran</span>
     </p>
     <h2>Stream-ul de ieșire cout</h2>
-    <p>Pentur afisatul pe ecran, o sa folosim stream-ul cout. El foloseste operatorul de insertie <<, urmat de ce se va afisa.</p>
+    <p>Pentru afisatul pe ecran, o sa folosim stream-ul cout. El foloseste operatorul de insertie <span class="functions"><<</span>, urmat de ce se va afisa.</p>
     <p class="codeblock">
-        <span class="functions">cout</span> << <span class="strings">1234</span>; <span class="comments">// Afisare: 1234</span><br>
-        <span class="functions">cout</span> << <span class="strings">"Salutare"</span>; <span class="comments">// Afisare: Salutare</span><br>
-        <span class="functions">cout</span> << <span class="strings">a</span>; <span class="comments">// Afisare: (valoarea variabilei a)</span>
+        cout << <span class="strings">1234</span>; <span class="comments">// Afisare: 1234</span><br>
+        cout << <span class="strings">"Salutare"</span>; <span class="comments">// Afisare: Salutare</span><br>
+        cout << <span class="strings">a</span>; <span class="comments">// Afisare: (valoarea variabilei a)</span>
     </p>
 
     <p>Putem afișa mai multe valori în aceeași instrucțiune:</p>
     <p class="codeblock">
         int <span class="functions">varsta_necesara</span> = 18;<br>
-        <span class="functions">cout</span>
+        cout
         << <span class="strings">"Varsta necesara este de "</span>
-        << <span class="strings">varsta_necesara</span>
+        << <span class="functions">varsta_necesara</span>
         << <span class="strings">" ani."</span>;<br>
-        <p class="comments">// Afisare: Varsta necesara este de 18 ani.</p>
+        <span class="comments">// Afisare: Varsta necesara este de 18 ani.</span>
     </p>
 
-    <p>cout nu adaugă automat sfârșit de linie sau spatii. De exemplu:</p>
-    <p class="codeblock">cout << "Aceasta este";<br>
-        cout << "o propozitie.";<br>
+    <p><span class="functions">Cout</span> nu adaugă automat sfârșit de linie sau spatii. De exemplu:</p>
+    <p class="codeblock">cout << <span class="strings">"Aceasta este"</span>;<br>
+        cout << <span class="strings">"o propozitie."</span>;<br>
         <span class="comments">//Afiseaza: Aceasta esteo propozitie."</span>
     </p>
-    <p>Trebuie sa punem spatiul noi: </p>
-    <p class="codeblock">cout << "Aceasta este "; <span class="codeblock">//Am pus un spatiu dupa 'este'</span><br>
-        cout << "o propozitie.";<br>
+    <p>Trebuie sa punem noi spatiul: </p>
+    <p class="codeblock">cout << <span class="strings">"Aceasta este "</span>; <span class="codeblock">//Spatiu dupa 'este'</span><br>
+        cout << <span class="strings">"o propozitie."</span>;<br>
         <span class="comments">//Afiseaza: Aceasta este o propozitie."</span>
     </p>
 
-    <p>Dacă vrem să afișăm pe linii diferite, adaugam '\n' pentru a trece pe linia urmatoare:</p>
+    <p>Dacă vrem să afișăm pe linii diferite, adaugam '<span class="functions">\n</span>' pentru a trece pe linia urmatoare:</p>
     <p class="codeblock">
-        cout << "Aceasta este o\n";<br>
-        cout << "propozitie mai lunga!";
+        cout << <span class="strings">"Aceasta este o</span><span class="functions">\n</span><span class="strings">"</span>;<br>
+        cout << <span class="strings">"propozitie mai lunga!"</span>;
     </p>
     <p>Sau putem folosi manipulatorul endl:</p>
     <p class="codeblock">
-        cout << "Aceasta este o" << endl;<br>
-        cout << "propozitie mai lunga!";
+        cout << <span class="strings">"Aceasta este o"</span> << <span class="functions">endl</span>;<br>
+        cout << <span class="strings">"propozitie mai lunga!"</span>;
     </p>
 
     <h2>Stream-ul de intrare cin</h2>
-    <p>cin se folosește împreună cu operatorul de extragere >>, urmat de variabila în care se va memora valoarea extrasă (variabila care se va citi). In cele mai multe cazuri, dispozitivul de intrare este tastatura.</p>
+    <p><span class="functions">Cin</span> se folosește împreună cu operatorul de extragere <span class="functions">>></span>, urmat de variabila în care se va memora valoarea extrasă (variabila care se va citi). In cele mai multe cazuri, dispozitivul de intrare este tastatura.</p>
     <p class="codeblock">
-        int n;<br>
-        cin >> n;
+        int <span class="numbers">n</span>;<br>
+        cin >> <span class="numbers">n</span>;
     </p>
-    <p>Mai întâi se declară variabila n, apoi se citește o valoare pentru ea – se extrage din cin o valoare care se memorează în variabila n. La execuție, programul așteaptă să se introducă o valoare de la tastatură. De fapt, caracterele introduse sunt transmise programului numai când se apasă tasta ENTER.</p>
+    <p>Mai întâi se declară variabila n, apoi se citește o valoare pentru ea – se extrage din cin o valoare care se memorează în variabila n. La execuție, programul așteaptă să se introducă o valoare de la tastatură. Caracterele introduse sunt transmise programului numai când se apasă tasta ENTER.</p>
     <p class="codeblock">
-        #include <iostream><br>
+        #include <span class="functions"><span><</span>iostream></span><br>
         using namespace std;<br>
-        int main()<br>
+        int <span class="functions">main</span>()<br>
         {<br>
-        int n;<br>
-        cin >> n;<br>
-        cout << "n este " << n << endl;<br>
-        cout << "patratul lui n este " << n * n << endl;<br>
-        return 0;<br>
+        &emsp;&emsp;int <span class="numbers">n</span>;<br>
+        &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+        &emsp;&emsp;cout << <span class="strings">"n este "</span> << <span class="numbers">n</span> << endl;<br>
+        &emsp;&emsp;cout << <span class="strings">"patratul lui n este "</span> << <span class="numbers">n</span> * <span class="numbers">n</span> << endl;<br>
+        &emsp;&emsp;return <span class="numbers">0</span>;<br>
         }<br>
 
         <span class="comments">// Daca citim numarul 5 pentru variabila n, se va afisa: </span><br>
@@ -79,8 +79,8 @@
     </p>
 
     <p>Se pot citi valorile a două sau mai multe variabile în aceeași instrucțiune:</p>
-    <p class="codeblock">cin >> x >> y;</p>
+    <p class="codeblock">cin >> <span class="numbers">x</span> >> <span class="numbers">y</span>;</p>
     <p>este echivalent cu</p>
-    <p class="codeblock">cin >> x;<br>
-        cin >> y;</p>
+    <p class="codeblock">cin >> <span class="numbers">x</span>;<br>
+        cin >> <span class="numbers">y</span>;</p>
 </body>

@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
     {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         theme = sharedPreferences.getBoolean(THEME, false);
-
         if(theme == false)
         {
 

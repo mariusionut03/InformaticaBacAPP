@@ -1,0 +1,46 @@
+<body>
+<h1><span class="functions">d. Descompunerea în factori primi</span></h1>
+<p>Exemplu: 140=2<sup>2</sup>⋅5<sup>1</sup>⋅7<sup>1</sup></p>
+<p>Pentru a determina descompunerea, vom proceda deductiv:</p>
+<p>
+    <span class="functions">-</span> știm că factorii primi ai lui n sunt cuprinși între 2 și <span class="numbers">n</span>;<br>
+    <span class="functions">-</span> vom parcurge succesiv aceste numere și pentru un divizor curent <span class="numbers">d</span> al lui <span class="numbers">n</span>;<br>
+    determinăm puterea sa în descompunere numărând de câte ori se poate împărții <span class="numbers">n</span> la <span class="numbers">d</span>. Această împărțire se realizează efectiv.<br>
+    afișam divizorul curent <span class="numbers">d</span> și puterea sa;<br>
+    <span class="functions">-</span> procesul se încheie când <span class="numbers">n</span> devine 1.
+</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>{<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">d</span> = 2,  <span class="comments">// d va fi, pe rand, fiecare factor prim din descompunere</span><br>
+    &emsp;&emsp;<span class="numbers">p</span>;      <span class="comments">// p va fi puterea lui d in descompunere</span><br>
+    &emsp;&emsp;<span class="comments">// il  im partim pe n la d in mod repetat, pana cand devine 1</span><br>
+    &emsp;&emsp;while(<span class="numbers">n</span> > 1)<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="comments">// numaram de cate ori se imparte n la d. Aceasta va fi puterea lui d in descompunere</span><br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">p</span> = 0;<br>
+    &emsp;&emsp;&emsp;&emsp;while(<span class="numbers">n</span> % <span class="numbers">d</span> == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;++<span class="numbers">p</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">n</span> /= <span class="numbers">d</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;}<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="comments">// daca s-a facut cel putin o impartire, afisam factorul si puterea</span><br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">p</span>)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">d</span> << <span class="strings">" "</span> << <span class="numbers">p</span> << endl;<br>
+    &emsp;&emsp;&emsp;&emsp;++ <span class="numbers">d</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="comments">//  daca d * d il depaseste pe n si n nu este 1, decidem ca n este prim,</span><br>
+    &emsp;&emsp;&emsp;&emsp;<span class="comments">//  si este factor in descompunerea valorii initiale a lui n</span><br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">n</span>>1 && <span class="numbers">d</span> * <span class="numbers">d</span> > <span class="numbers">n</span>){<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">d</span> = <span class="numbers">n</span>; <span class="comments">// trecem direct la n, urmatorul factor din descompunere</span><br>
+    &emsp;&emsp;&emsp;&emsp;}<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;return 0;<br>
+    }
+</p>
+
+<p>Programul de mai sus afișează pentru n descompunerea în factori primi; pe fiecare linie se afișează perechea factor putere. Merită observat că nu se parcurg toate numerele de la 1 la n. Dacă la un moment dat se decide că valoarea curentă a lui n este număr prim, se trece direct la aceasta, fără a mai parcurge un șir lung de numere care nu mai pot fi factori primi ai lui n.</p>
+</body>

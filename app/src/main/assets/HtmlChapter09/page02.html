@@ -1,76 +1,61 @@
-<body><h1>Siruri de caractere in C++</h1>
-<p>Un sir de caractere este un tablou unidimensional(vector) ce contine caractere.</p>
-<p>Astfel, pentru reprezentarea în C/C++ a cuvântului copil, care are 5 caractere, se vor folosi 6 octeți, cu valorile: 'c', 'o', 'p', 'i', 'l', '\0'.</p>
-<p>În reprezentarea internă, după ultimul caracter (byte, octet) valid din șir se află caracterul '\0' – caracterul cu codul ASCII 0, numit și caracter nul. Toate sirurile de caracter il contin la final, el marcand sfarsitul. Astfel, cand vrem sa reprezentam un cuvant de maxim 10 litere, vom declara vectorul cu maxim 11.</p>
+<body><h1><span class="functions">Structura unei functii</span></h1>
+<p>O sa rescriem functia de pe pagina anterioara si o sa explicam ce inseamna fiecare lucru: </p>
 
-<h2>Declararea unui șir de caractere</h2>
 <p class="codeblock">
-    char s[11]; // putem memora in sir maxim 10 caractere
-    char s[11] = "copil"; // Se folosesc doar 6 caractere (5 + cel nul)
-    char t[]="copil"; // se aloca automat 6 octeti
-    char x[6]={'c','o','p','i','l','\0'};
-    char z[]={'c','o','p','i','l','\0'}; // se aloca automat 6 octeti pentru sir
-</p>
-
-<h2>Afișarea unui șir de caractere</h2>
-<p class="codeblock">
-    cout << s << endl;
-</p>
-<h2>Citirea unui șir de caractere</h2>
-<p class="codeblock">
-    cin >> s;
-</p>
-<p>Nu se poate citi un sir cu spatii daca folosim operatorul '>>'.</p>
-<p>Pentru a citi șiruri care conțin spații, putem folosi metoda 'getline'.</p>
-
-<p class="codeblock">cin.getline(s , 11);</p>
-
-<p>Un exemplu in C++:</p>
-<p class="codeblock">
-    #include <span><</span>iostream>
-    using namespace std;
-    int main(){
-    char nume1[31], nume2[31];
-    cout << "Cum te cheama? (nume, prenume) ";
-    cin.getline(nume1, 31);
-    cout << "Cum il cheama pe prietenule tau? ";
-    cin.getline(nume2 , 31);
-    cout << "Te numesti " << nume1 << endl;
-    cout << "Esti prieten cu " << nume2 << endl;
-    return 0;
+    int <span class="functions">subprogram</span>(int <span class="numbers">a</span>, int <span class="numbers">b</span>)<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">c</span> = <span class="numbers">a</span> + <span class="numbers">b</span>;<br>
+    &emsp;&emsp;return <span class="numbers">c</span>;<br>
     }
 </p>
 
-<h2>Referirea unui caracter din șir</h2>
-<p>Deoarece șirurile de caractere sunt de fapt tablouri, pentru referirea unui caracter din șir se folosește operatorul [], ca în exemplul următor:</p>
+<p><span class="functions">1</span>. Observam ca functia este declarata cu <span class="strings">'int'</span>(numar intreg). Acesta reprezinta tipul de dată ce este returnata si poate fi inlocuit cu majoriatatea tipurilor de date pe care le cunoastem(<span class="strings">'char'</span>, <span class="strings">'double'</span>, <span class="strings">'float'</span> etc.).</p>
+<p>Daca nu vrem sa returnam nimic, folosim tipul <span class="strings">'void'</span>. Un exemplu este o functie care doar afiseaza ceva pe ecran, ea va fi declarata cu 'void'.</p>
+<p><span class="functions">2</span>. <span class="strings">'subprogram'</span> este numele functiei si poate fi editat dupa placul nostru.</p>
+<p><span class="functions">3</span>. <span class="strings">'(int a, int b)'</span> sunt parametrii functiei, doua numere de tip intreg si trebuie precizate la chemarea functiei. O functie poate fi lipsita de parametri, in cazul nostru am fi definit-o <span class="strings">'int subprogram()'</span>, fara niciun text intre paranteze.</p>
+<p><span class="functions">4</span>. <span class="strings">'{ }'</span> parantezele delimiteaza instructiunile.</p>
+<p><span class="functions">5</span>. Scriem instructiunile functiei intre paranteze.</p>
+
+
+<h2>Prototipul unei functii</h2>
+
 <p class="codeblock">
-    char s[]="abac"; // sirul consta din 5 caractere: cele 4 litere si caracterul nul '\0'
-    cout << s[3]; // c
-    s[1] = 'r';
-    cout << s; // arac
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;<span class="functions">g</span>();<br>
+    &emsp;&emsp;return 0;<br>
+    }<br>
+    <br>
+    void <span class="functions">g</span>()<br>
+    {<br>
+    &emsp;&emsp;cout << <span class="strings">"Salutare!"</span><br>
+    }<br>
+    <br>
+    <span class="comments">// Eroare</span>
 </p>
 
-<h2>Parcurgerea unui sir de caractere</h2>
-<p>Sunt unele probleme unde trebuie sa parcurgem tot sirul de caractere pentru a verifica anumite caractere sau pentru a edita fiecare caracter in parte. Avem momente cand nu stim cate caractere contine sirul. Mai jos avem doua variante:</p>
+<p>Acest program va da eroare. Functia <span class="strings">'g()'</span> este chemata in <span class="strings">'main()'</span> inainte ca ea sa fie definita.</p>
+<p>Totul se rezolva mentionand functia <span class="strings">'g()'</span> la inceputul programului.</p>
+
 <p class="codeblock">
-    char s[11];
-    cin.getline(s);
-    int i = 0;
-    while(s[i] != '\0')
-    {
-    // Instructiuni asupra caracterului de pe pozitia i;
-    i ++;
+    #include <span><</span>iostream>;<br>
+    using namespace std;<br>
+    <br>
+    void <span class="functions">g</span>(); <span class="comments">// Acesta</span> <br>
+    <br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;<span class="functions">g</span>();<br>
+    &emsp;&emsp;return 0;<br>
+    }<br>
+    <br>
+    void <span class="functions">g</span>()<br>
+    {<br>
+    &emsp;&emsp;cout << <span class="strings">"Salutare!"</span><br>
     }
 </p>
 
-<p>Sau, putem folosi functia 'strlen', care returneaza lungimea sirului:</p>
-<p class="codeblock">
-    #include <span><</span>iostream>;
-    #include <span><</span>cstring>;
-    [...] // Includem la inceputul programului libraria 'cstring' pentru a putea accesa comanda 'strlen'
-    for(int i = 0; i < strlen(s); i++)
-    {
-    //Instrunctiuni asupra caracterului de pe pozitia i, accesat cu s[i];
-    }
-</p>
 </body>

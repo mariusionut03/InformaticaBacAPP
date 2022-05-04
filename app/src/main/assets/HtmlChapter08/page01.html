@@ -1,32 +1,85 @@
-<body><h1>Subprograme</h1>
+<body><h1><span class="functions">Tablouri bidimensionale</span></h1>
 
-<p>Un subprogram este o colecție de tipuri de date, variabile, instrucțiuni care îndeplinesc o anumită sarcină (calcule, citiri, afișări), atunci când este apelat de un program sau de un alt subprogram.</p>
-<p>Subprogramele sunt utile in programele unde o serie de instructiuni este repetata de mai multe ori, asa ca o scriem o singura data si, dupa, o chemam de fiecare data cand avem nevoie.</p>
-<p>Pentru a intelege conceptul, cel mai bine dam un exemplu in C++:</p>
+<p>Declararea <span class="functions">tablourilor bidimensionale</span> (matrice) face în C/C++ similar cu a tablourilor unidimensionale, dar trebuie precizate două dimensiuni fizice, maximale: numărul maxim de linii și numărul maxim de coloane ale matricei:</p>
 
-<p class="codeblock">
-    #include <span><</span>iostream>;<br>
-    using namespace std;<br>
-    <br>
-    int subprogram(int a, int b)<br>
-    {<br>
-    int c = a + b;<br>
-    return c;<br>
-    }<br>
-    <br>
-    int main()<br>
-    {<br>
-    int m, n;<br>
-    cin >> m >> n;<br>
-    cout << subprogram(m, n);<br>
-    return 0;<br>
-    }
+<p class="codeblock">tipDeBază <span class="numbers">denumire</span>[<span class="functions">NumarLinii</span>][<span class="functions">NumarColoane</span>];</p>
+<p>de exemplu:</p>
+
+<p class="codeblock">int <span class="numbers">A</span>[5][7];</p>
+<p>Mai sus s-a declarat un tablou bidimensional (o matrice) cu 5 linii și 7 coloane. Ni-l putem imagina astfel (valorile sunt aleatorii):</p>
+
+<table>
+    <tr>
+        <td>Index</td>
+        <td><span class="strings">0</span></td>
+        <td><span class="strings">1</span></td>
+        <td><span class="strings">2</span></td>
+        <td><span class="strings">3</span></td>
+        <td><span class="strings">4</span></td>
+        <td><span class="strings">5</span></td>
+        <td><span class="strings">6</span></td>
+    </tr>
+    <tr>
+        <td><span class="strings">0</span></td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+        <td>51</td>
+        <td>5</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td><span class="strings">1</span></td>
+        <td>43</td>
+        <td>21</td>
+        <td>16</td>
+        <td>5</td>
+        <td>7</td>
+        <td>83</td>
+        <td>14</td>
+    </tr>
+    <tr>
+        <td><span class="strings">2</span></td>
+        <td>57</td>
+        <td>51</td>
+        <td>5</td>
+        <td>17</td>
+        <td>64</td>
+        <td>69</td>
+        <td>17</td>
+    </tr>
+    <tr>
+        <td><span class="strings">3</span></td>
+        <td>5</td>
+        <td>64</td>
+        <td>64</td>
+        <td>4</td>
+        <td>71</td>
+        <td>34</td>
+        <td>28</td>
+    </tr>
+    <tr>
+        <td><span class="strings">4</span></td>
+        <td>46</td>
+        <td>7</td>
+        <td>5</td>
+        <td>68</td>
+        <td>14</td>
+        <td>57</td>
+        <td>64</td>
+    </tr>
+</table>
+
+<p>Matricea are:<br><br>
+
+5 • 7 = 35 de elemente;<br>
+5 linii, indexate (numerotate) de la 0 la 4<br>
+7 coloane, indexate de la 0 la 6<br><br><br>
+
+
+Referirea elementelor se face prin intermediul operatorului C++ de indexare [], la fel ca în cazul vectorilor, dar trebuie precizați doi indici – cel de linie și cel de coloană. Astfel, A[2][4] reprezintă elementul matricei aflat pe linia 2 și pe coloana 4 – la intersecția dintre linia 2 și coloana 4. Astfel primul indice al unui element este cel de linie, iar al doilea indice este cel de coloană.
 </p>
-
-<p>
-    In codul de mai sus avem definita inca o functie pe langa 'main', numita 'subprogram'. Ea primeste 2 valori, retinute cu numele 'a' si 'b'. La apelarea functiei 'subprogram', se va face suma celor doua numere ce se va retine in variabila 'c', urmand sa fie returnata inapoi in main. Observam ca apelarea functiei se face in comanda 'cout', asa ca valoarea returnata va fi afisata pe ecran.
-</p>
-
 
 
 

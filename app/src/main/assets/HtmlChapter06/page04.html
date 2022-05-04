@@ -1,57 +1,91 @@
 <body>
-    <h1>Interclasarea tablourilor</h1>
-
-    Considerăm două tablouri unidimensionale cu elemente numere întregi ordonate crescător. Se dorește construirea unui alt tablou, care să conțină valorile din cele două tablouri, în ordine.
-    O soluție foarte eficientă este interclasarea:
-
-    considerăm două tablouri, cu n, respectiv m elemente, ordonate crescător
-    cele două tablouri se parcurg concomitent;
-    se alege valoarea mai mică dintre cele două elemente curente
-    se adaugă în al treilea tablou
-    se avansează numai în tabloul din care am ales valoarea de adăugat
-    parcurgerea unuia dintre cele două tablouri se încheie
-    toate elementele din celălalt tablou, neparcurse încă, sunt adăugate în tabloul destinație
-    tabloul destinație are p = n + m elemente
-
-
-    <table>
-        <tr>
-            <td>Tabloul 1</td>
-            <td>4</td><td>6</td><td>12</td><td>17</td>
-        </tr>
-        <tr>
-            <td>Tabloul 2</td>
-            <td>2</td><td>4</td><td>6</td><td>6</td><td>9</td><td>12</td><td>17</td>
-        </tr>
-        <tr>
-            <td>Tabloul 3</td>
-            <td>2</td><td>6</td><td>9</td>
-        </tr>
-    </table>
-
-
-    Secvență C++:
-<p class="codeblock">
-    int n,a[100000], m , b[100000], p, c[200000];<br>
-
-    //citire a[] cu n elemente<br>
-    //citire b[] cu m elemente<br>
-
-    int i = 0 , j = 0;<br>
-    p = 0;<br>
-    while(i < n && j < m)<br>
-    if(a[i] < b[j])<br>
-    c[p ++] = a[i ++];<br>
-    else<br>
-    c[p ++] = b[j ++];<br>
-    while(i < n)<br>
-    c[p ++] = a[i ++];<br>
-    while(j < m)<br>
-    c[p ++] = b[j ++];
+<h1><span class="functions">3. Divizibilitate</span></h1>
+<p>
+    <span class="functions">a</span>. Divizorii unui număr<br>
+    <span class="functions">b</span>. Algoritmul lui Euclid<br>
+    <span class="functions">c</span>. Verificare primalității<br>
+    <span class="functions">d</span>. Descompunerea în factori primi
 </p>
 
-    Observație: Doar una dintre instrucțiunile while(i < n)... și while(j < m)... se va executa, deoarece exact una dintre condițiile i < n și j < m este adevărată. În prima structură repetitivă, la fiecare pas, doar una dintre variabilele i și j se mărește, deci la final una dintre condiții este adevărată și una este falsă.
+<p>
+    Spunem că numărul n divide numărul m dacă există un număr p astfel încât n * p = m. De regulă, este echivalent cu faptul că restul împărțirii lui m la n este 0, în C/C++ m % n este 0.<br>
+    Dacă n divide pe m, spunem că n este divizor al lui m, iar m este multiplu al lui n.
+</p>
 
-    Algoritmul de interclasare este foarte eficient. El are complexitate O(n+m). De asemenea, este posibilă și interclasarea valorilor din două fișiere, singura condiție este ca valorile să fie ordonate.
+<h2><span class="functions">a</span>. Divizorii unui număr</h2>
 
+<p>O problemă frecvent întâlnită este determinarea divizorilor unui număr dat. În practică se pot cere diverse operații cu aceștia: afișarea, însumarea, numărarea, etc.</p>
+
+<h2>Algoritmul naiv</h2>
+
+<p>O primă metodă de determinare a divizorilor constă în a observa că toți divizorii lui n sunt între 1 și n, inclusiv. Putem parcurge numerele din acest interval și verifica dacă sunt într-adevăr divizori ai lui n, caz în care sunt luați în considerare. Următorul program afișează divizorii lui n în acest fel.</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;for(int <span class="numbers">d</span> = 1 ; <span class="numbers">d</span> <= <span class="numbers">n</span>; <span class="numbers">d</span> ++ )<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">n</span> % <span class="numbers">d</span> == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">d</span> << <span class="strings">" "</span>;<br>
+    &emsp;&emsp;return 0;<br>
+    }<br>
+    <span class="comments">// De exemplu, pentru n = 24 se va afișa:</span><br>
+    <span class="comments">// 1 2 3 4 6 8 12 24</span>
+</p>
+
+<p>Programul de mai sus este corect, dar neeficient. Testați-l pentru n = 1.000.000.000 și veți vedea că execuția durează 2-3 secunde.</p>
+
+<h2>Un algoritm mai eficient</h2>
+<p>Soluția acceptabilă este să observăm că divizorii oricărui număr n sunt în pereche: dacă d este divizor al lui n, atunci și n/d este divizor al lui n. De exemplu, pentru n = 75.</p>
+<p>
+    <span class="functions">-</span> 1 este divizor 75, atunci și 75/1 = 75 este divizor al lui 75;<br>
+    <span class="functions">-</span> 2 nu este divizor al lui 75<br>
+    <span class="functions">-</span> 3 este divizor 75, atunci și 75/3 = 25 este divizor al lui 75;<br>
+    <span class="functions">-</span> 4 nu este divizor al lui 75<br>
+    <span class="functions">-</span> 5 este divizor 75, atunci și 75/5 = 15 este divizor al lui 75;<br>
+    <span class="functions">-</span> 6 nu este divizor al lui 75<br>
+    <span class="functions">-</span> 7 nu este divizor al lui 75<br>
+    <span class="functions">-</span> 8 nu este divizor al lui 75<br>
+    <span class="functions">-</span> 9 nu este divizor al lui 75. Mai mult, 9 * 9 > 75, alți divizori nu vom mai găsi.
+</p>
+
+<p>Divizorii lui 75 sunt: 1 75  3 25 5 15. Constatăm astfel că pentru a determina divizorii lui n este suficient să parcurgem numerele de la 1 la &#8730;n.</p>
+<p>Un caz special îl constituie pătratele perfecte. În cazul lor trebuie evitată analizarea de două ori a lui &#8730;n, care este divizor al lui n. Pentru 36 avem divizorii:</p>
+<p>
+    <span class="functions">-</span> 1 în pereche cu 36<br>
+    <span class="functions">-</span> 2 în pereche cu 18<br>
+    <span class="functions">-</span> 3 în pereche cu 12<br>
+    <span class="functions">-</span> 4 în pereche cu 9<br>
+    <span class="functions">-</span> 5 nu este divizor al lui 36<br>
+    <span class="functions">-</span> 6 în pereche cu 6. 6 trebuie luat o singură dată!<br>
+    <span class="functions">-</span> 7*7>36, ne oprim!
+</p>
+
+<p class="codeblock">
+    #include <span><</span>iostream><br>
+    using namespace std;<br>
+    int <span class="functions">main</span>()<br>
+    {<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;for(int <span class="numbers">d</span> = 1 ; <span class="numbers">d</span> * <span class="numbers">d</span> <= <span class="numbers">n</span>; <span class="numbers">d</span> ++ )<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">n</span> % <span class="numbers">d</span> == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">d</span> << <span class="strings">" "</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;if(<span class="numbers">d</span> * <span class="numbers">d</span> < <span class="numbers">n</span>) <span class="comments">// dacă d != sqrt(n)</span><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">n</span> / <span class="numbers">d</span> << <span class="strings">" "</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;}<br>
+    &emsp;&emsp;return 0;<br>
+    }
+</p>
+
+<h2>Observații</h2>
+<p>
+    <span class="functions">1</span>. Numerele care nu sunt pătrate perfecte au număr par de divizori.<br>
+    <span class="functions">2</span>. Singurele numere cu număr impar de divizori sunt pătratele perfecte.<br>
+    <span class="functions">3</span>. Cel mai mic divizor propriu al unui număr natural (diferit de 1 și de numărul însuși) este număr prim.
+</p>
 </body>

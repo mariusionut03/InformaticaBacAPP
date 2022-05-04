@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layoutId"
+    tools:context=".quizActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:gravity="center"
+        android:text="Eroare"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="150px"
+        android:layout_height="120px"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/monda"
+        android:text="X"
+        android:textColor="#004bad"
+        android:textSize="18dp"
+        app:tint="@android:color/black" />
+
+    <TextView
+        android:id="@+id/answer1Button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:fontFamily="@font/dosis"
+        android:gravity="center"
+        android:text="Eroare"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/answer2Button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/answer1Button"
+        android:text="Eroare"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/dosis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple" />
+
+    <TextView
+        android:id="@+id/answer3Button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/answer2Button"
+        android:text="Eroare"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/dosis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple" />
+
+    <TextView
+        android:id="@+id/answer4Button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/answer3Button"
+        android:text="Eroare"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/dosis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple" />
+
+    <TextView
+        android:id="@+id/answer5Button"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_below="@+id/answer4Button"
+        android:text="Urmatoarea"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/dosis"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:visibility="invisible"/>
+</RelativeLayout>

@@ -1,0 +1,280 @@
+<body>
+<h1>Functii pentru caractere</h1>
+
+<p class="codeblock">
+    Header-ul <span class="strings"><span><</span>cctype></span>:<br>
+    - <span class="functions">isalnum</span> (alfanumeric)<br>
+    - <span class="functions">isalpha</span> (alfabetic)<br>
+    - <span class="functions">islower</span> (litera mica)<br>
+    - <span class="functions">isupper</span> (litera mare)<br>
+    - <span class="functions">isdigit</span> (cifra)<br>
+    - <span class="functions">tolower</span> (conversie)<br>
+    - <span class="functions">toupper</span> (conversie)<br>
+    <br>
+    Header-ul <span class="strings"><span><</span>cstring></span>:<br>
+    - <span class="functions">strlen</span> (lungime)<br>
+    - <span class="functions">strcpy</span> (copiere in alt sir)<br>
+    - <span class="functions">strncpy</span> ( ... primele n caractere)<br>
+    - <span class="functions">strcat</span> (lipeste 2 siruri)<br>
+    - <span class="functions">strchr</span> (cauta un caracter intr-un sir)<br>
+    - <span class="functions">strstr</span> (cauta un sir intr-un sir)<br>
+    - <span class="functions">strcmp</span> (compara 2 siruri)<br>
+    - <span class="functions">strtok</span> (extrage subsiruri dintr-un sir)
+</p>
+
+<h1>#include <span class="strings"><span><</span>cctype></span></h1>
+
+<p> Următoarele funcții au ca parametri valori numerice, reprezentând codul ASCII al unor caractere. Prototipul lor se află în header-ul cctype.</p>
+
+<h2>isalnum</h2>
+<p class="codeblock">
+    int <span class="functions">isalnum</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Verifică dacă un caracter este alfanumeric (cifră, literă mare, literă mică). Returnează o valoare diferită de zero dacă parametrul este alfanumeric, 0 în caz contrar.
+</p>
+
+
+<h2>isalpha</h2>
+<p class="codeblock">
+    int <span class="functions">isalpha</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Verifică dacă un caracter este alfabetic (literă mare, literă mică). Returnează o valoare diferită de zero dacă parametrul este alfabetic, 0 în caz contrar.
+</p>
+
+
+<h2>islower</h2>
+<p class="codeblock">
+    int <span class="functions">islower</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Verifică dacă un caracter este literă mică. Returnează o valoare diferită de zero dacă parametrul este literă mică, 0 în caz contrar.
+</p>
+
+
+<h2>isupper</h2>
+<p class="codeblock">
+    int <span class="functions">isupper</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Verifică dacă un caracter este literă mare. Returnează o valoare diferită de zero dacă parametrul este literă mare, 0 în caz contrar.
+</p>
+
+
+<h2>isdigit</h2>
+<p class="codeblock">
+    int <span class="functions">isdigit</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Verifică dacă un caracter este cifră. Returnează o valoare diferită de zero dacă parametrul este cifră, 0 în caz contrar.
+</p>
+
+
+<h2>tolower</h2>
+<p class="codeblock">
+    int <span class="functions">tolower</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Convertește parametrul la literă mică. Dacă parametrul este literă mare, returnează valoarea convertită, în caz contrar returnează valoarea inițială a parametrului.
+</p>
+
+
+<h2>toupper</h2>
+<p class="codeblock">
+    int <span class="functions">toupper</span> ( int <span class="numbers">ch</span> );
+</p>
+<p>
+    Convertește parametrul la literă mare. Dacă parametrul este literă mică, returnează valoarea convertită, în caz contrar returnează valoarea inițială a parametrului.
+</p>
+
+
+<h1>#include <span class="strings"><span><</span>cstring></span></h1>
+
+<p>Următoarele funcții prelucrează șiruri de caractere. Dacă nu se precizează altfel, prototipul lor se află în header-ul cstring.</p>
+
+
+
+<h2>strlen</h2>
+<p class="codeblock">
+    <span class="functions">strlen</span>( char* <span class="numbers">str</span> );
+</p>
+<p>
+    Returnează lungimea șirului str, adică numărul de caractere din șirul al cărui prim caracter se află la adresa memorată în str. Caracterul nul nu se numără.
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    cout << strlen(<span class="strings">"pbinfo"</span>); <span class="comments">// 6</span><br>
+    char <span class="numbers">s</span>[10]=<span class="strings">"copil"</span>;<br>
+    cout << strlen(<span class="numbers">s</span>); <span class="comments">// 5</span><br>
+    cout << strlen(<span class="numbers">s</span> + 2); <span class="comments">//3</span>
+</p>
+
+
+
+<h2>strcpy</h2>
+<p class="codeblock">
+    char* <span class="functions">strcpy</span>( char* <span class="numbers">dest</span>, const char* <span class="numbers">src</span> );
+</p>
+<p>
+    Copiază caracterele din șirul aflat la adresa src, inclusiv caracterul nul, în șirul al cărui prim element se află la adresa din dest.<br>
+
+    Funcția returnează adresa dest.<br>
+
+    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[21], <span class="numbers">t</span>[21] = <span class="strings">"copil"</span>;<br>
+    strcpy(<span class="numbers">s</span> , <span class="strings">"pbinfo"</span>);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// pbinfo</span><br>
+    strcpy(<span class="numbers">s</span> , <span class="numbers">t</span>);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// copil</span><br>
+    strcpy(<span class="numbers">s</span> , <span class="numbers">t</span> + 2);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// pil</span><br>
+    strcpy(<span class="numbers">s</span> + 2 , <span class="numbers">t</span>);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// picopil</span>
+</p>
+
+
+
+<h2>strncpy</h2>
+<p class="codeblock">
+    char *<span class="functions">strncpy</span>( char *dest, const char *src, int count );
+</p>
+<p>
+    Copiază cel mult count caractere din șirul aflat la adresa src, în șirul al cărui prim element se află la adresa din dest.<br>
+
+    În șirul dest nu se va plasa caracterul nul după cele count caractere copiate.<br>
+
+    Funcția returnează adresa dest.<br>
+
+    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.<br>
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[100]=<span class="strings">"abcdefghjkl"</span>;<br>
+    strncpy(<span class="numbers">s</span>, <span class="strings">"poveste"</span>, 3);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// povdefghjkl</span>
+</p>
+
+
+
+<h2>strcat</h2>
+<p class="codeblock">
+    char *<span class="functions">strcat</span>( char *dest, const char *src );
+</p>
+<p>
+    Adaugă (concatenează) caracterele din șirul aflat la adresa src, inclusiv caracterul nul, la șirul al cărui prim element se află la adresa din dest.<br>
+
+    Funcția returnează adresa dest.<br>
+
+    Comportamentul acestei funcții este nedefinit dacă șirurile de la adresele dest și src se suprapun.
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[21]=<span class="strings">"pbinfo"</span>, t[21] = <span class="strings">"copil"</span>;<br>
+    strcat(<span class="numbers">s</span> , <span class="numbers">t</span>);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// pbinfocopil</span><br>
+    strcat(<span class="numbers">s</span> , <span class="numbers">t</span> + 2);<br>
+    cout << <span class="numbers">s</span>; <span class="comments">// pbinfocopilpil</span>
+</p>
+
+
+
+<h2>strchr</h2>
+<p class="codeblock">
+    char *<span class="functions">strchr</span>( char * str, char ch );
+</p>
+<p>
+    Caută caracterul ch în șirul al cărui prim caracter se află în memorie la adresa din str.<br>
+
+    Funcția returnează adresa NULL, dacă caracterul ch nu apare în șirul str, respectiva adresa primei apariții al lui ch în str, dacă ch apare în str.
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[21]=<span class="strings">"pbinfo"</span>;<br>
+    char *<span class="numbers">p</span> = strchr(<span class="numbers">s</span> , <span class="strings">'i'</span>);<br>
+    cout << <span class="numbers">p</span>; <span class="comments">// info</span>
+</p>
+<p class="codeblock">
+    char <span class="numbers">ch</span> = <span class="strings">'i'</span>;<br>
+    if(strchr(<span class="strings">"aeiou"</span> , <span class="numbers">ch</span>) != NULL)<br>
+    &emsp;&emsp;cout << <span class="strings">"DA"</span><br>
+    else<br>
+    &emsp;&emsp;cout << <span class="strings">"NU"</span>;<br>
+    <span class="comments">//se va afisa DA</span>
+</p>
+
+
+
+<h2>strstr</h2>
+<p class="codeblock">
+    char *<span class="functions">strstr</span>( char * s, char * t );
+</p>
+<p>
+    Caută șirul t în șirul al cărui prim caracter se află în memorie la adresa din s.<br>
+
+    Funcția returnează adresa NULL, dacă șirul t nu apare în șirul s, respectiva adresa primei apariții al lui t în s, dacă t apare în s.
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[21]=<span class="strings">"pbinfo"</span>;<br>
+    char *<span class="numbers">p</span> = strstr(<span class="numbers">s</span> , <span class="strings">"inf"</span>);<br>
+    cout << <span class="numbers">p</span>; <span class="comments">// info</span>
+</p>
+
+
+
+<h2>strcmp</h2>
+<p class="codeblock">
+    int <span class="functions">strcmp</span>( char *<span class="numbers">s</span>, char *<span class="numbers">t</span> );
+</p>
+<p>
+    Compară lexicografic cele două șiruri de caractere:<br>
+<br>
+    <span class="functions">-</span> dacă șirul s este lexicografi mai mic decât t funcția va returna o valoare negativă<br>
+    <span class="functions">-</span> dacă șirul s este lexicografi mai mare decât t funcția va returna o valoare pozitivă<br>
+    <span class="functions">-</span> dacă cele două șiruri sunt identice funcția va returna valoarea 0<br>
+
+    Standardul C/C++ stabilește doar semnul rezultatului, nu și valoarea acestuia. Valorile returnate pot fi, dar nu trebuie să fie, -1 0 1.
+
+</p>
+<h3>Exemple:</h3>
+<p class="codeblock">
+    char <span class="numbers">s</span>[21]=<span class="strings">"abur"</span>, <span class="numbers">t</span>[21]=<span class="strings">"abecedar"</span>;<br>
+    if(strcmp(<span class="numbers">s</span> , <span class="numbers">t</span>) < 0)<br>
+    &emsp;&emsp;cout << <span class="strings">"Da"</span><br>
+    else<br>
+    &emsp;&emsp;cout << <span class="strings">"Nu"</span>;<br>
+    <span class="comments">// se va afisa Nu; cuvantul "abur" este lexicografic dupa "abecedar"</span>
+</p>
+
+
+
+<h2>strtok</h2>
+<p class="codeblock">
+    char *strtok( char *str, const char *sep );
+</p>
+<p>
+    Funcția strtok extrage dintr-un sir de caractere câte un subșir (cuvânt) delimitat de caractere din șirul sep. Funcția se apelează în două moduri:<br>
+<br>
+    <span class="functions">-</span> primul apel are ca parametri șirul din care se face extragerea și șirul separatorilor<br>
+    <span class="functions">-</span> la următoarele apeluri primul parametru este NULL.<br>
+    <br>
+    Rezultatul funcției strtok este adresa de început a subșirului curent extras, sau NULL dacă nu se mai poate extrage niciun subșir din șirul dat.<br>
+<br>
+    Șirul din care se face extragerea se modifică în urma apelurilor. Dacă este nevoie de el mai târziu trebuie să-i facem o copie.
+</p>
+<h3>Exemple:</h3>
+<p>Secvența de mai jos extrage dintr-un șir s cuvintele (separate prin caractere din mulțimea {' ', ',', '.'}) și le afișează pe linii diferite. Șirul s se presupune declarat și citit.</p>
+<p class="codeblock">
+    char <span class="numbers">sep</span>[]=<span class="strings">" .,"</span>;<br>
+    char *<span class="numbers">p</span> = strtok(<span class="numbers">s</span> , <span class="numbers">sep</span>);<br>
+    while(<span class="numbers">p</span> != NULL)<br>
+    {<br>
+    &emsp;&emsp;cout << <span class="numbers">p</span> << endl;<br>
+    &emsp;&emsp;<span class="numbers">p</span> = strtok(NULL , <span class="numbers">sep</span>);<br>
+    }
+</p>
+</body>

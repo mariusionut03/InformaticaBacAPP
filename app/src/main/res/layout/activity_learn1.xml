@@ -17,11 +17,11 @@
         android:id="@+id/buttonExit"
         android:layout_width="150px"
         android:layout_height="120px"
-        android:text="X"
-        android:textSize="18dp"
-        android:textColor="#004bad"
         android:background="@android:color/transparent"
         android:fontFamily="@font/monda"
+        android:text="X"
+        android:textColor="#004bad"
+        android:textSize="18dp"
         app:tint="@android:color/black" />
 
     <Button

@@ -1,57 +1,57 @@
 <body>
 <h2>Instrucțiuni care controlează execuția structurilor repetitive</h2>
-<h2>Instrucțiunea break</h2>
-<p>Instrucțiunea break are sens și poate fi folosită numai în instrucțiunile switch, while, do ... while și for.</p>
-<p class="codeblock">break;</p>
+<h2>Instrucțiunea <span class="functions">break</span></h2>
+<p><span class="functions">Instrucțiunea break</span> are sens și poate fi folosită numai în instrucțiunile <span class="functions">switch</span>, <span class="functions">while</span>, <span class="functions">do ... while</span> și <span class="functions">for</span>.</p>
+<p class="codeblock"><span class="functions">break</span>;</p>
 <p>Mod de execuție<br>
-    Am văzut semnificația instrucțiunii break atunci când apare în instrucțiunea switch.<br>
+    Am văzut semnificația instrucțiunii break atunci când apare în instrucțiunea <span class="functions">switch</span>.<br>
     Efectul instrucțiunii break când apare într-o instrucțiune repetitivă este întreruperea execuției acesteia și trecerea la instrucțiunea care urmează celei repetitive.</p>
 <p>Exemplu:</p>
 <p class="codeblock">
     #include <span><</span>iostream><br>
     using namespace std;<br>
-    int main ()<br>
+    int <span class="functions">main</span> ()<br>
     {<br>
-    int n;<br>
-    cin >> n;<br>
-    int S = 0;<br>
-    for(int i = 1; i <= n ; i ++)<br>
-    {<br>
-    S += i;<br>
-    if(i == 5)<br>
-    break;<br>
-    }<br>
-    cout << S << endl;<br>
-    return 0;<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">S</span> = 0;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 1; <span class="numbers">i</span> <= <span class="numbers">n</span>; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">S</span> += <span class="numbers">i</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">i</span> == 5)<br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="functions">break</span>;<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;cout << <span class="numbers">S</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
 
-<p>- Dacă valoarea lui n este cel mult 5, se va afișa suma numerelor de la 1 la n.<br>
-    - Dacă n >= 5 se va afișa întotdeauna 15, deoarece execuția lui for se întrerupe, datorită lui break, când i este 5.</p>
+<p><span class="functions">-</span> Dacă valoarea lui n este cel mult 5, se va afișa suma numerelor de la 1 la n.<br>
+    <span class="functions">-</span> Dacă n >= 5 se va afișa întotdeauna 15, deoarece execuția lui for se întrerupe, datorită lui break, când i este 5.</p>
 
-<h2>Instrucțiunea continue</h2>
-<p>Instrucțiunea continue are sens și poate fi folosită numai în instrucțiunile while, do ... while și for.</p>
-<p class="codeblock">continue;</p>
+<h2>Instrucțiunea <span class="functions">continue</span></h2>
+<p><span class="functions">Instrucțiunea continue</span> are sens și poate fi folosită numai în instrucțiunile <span class="functions">while</span>, <span class="functions">do ... while</span> și <span class="functions">for</span>.</p>
+<p class="codeblock">continue</span>;</p>
 
 <p>Mod de execuție<br>
-    Efectul instrucțiunii continue este ignorarea instrucțiunilor care îi urmează în corpul ciclului și revenirea la evaluarea Expresiei, în cazul lui while, do ... while, respectiv la evaluarea Expresiei_de_Continuare, în cazul lui for.</p>
+    Efectul instrucțiunii <span class="functions">continue</span> este ignorarea instrucțiunilor care îi urmează în corpul ciclului și revenirea la evaluarea <span class="functions">Expresiei</span>, în cazul lui <span class="functions">while</span>, <span class="functions">do ... while</span>, respectiv la evaluarea <span class="functions">Expresiei_de_Continuare</span>, în cazul lui <span class="functions">for</span>.</p>
 <p>Exemplu</p>
 <p class="codeblock">
     #include <span><</span>iostream><br>
     using namespace std;<br>
-    int main ()<br>
+    int <span class="functions">main</span> ()<br>
     {<br>
-    int n;<br>
-    cin >> n;<br>
-    int S = 0;<br>
-    for(int i = 1; i <= n ; i ++)<br>
-    {<br>
-    if(i % 2 == 0)<br>
-    continue;<br>
-    S += i;<br>
-    }<br>
-    cout << S << endl;<br>
-    return 0;<br>
+    &emsp;&emsp;int <span class="numbers">n</span>;<br>
+    &emsp;&emsp;cin >> <span class="numbers">n</span>;<br>
+    &emsp;&emsp;int <span class="numbers">S</span> = 0;<br>
+    &emsp;&emsp;for(int <span class="numbers">i</span> = 1; <span class="numbers">i</span> <= <span class="numbers">n</span> ; <span class="numbers">i</span> ++)<br>
+    &emsp;&emsp;{<br>
+    &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">i</span> % 2 == 0)<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="functions">continue</span>;<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="numbers">S</span> += <span class="numbers">i</span>;<br>
+    &emsp;&emsp;}<br>
+    &emsp;&emsp;cout << <span class="numbers">S</span> << endl;<br>
+    &emsp;&emsp;return 0;<br>
     }
 </p>
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutId"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".subiecteActivity">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="150px"
+        android:layout_height="120px"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/monda"
+        android:text="X"
+        android:textColor="#004bad"
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
+        app:tint="@android:color/black" />
+
+</RelativeLayout>

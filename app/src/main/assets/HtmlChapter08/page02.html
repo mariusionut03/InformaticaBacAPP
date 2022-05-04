@@ -1,61 +1,62 @@
-<body><h1>Structura unei functii</h1>
-<p>O sa rescriem functia de pe pagina anterioara si o sa explicam ce inseamna fiecare lucru: </p>
+<body><h1><span class="functions">Parcurgerea tablourilor bidimensionale</span></h1>
+
+<p><span class="functions">Dimensiunile unei matrice</span><br>
+La fel ca în cazul tablourilor unidimensionale, și tablourile bidimensionale au două categorii de dimensiuni:<br><br>
+
+    <span class="functions">-</span> dimensiunile fizice, maxime – numărul maxim de linii, respectiv coloane pe care le poate avea tabloul; de regula se precizează în enunțul problemei<br>
+    <span class="functions">-</span> dimensiunile logice, curente – numărul de linii linii și de coloane pe care le are matricea la un moment dat, pe parcursul execuției programului. Nu pot să depășească dimensiunile fizice.<br>
+    <br>Datorită existenței acestor dimensiuni logice, într-un program C/C++ care folosește tablouri bidimensionale, pe lângă variabila care reprezintă tabloul propriu-zis este necesară prezența a încă două variabile, de regulă notate cu <span class="numbers">n</span> și <span class="numbers">m</span>, care reprezintă numărul curent de linii, respectiv coloane ale tabloului.
+</p>
+
+<p class="codeblock">int <span class="numbers">A</span>[100][100], <span class="numbers">n</span>, <span class="numbers">m</span>;</p>
+
+<p>Indexarea de la 0 și indexarea de la 1<br>
+    Implicit, tablourile bidimensionale, la fel ca cele unidimensionale sunt indexate de a 0 (liniile sunt indexate de la 0 la <span class="numbers">n</span>-1 și coloanele de la 0 la <span class="numbers">m</span>-1).<br><br>
+
+    Putem însă să ignorăm prima linie și prima coloană, și să considerăm tabloul indexat de la 1, adică liniile sunt indexate de la 1 la <span class="numbers">n</span>, iar coloanele de la 1 la <span class="numbers">m</span>. În această situație matricea trebuie declarată corespunzător.<br><br>
+
+    De exemplu, pentru o matrice cu 100 de linii și 100 de coloane indexată de la 0 declararea va fi:</p>
+
+<p class="codeblock">int <span class="numbers">A</span>[100][100], <span class="numbers">n</span> , <span class="numbers">m</span>;</p>
+
+<p>iar pentru o matrice similară indexată de la 1 declararea va fi:</p>
+
+<p class="codeblock">int <span class="numbers">A</span>[101][101], <span class="numbers">n</span> , <span class="numbers">m</span>;</p>
+
+<h2>Parcurgerea matricei</h2>
+<p>Parcurgerea presupune accesarea elementelor curente ale matricei, într-o anumită ordine – de regulă aceasta se face pe linii, de sus în jos și de la stânga la dreapta:</p>
 
 <p class="codeblock">
-    int subprogram(int a, int b)<br>
+    int <span class="numbers">n</span>, <span class="numbers">m</span>, <span class="numbers">A</span>[100][100];<br>
+    ...<br>
+    for(int <span class="numbers">i</span> = 0 ; <span class="numbers">i</span> < <span class="numbers">n</span> ; <span class="numbers">i</span> ++)<br>
     {<br>
-    int c = a + b;<br>
-    return c;<br>
+    &emsp;&emsp;<span class="comments">// linia i</span><br>
+    &emsp;&emsp;for(int <span class="numbers">j</span> = 0 ; <span class="numbers">j</span> < <span class="numbers">m</span> ; <span class="numbers">j</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;<span class="comments">// A[i][j]</span><br>
+    &emsp;&emsp;<span class="comments">// .....</span><br>
     }
 </p>
 
-<p>1. Observam ca functia este declarata cu 'int'(numar intreg). Acesta reprezinta tipul de dată ce este returnata si poate fi inlocuit cu majoriatatea tipurilor de date pe care le cunoastem('char', 'double', 'float' etc.).</p>
-<p>Daca nu vrem sa returnam nimic, folosim tipul 'void'. Un exemplu este o functie care doar afiseaza ceva pe ecran, ea va fi declarata cu 'void'.</p>
-<p>2. 'subprogram' este numele functiei si poate fi editat dupa placul nostru.</p>
-<p>3. '(int a, int b)' sunt parametrii functiei, doua numere de tip intreg si trebuie precizate la chemarea functiei. O functie poate fi lipsita de parametri, in cazul nostru am fi definit-o 'int subprogram()', fara niciun text intre paranteze.</p>
-<p>4. '{ }' parantezele delimiteaza instructiunile.</p>
-<p>5. Scriem instructiunile functiei intre paranteze.</p>
-
-
-<h2>Prototipul unei functii</h2>
+<h2>Citirea unei matrice</h2>
+<p>De regulă, elementele matricei se dau în ordine: de sus în jos și de la stânga la dreapta. Citirea presupune nu doar citirea elementelor matricei, dar și citirea dimensiunilor n și m:</p>
 
 <p class="codeblock">
-    #include <span><</span>iostream>;<br>
-    using namespace std;<br>
-    <br>
-    int main()<br>
-    {<br>
-    g();<br>
-    return 0;<br>
-    }<br>
-    <br>
-    void g()<br>
-    {<br>
-    cout << "Salutare!"<br>
-    }<br>
-    <br>
-    // Eroare
+    cin >> <span class="numbers">n</span> >> <span class="numbers">m</span>;<br>
+    for(int <span class="numbers">i</span> = 0 ; <span class="numbers">i</span> < <span class="numbers">n</span> ; <span class="numbers"></span> ++)<br>
+    &emsp;&emsp;for(int <span class="numbers">j</span> = 0 ; <span class="numbers">j</span> < <span class="numbers">m</span> ; <span class="numbers">j</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;cin >> <span class="numbers">A</span>[<span class="numbers">i</span>][<span class="numbers">j</span>];
 </p>
 
-<p>Acest program va da eroare. Functia 'g()' este chemata in 'main()' inainte ca ea sa fie definita.</p>
-<p>Totul se rezolva mentionand functia 'g()' la inceputul programului.</p>
+<h2>Afișarea unei matrice</h2>
+<p>Pentru a obține aspectul specific tabloului bidimensional, după afișarea elementelor de fiecare linie vom trece la linia următoare a ecranului. Elementele fiecărei linii sunt de regulă separate printr-un spațiu:</p>
 
 <p class="codeblock">
-    #include <span><</span>iostream>;<br>
-    using namespace std;<br>
-    <br>
-    void g(); // Acest <br>
-    <br>
-    int main()<br>
+    for(int <span class="numbers">i</span> = 0 ; <span class="numbers">i</span> < <span class="numbers">n</span> ; <span class="numbers">i</span> ++)<br>
     {<br>
-    g();<br>
-    return 0;<br>
-    }<br>
-    <br>
-    void g()<br>
-    {<br>
-    cout << "Salutare!"<br>
+    &emsp;&emsp;for(int <span class="numbers">j</span> = 0 ; <span class="numbers">j</span> < <span class="numbers">m</span> ; <span class="numbers">j</span> ++)<br>
+    &emsp;&emsp;&emsp;&emsp;cout << <span class="numbers">A</span>[<span class="numbers">i</span>][<span class="numbers">j</span>] << <span class="strings">" "</span>;<br>
+    &emsp;&emsp;cout << <span class="strings">"\n"</span>;<br>
     }
 </p>
-
 </body>

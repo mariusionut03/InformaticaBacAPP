@@ -1,79 +1,70 @@
 <body>
-<h1>Ștergeri și inserări de elemente</h1>
-<h2>Ștergerea</h2>
-<p>Se dă un șir X cu n elemente întregi și un număr p. Să se șteargă din șirul X elementul aflat pe poziția p.</p>
-<p>Să considerăm următorul vector cu n=10 elemente și p=4.</p>
-<table>
-    <tr>
-        <td>Element</td>
-        <td>7</td>
-        <td>23</td>
-        <td>12</td>
-        <td>17</td>
-        <td>34</td>
-        <td>65</td>
-        <td>0</td>
-        <td>32</td>
-        <td>16</td>
-        <td>17</td>
-    </tr>
-    <tr>
-        <td>Indice</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>9</td>
-    </tr>
-</table>
-<p>Dorim sa-l eliminam pe X[4]=34. Tabloul va deveni: </p>
-<table>
-    <tr>
-        <td>Element</td>
-        <td>7</td>
-        <td>23</td>
-        <td>12</td>
-        <td>17</td>
-        <td>65</td>
-        <td>0</td>
-        <td>32</td>
-        <td>16</td>
-        <td>17</td>
-    </tr>
-    <tr>
-        <td>Indice</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-    </tr>
-</table>
+<h1><span class="functions">1. Maxime și minime</span></h1>
 
-<p>Proces: Elementele cu indici p+1, p+2, ..., n-1 se muta spre stanga cu o pozitie. Dimensiunea n se micsoreaza cu 1.</p>
-
+<h2><span class="functions">A doua numere</span></h2>
 <p class="codeblock">
-    for(int i = p ; i < n - 1; i ++)<br>
-    X[i] = X[i+1];<br>
-    n --;
+    cin >> <span class="numbers">x</span> >> <span class="numbers">y</span>;<br>
+    if(<span class="numbers">x</span> > <span class="numbers">y</span>) <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    else <span class="numbers">max</span> = <span class="numbers">y</span>;
+</p>
+<p class="codeblock">
+    cin >> <span class="numbers">x</span> >> <span class="numbers">y</span>;<br>
+    if(<span class="numbers">x</span> < <span class="numbers">y</span>) <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    else <span class="numbers">min</span> = <span class="numbers">y</span>;
 </p>
 
-
-<h2>Adaugarea</h2>
-<p>Similar cu algoritmul de ștergere a unui element dintr-un vector, și cel de inserare presupune modificarea elementelor din dreapta lui X[p]. De data aceasta elementele vor fi mutate spre dreapta, începând cu ultimul.</p>
+<h2><span class="functions">A trei numere</span></h2>
 <p class="codeblock">
-    for(int i = n - 1 ; i >= p ; i --)<br>
-    X[i+1] = X[i];<br>
-    X[p] = val;<br>
-    n ++;
+    cin >> <span class="numbers">x</span> >> <span class="numbers">y</span> >> <span class="numbers">z</span>;<br>
+    <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    if(<span class="numbers">y</span> > <span class="numbers">x</span>) <span class="numbers">max</span> = <span class="numbers">y</span>;<br>
+    if(<span class="numbers">z</span> > <span class="numbers">x</span>) <span class="numbers">max</span> = <span class="numbers">z</span>;
+</p>
+<p class="codeblock">
+    cin >> <span class="numbers">x</span> >> <span class="numbers">y</span> >> <span class="numbers">z</span>;<br>
+    <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    if(<span class="numbers">y</span> < <span class="numbers">x</span>) <span class="numbers">min</span> = <span class="numbers">y</span>;<br>
+    if(<span class="numbers">z</span> < <span class="numbers">x</span>) <span class="numbers">min</span> = <span class="numbers">z</span>;
+</p>
+
+<h2><span class="functions">A n numere</span> (cu numar cunoscut de valori)</h2>
+<p class="codeblock">
+    cin >> <span class="numbers">n</span> >> <span class="numbers">x</span>;<br>
+    <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    for(int <span class="numbers">i</span> = 2; <span class="numbers">i</span> <= <span class="numbers">n</span>; <span class="numbers">i</span>++)<br>
+    {<br>
+    &emsp;&emsp;cin >> <span class="numbers">x</span>;<br>
+    &emsp;&emsp;if(<span class="numbers">x</span> > <span class="numbers">max</span>) <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    }
+</p>
+<p class="codeblock">
+    cin >> <span class="numbers">n</span> >> <span class="numbers">x</span>;<br>
+    <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    for(int <span class="numbers">i</span> = 2; <span class="numbers">i</span> <= <span class="numbers">n</span>; <span class="numbers">i</span>++)<br>
+    {<br>
+    &emsp;&emsp;cin >> <span class="numbers">x</span>;<br>
+    &emsp;&emsp;if(<span class="numbers">x</span> < <span class="numbers">min</span>) <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    }
+</p>
+
+<h2><span class="functions">A n numere</span> (cu numar necunoscut de valori)</h2>
+<p class="codeblock">
+    cin >> <span class="numbers">x</span>;<br>
+    <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    while(<span class="numbers">x</span> != 0)<br>
+    {<br>
+    &emsp;&emsp;cin >> <span class="numbers">x</span>;<br>
+    &emsp;&emsp;if(<span class="numbers">x</span> > <span class="numbers">max</span>) <span class="numbers">max</span> = <span class="numbers">x</span>;<br>
+    }
+</p>
+
+<p class="codeblock">
+    cin >> <span class="numbers">x</span>;<br>
+    <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    while(<span class="numbers">x</span> != 0)<br>
+    {<br>
+    &emsp;&emsp;cin >> <span class="numbers">x</span>;<br>
+    &emsp;&emsp;if(<span class="numbers">x</span> < <span class="numbers">min</span>) <span class="numbers">min</span> = <span class="numbers">x</span>;<br>
+    }
 </p>
 </body>

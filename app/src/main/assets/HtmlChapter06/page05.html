@@ -1,46 +1,70 @@
 <body>
-    <h1>Cautarea intr-un vector</h1>
+    <h1><span class="functions">b. CMMDC și CMMMC. Algoritmul lui Euclid</span></h1>
+    <p>Fie <span class="numbers">a</span> și <span class="numbers">b</span> două numere naturale. Un număr natural <span class="numbers">d</span> se numește <span class="functions">cel mai mare divizor comun</span> (pe scurt <span class="functions">cmmdc</span>) al lui <span class="numbers">a</span> și <span class="numbers">b</span> dacă îndeplinește condițiile:</p>
+    <p>
+        1. <span class="numbers">d</span>|<span class="numbers">a</span> și <span class="numbers">d</span>|<span class="numbers">b</span>;
+        2. dacă <span class="numbers">c</span>|<span class="numbers">a</span> și <span class="numbers">c</span>|<span class="numbers">b</span>, atunci <span class="numbers">c</span>|<span class="numbers">d</span>.
+    </p>
+    <p><span class="functions">Cel mai mare divizor comun</span> al numerelor <span class="numbers">a</span> și <span class="numbers">b</span> se notează <span class="functions">(a,b)</span>.</p>
+    <p>Dacă <span class="functions">(a,b)</span>=1, spunem că <span class="numbers">a</span> și <span class="numbers">b</span> sunt prime între ele sau relativ prime, sau că <span class="numbers">a</span> este prim cu <span class="numbers">b</span>.</p>
+    <h2><span class="functions">Determinarea celui mai mare divizor comun</span></h2>
+    <p>Cel mai mare divizor comun al două numere naturale <span class="numbers">n</span> și <span class="numbers">m</span> poate fi determinat folosind descompunerea în factori primi a celor două numere. Această metodă este mai dificil de implementat. Există o metodă mai simplu de implementat într-un program, numită algoritmul lui Euclid.</p>
+    <p>Sunt două variante ale algoritmului lui Euclid: cu scăderi și cu împărțiri.</p>
+    <h2><span class="functions">Algoritmul lui Euclid cu scăderi</span></h2>
+    <p><span class="functions">Algoritmul lui Euclid</span> cu scăderi se bazează pe ideea că cele mai mare divizor a două numere divide și diferența acestora. Algoritmul este:</p>
+    <p>- Cât timp numerele sunt diferite, se scade numărul mai mic din numărul mai mare.<br>
+        <span class="functions">-</span> Când numerele devin egale, valoare comună este cel mai mare divizor comun al valorilor inițiale.<br>
+        <span class="functions">-</span> Algoritmul nu poate fi aplicat dacă unul dintre numere este 0.</p>
+    <p>Exemplu: </p>
+    <p>
+        Fie <span class="numbers">n</span>=32 și <span class="numbers">m</span>=24.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, <span class="numbers">n</span> = <span class="numbers">n</span> - <span class="numbers">m</span> = 32 - 24 = 8.<br>
+        Acum <span class="numbers">n</span> = 8 și <span class="numbers">m</span> = 24.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, <span class="numbers">m</span> = <span class="numbers">m</span> - <span class="numbers">n</span> = 24 - 8 = 16.<br>
+        Acum <span class="numbers">n</span> = 8 și <span class="numbers">m</span> = 16.<br>
+        Numerele nu sunt egale, scădem numărul mai mic din numărul mai mare, <span class="numbers">m</span> = <span class="numbers">m</span> - <span class="numbers">n</span> = 16 - 8 = 8.<br>
+        Acum <span class="numbers">n</span> = 8 și <span class="numbers">m</span> = 8.<br>
+        Numerele sunt egale. Valoarea comună, 8, este cel mai mare divizor comun al valorilor inițiale, 32 și 24
+    </p>
 
-<p>Căutarea unei valori într-un vector se poate face în două moduri:
+    <p class="codeblock">
+        #include <span><</span>iostream><br>
+        using namespace std;<br>
+        int <span class="functions">main</span>()<br>
+        {<br>
+        &emsp;&emsp;int <span class="numbers">n</span> , <span class="numbers">m</span>;<br>
+        &emsp;&emsp;cin >> <span class="numbers">n</span> >> <span class="numbers">m</span>;<br>
+        &emsp;&emsp;while(<span class="numbers">n</span> != <span class="numbers">m</span>)<br>
+        &emsp;&emsp;&emsp;&emsp;if(<span class="numbers">n</span> > <span class="numbers">m</span>)<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">n</span> -= <span class="numbers">m</span>;<br>
+        &emsp;&emsp;&emsp;&emsp;else<br>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="numbers">m</span> -= <span class="numbers">n</span>;<br>
+        &emsp;&emsp;cout << <span class="numbers">n</span> << endl;<br>
+        &emsp;&emsp;return 0;<br>
+        }
+    </p>
 
-    -> secvențial – presupune analizarea fiecărui element al vectorului într-o anumită ordine (de obicei de la stânga la dreapta). Când se găsește valoarea căutată parcurgerea vectorului se poate opri. În cel mai rău caz, pentru un vector cu n elemente parcurgerea face n pași, complexitatea timp a căutării secvențiale este O(n)
-    -> binar. Căutarea binară se poate face într-un vector numai dacă elementele acestuia sunt în ordine (de obicei crescătoare) după un anumit criteriu (de obicei criteriul este chiar relația de ordine naturală între numere, cuvinte, etc). Căutarea binară presupune împărțirea vectorului în secvențe din ce în ce mai mici, înjumătățindu-le și continuând cu jumătatea în care se poate afla valoarea dorită (conform ordinii elementelor din vector).</p>
-    Algoritm pseudocod
-    Algoritmul căutării binare este următorul:
-
-    Date de intrare:
-
-    un vector v[] cu n elemente, indexate de la 1 la n, ordonate crescător și o valoare x care se va căuta.
-    Date de ieșire:
-
-    un indice poz dacă valoarea x apare în vectorul v[] sau 0 în caz contrar.
-    Algoritm pseudocod:
-<p class="codeblock">
-    st ← 1
-    dr ← n
-    poz ← 0
-    CÂTTIMP st < dr SI poz=0 EXECUTĂ
-                  m ← (st + dr) DIV 2
-                  DACĂ v[m] = x ATUNCI
-                  poz = m
-                  ALTFEL
-                  DACĂ v[m] < x ATUNCI
-    st ← m + 1
-    ALTFEL
-    dr ← m -1
-    SFDACĂ
-    SFDACĂ
-    SFCÂTTIMP
-
-    DACĂ poz≠0 ATUNCI
-    // x apare în vector pe poziția poz
-    ALTFEL
-    // x nu apare în vector
-    SFDACĂ
+    <h1><span class="functions">Cel mai mic multiplu comun</span></h1>
+<p>
+    Fie <span class="numbers">a</span> și <span class="numbers">b</span> două numere naturale. De numește <span class="functions">cel mai mic multiplu comun</span> (pe scurt <span class="functions">cmmmc</span>) al lui <span class="numbers">a</span> și <span class="numbers">b</span> cel mai mic număr natural nenul cu proprietatea că se divide atât cu a cât și cu <span class="numbers">b</span>.<br>
+    Cel mai mic multiplu comun al numerelor <span class="numbers">a</span> și <span class="numbers">b</span> se notează <span class="functions">[a,b]</span>.
 </p>
-    Notă: În algoritmul de mai sus a DIV b reprezintă câtul împărțirii lui a la b, iar cu V ← EXPR s-a notat atribuirea la variabila V a rezultatului expresiei EXPR.
 
+    <h2><span class="functions">Determinarea cmmmc</span></h2>
+    <p>Pentru a determina cel mai mic multiplu comun se pot folosi mai multe metode:</p>
+    <h3>Determinarea <span class="functions">cmmmc</span> folosind <span class="functions">cmmdc</span></h3>
+<p>Produsul a două numere naturale nenule este egal cu produsul dintre cel mai mare divizor comun al lor și cel mai mic multiplu comun al lor.</p>
+    <p><span class="numbers">a</span>⋅<span class="numbers">b</span> = <span class="functions">(a,b)</span> ⋅ <span class="functions">[a,b]</span></p>
 
+    <h3>Determinarea <span class="functions">cmmmc</span> folosind un algoritm de tip Euclid</h3>
+<p>
+    Fie <span class="numbers">a</span> și <span class="numbers">b</span> valorile date. Vom construi valorile <span class="numbers">m</span> și <span class="numbers">n</span>, astfel:<br><br>
 
-
+    <span class="functions">1</span>. inițial <span class="numbers">n</span> ← <span class="numbers">a</span>, <span class="numbers">m</span> ← <span class="numbers">b</span>;<br>
+    <span class="functions">2</span>. cât timp <span class="numbers">m</span> ≠ <span class="numbers">n</span>:<br>
+    &emsp;&emsp;<span class="functions">-</span> dacă <span class="numbers">n</span> < <span class="numbers">m</span>, atunci <span class="numbers">n</span> crește cu valoarea lui <span class="numbers">a</span>: <span class="numbers">n</span> ← <span class="numbers">n</span> + <span class="numbers">a</span><br>
+    &emsp;&emsp;<span class="functions">-</span> dacă <span class="numbers">n</span> > <span class="numbers">m</span>, atunci <span class="numbers">m</span> crește cu valoarea lui <span class="numbers">b</span>: <span class="numbers">m</span> ← <span class="numbers">m</span> + <span class="numbers">b</span><br>
+    <span class="functions">3</span>. valoarea finală, comună, a lui <span class="numbers">n</span> și <span class="numbers">m</span> este cel mai mic multiplu comun pentru <span class="numbers">a</span> și <span class="numbers">b</span><br>
+    Observație: Algoritmul poate fi aplicat similar pentru trei sau mai multe numere!
+</p>
 </body>

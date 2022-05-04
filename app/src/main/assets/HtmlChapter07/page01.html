@@ -1,26 +1,73 @@
-<body><h1>Tablouri bidimensionale</h1>
+<body>
+<h1><span class="functions">Tablouri unidimensionale</span></h1>
+<p><span class="functions">Tablourile unidimensionale</span> sunt declarate astfel: </p>
+<p class="codeblock">
+    tipDeBază <span class="functions">denumire</span>[Dimensiune];<br>
+    de exemplu:
+    int <span class="numbers">X</span>[4];
+</p>
 
-Declararea tablourilor bidimensionale (matrice) face în C/C++ similar cu a tablourilor unidimensionale, dar trebuie precizate două dimensiuni fizice, maximale: numărul maxim de linii și numărul maxim de coloane ale matricei:
+<p>Ne putem imagina tablourile unidimensionale ca un sir de valori.<br>
+Dimensiunea tabloului declarat mai sus, adica <span class="numbers">X</span>[4], este 4.<br>
+Acest tablou poate lua 10 valori numerotate de la 0 la 3.</p>
 
-<p class="codeblock">tipDeBază denumire[NumarLinii][NumarColoane];</p>
-de exemplu:
+<table>
+    <tr>
+        <td>Element</td>
+        <td>17</td>
+        <td>23</td>
+        <td>5</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Indice</td>
+        <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+</table>
 
-<p class="codeblock">int A[5][10];</p>
-Mai sus s-a declarat un tablou bidimensional (o matrice) cu 5 linii și 10 coloane. Ni-l putem imagina astfel (valorile sunt aleatorii):
+<p>Accesarea unui element se face prin operatorul de indexare <span class="functions">[]</span>.</p>
+<p class="codeblock">
+    cout << <span class="numbers">X</span>[0]; <span class="comments">// Afiseaza 17</span><br>
+    cout << <span class="numbers">X</span>[3]; <span class="comments">// Afiseaza 0</span><br>
+    cout << <span class="numbers">X</span>[4]; <span class="comments">// Eroare</span>
+</p>
 
+<h2>Scrierea unui tablou intr-un program</h2>
+<p class="codeblock">
+    int <span class="functions">main</span>()<br>
+    {<br>
+    int <span class="numbers">A</span>[100]; <span class="comments">// Declaram un tablou cu maxim 100 de elemente</span><br>
+    int <span class="numbers">n</span>; cin >> <span class="numbers">n</span>; <span class="comments">// n reprezinta numarul elementelor pe care le vom citi</span><br>
+    for(int <span class="numbers">i</span> = 0; <span class="numbers">i</span> < <span class="numbers">n</span>; <span class="numbers">i</span>++)<br>
+    cin >> <span class="numbers">A</span>[<span class="numbers">n</span>];
+</p>
+<p>Programul o sa citeasca de la tastatura, pe rand, elementele lui <span class="numbers">A</span> de la 0 la <span class="numbers">n</span>-1.</p>
+<p>Important! <span class="numbers">n</span> trebuie sa fie mai mic decat dimensiunea lui <span class="numbers">A</span>, adica 100.</p>
 
-Matricea are:
+<h2>Afisarea unui vector</h2>
+<p>Important! Nu se poate face afisarea cu <span class="strings">"cout << X;"</span>. Trebuie specificat indexul. Varianta corecta este:</p>
+<p class="codeblock">
+    for(int <span class="numbers">i</span> = 0; <span class="numbers">i</span> < <span class="numbers">n</span>; <span class="numbers">i</span>++)<br>
+    cout << <span class="numbers">X</span>[<span class="numbers">i</span>] << <span class="strings">' '</span>;
+</p>
 
-5 • 10 = 50 de elemente;
-5 linii, indexate (numerotate) de la 0 la 4 – mai jos sunt evidențiate liniile cu indici 1 și 3;
-10 coloane, indexate de la 0 la 9 – mai jos sunt evidențiate coloanele cu indici 0, 4 și 9;
+<p>sau in ordine descrescatoare:</p>
+<p class="codeblock">
+    for(int <span class="numbers">i</span> = <span class="numbers">n</span>-1; <span class="numbers">i</span> >= 0; <span class="numbers">i</span>--)<br>
+    cout << <span class="numbers">X</span>[<span class="numbers">i</span>] << <span class="strings">' ';
+</p>
 
-
-Referirea elementelor se face prin intermediul operatorului C++ de indexare [], la fel ca în cazul vectorilor, dar trebuie precizați doi indici – cel de linie și cel de coloană. Astfel, A[2][4] reprezintă elementul matricei aflat pe linia 2 și pe coloana 4 – la intersecția dintre linia 2 și coloana 4. Astfel primul indice al unui element este cel de linie, iar al doilea indice este cel de coloană.
-
-
-
-
-
-
+<h2>Initializarea elementelor unui tablou</h2>
+<p>Declararea unui tablou se poate face specificand si elementele.</p>
+<p class="codeblock">
+    int <span class="numbers">A</span>[] = {10 , 20 , 30 , 40};<br>
+    int <span class="numbers">B</span>[10] = {10 , 20 , 30 , 40};<br>
+    int <span class="numbers">C</span>[10] = {0};
+</p>
+<p><span class="numbers">A</span> va avea patru elemente, cu valorile <span class="numbers">A</span>[0] = 10, <span class="numbers">A</span>[1] = 20, <span class="numbers">A</span>[2] = 30, <span class="numbers">A</span>[3] = 40.<br>
+    <span class="numbers">B</span> va avea zece elemente; primele patru vor avea valorile <span class="numbers">B</span>[0] = 10, <span class="numbers">B</span>[1] = 20, <span class="numbers">B</span>[2] = 30, <span class="numbers">B</span>[3] = 40, celelalte vor avea valoarea 0!!!<br>
+    <span class="numbers">C</span> va avea zece elemente. Toate vor avea valoarea 0!!!</p>
 </body>

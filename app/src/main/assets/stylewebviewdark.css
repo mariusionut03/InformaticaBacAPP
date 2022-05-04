@@ -1,19 +1,19 @@
 @font-face {
-			font-family: monda;
-			src: url("file:///android_asset/font/monda.ttf")
+			font-family: dosis;
+			src: url("file:///android_asset/font/dosis.ttf")
 		}
 		body {
-			font-family: monda;
+			font-family: dosis;
 			font-size: medium;
 			text-align: justify;
 		}
 
 @font-face {
-			font-family: oxygen;
-			src: url("file:///android_asset/font/oxygen.ttf")
+			font-family: dosis;
+			src: url("file:///android_asset/font/dosis.ttf")
 		}
 		body {
-			font-family: oxygen;
+			font-family: dosis;
 			font-size: medium;
 			text-align: justify;
 		}
@@ -24,19 +24,26 @@ background-color:#000000;
 }
 
 h1 {
-	font-family: 'oxygen', sans-serif;
+	font-family: 'dosis', sans-serif;
 	color: #FFFFFF;
+	text-align: center;
 }
 
 h2 {
-	font-family: 'oxygen', sans-serif;
+	font-family: 'dosis', sans-serif;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+h3 {
+	font-family: 'dosis', sans-serif;
 	color: #FFFFFF;
 }
 
 p {
-	font-family: 'monda', sans-serif;
+	font-family: 'dosis', sans-serif;
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: 20px;
 }
 
 .codeblock {
@@ -48,7 +55,7 @@ p {
 	align: center;
 	color: white;
 	background-color: #1f1f1f;
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .functions {
@@ -68,6 +75,14 @@ p {
 }
 .comments {
 	color: #7d7d7d;
+}
+
+.falscolor {
+    color: #a60006;
+}
+
+.adevaratcolor {
+    color: #00a621;
 }
 
 td, th {

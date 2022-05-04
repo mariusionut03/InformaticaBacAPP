@@ -3,11 +3,193 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Practice Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layoutId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="65dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/practiceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/monda"
+                android:text="Subiecte Bacalaureat"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/practiceTitle"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Simulare 2022 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2021 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2020 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2019 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2018 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2017 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button6"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2016 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button7"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2015 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button9"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button8"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2014 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button9"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2013 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+            <TextView
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_below="@+id/button10"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_bg_light_ripple"
+                android:fontFamily="@font/dosis"
+                android:textColor="@color/black"
+                android:text="Subiect 2012 Mate-Info"
+                android:gravity="center"
+                android:textSize="25dp"  />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 
 </RelativeLayout>

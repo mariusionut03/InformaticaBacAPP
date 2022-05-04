@@ -1,79 +1,65 @@
-<body>
-<h1>Structuri de date liniare</h1>
-<h2>Stiva</h2>
+ <body>
+<h1>Alocarea dinamică a memoriei</h1>
 
-<p>Stiva (stack) este o structură de date liniară abstractă, pentru care sunt definite operațiile de adăugare a unui element și eliminare a unui element și aceste operații se realizează la un singur capăt al structurii, numit vârful stivei.
-<br><br>
-    În timpul operațiilor cu stiva avem acces numai la elementul din vârful stivei.</p>
+<h2>Pointeri</h2>
+<p>Definiție: Un <span class="functions">pointer</span> este o dată a cărei valoare este o adresă de memorie. O variabilă de tip pointer este o variabilă a cărei valoare este adresa altor variabile.</p>
+<p>Important: Nu confundați adresa unei variabile cu valoarea memorată de aceasta. Ele sunt de regulă diferite, chiar și în cazul pointerilor!</p>
 
-<h3>Operații cu stiva</h3>
-
-<p class="codeblock">
-    Cu o stivă se pot face următoarele operații:<br>
-    - inițializarea stivei – crearea unei stive vide;<br>
-    - verificarea faptului că o stivă este sau nu vidă;<br>
-    - adăugarea unui nou element pe stivă – elementul devine vârful stivei. Operația se numește push;<br>
-    - eliminarea unui element de pe stivă – se va elimina vârful stivei. Un nou element devine vârf al stivei, sau ea devine vidă. Operația se numește pop;<br>
-    - identificarea valorii elementului din vârful stivei – accesul la acel element Operația se numește top.
+<h2>Declararea de pointeri</h2>
+<p>La declararea unei variabile de tip pointer se precizează tipul variabilelor a căror adrese pot fi memorate de acel pointer:</p>
+<p class="codeblock">TIP *<span class="numbers">NUME</span>;<br>
+    <span class="comments">// Exemple:</span><br>
+    int *<span class="numbers">p</span>;<br>
+    <span class="comments">// p este o variabilă de tip pointer a cărei valoare este adresa unei variabile de tip int.</span><br>
+    double *<span class="numbers">f</span>;<br>
+    <span class="comments">// f este o variabilă de tip pointer a cărei valoare este adresa unei variabile de tip double.</span><br>
+    int *<span class="numbers">p</span>, *<span class="numbers">q</span>;<br>
+    <span class="comments">// dacă declarăm mai multe variabile de același tip pointer trebuie să plasăm simbolul * înaintea fiecăreia</span>
 </p>
 
-<p>Imaginati-va un pachet de gume de mestecat. Il deschidem de la un capat si avem acces doar la guma din acel capat. Ea trebuie scoasa pentru a avea acces la urmatoarea.</p>
-
-<h3>Modalități de implementare a stivei</h3>
-<p>La fel ca în cazul cozii, stiva poate fi implementată în limbajul C++ în mai multe moduri:
-<br><br>
--implementare statică, prin intermediul tablourilor;<br>
--implementare dinamică, prin intermediul listelor alocate dinamic;<br>
--folosirea containerului stack din STL.<br>
-    Acest articol prezintă implementarea statică și folosirea STL.</p>
-
-<h3>Implementarea statică a stivei</h3>
-<p>Vom folosi un tablou alocat static și o variabilă simplă prin care identificăm vârful stivei. În continuare considerăm o stivă cu elemente întregi.</p>
-
+<h2>Referențiere, dereferențiere</h2>
+<p>adresa unei variabile (statice) poate fi determinată cu ajutorul operatorului de referențiere <span class="functions">&</span>. Fiind o adresă, rezultatul acestei operații poate fi atribuit unui pointer:</p>
 <p class="codeblock">
-    // Declaratii<br>
-    const int DIM = 100;<br>
-    int S[DIM], vf;<br>
-    <br>
-    // Inițializarea stivei – crearea unei stive vide<br>
-    vf = 0;<br>
-    <br>
-    // Verificarea faptului că stiva este vidă<br>
-    vf == 0 // stivă vidă<br>
-    vf > 0 // stivă nevidă<br>
-    <br>
-    // Adăugarea unui element – PUSH<br>
-    S[vf++] = _VALOARE ;<br>
-    <br>
-    // Eliminarea unui element – POP<br>
-    vf --;<br>
-    <br>
-    // Identificarea valorii din vârful stivei – TOP<br>
-    S[vf-1];
+    int <span class="numbers">x</span> , *<span class="numbers">p</span>;<br>
+    cout << &<span class="numbers">x</span>; <span class="comments">// adresă</span><br>
+    <span class="numbers">p</span> = &<span class="numbers">x</span>;<br>
+    cout << <span class="numbers">p</span>; <span class="comments">// aceeași adresă ca mai sus</span>
+</p>
+<p>variabila cu adresa memorată într-un anumit pointer poate fi obținută cu ajutorul operatorului de dereferențiere *</p>
+<p class="codeblock">
+    int <span class="numbers">x</span> , *<span class="numbers">p</span>;<br>
+    <span class="numbers">x</span> = 7;<br>
+    <span class="numbers">p</span> = &<span class="numbers">x</span>; <span class="comments">// x memorează adresa lui x</span><br>
+    *<span class="numbers">p</span> = 10; <span class="comments">// dereferențiere: *p este variabila x; s-a modificat x</span><br>
+    cout << <span class="numbers">x</span>; <span class="comments">// 10</span>
 </p>
 
-
-<h3>Folosirea containerului STL stack</h3>
-
-<p>Standard Template Library pune la dispoziție un container adaptor specializat pentru gestionarea unei stive, numit stack. Un obiect de tip stack încapsulează toate operațiile specifice stivei:</p>
-
+<p>la declararea unei variabile de tip pointer, aceasta este inițializată; valoarea ei este 0 sau o adresă la întâmplare; operația de dereferențiere produce de obicei erori de rulare, deoarece valoarea pointerului nu coincide cu adresa unei variabile din zonele de memorie alocate programului curent:</p>
 <p class="codeblock">
-    // Declarații<br>
-    #include <span><</span>stack><br>
-    <br>
-    // Inițializarea stivei – crearea unei stive vide<br>
-    stack<span><</span>int> S;<br>
-    <br>
-    // Verificarea faptului că stiva este vidă<br>
-    S.empty() // true dacă stiva este vidă, false în caz contrar<br>
-    <br>
-    // Adăugarea unui element – PUSH<br>
-    S.push( _VALOARE );<br>
-    <br>
-    // Eliminarea unui element – POP<br>
-    S.pop();<br>
-    <br>
-    // Identificarea valorii din vârful stivei – TOP<br>
-    S.top()
+    int *<span class="numbers">p</span>;<br>
+    *<span class="numbers">p</span> = 10; <span class="comments">// eroare la rulare</span>
 </p>
+
+<h2>Compararea pointerilor</h2>
+<p>În mod curent trebuie să verificăm dacă doi pointeri rețin aceeași adresă. Pentru aceasta putem folosi operatorii == și !=.<br>
+<br>
+    De asemenea, pointerilor li se pot aplica operatorii relaționali <, >, <=, >=.</p>
+<h2>Pointeri la structuri</h2>
+<p>Considerăm următoarea secvență:</p>
+<p class="codeblock">
+    struct <span class="functions">Punct</span><br>{<br>
+    &emsp;&emsp;int <span class="numbers">x</span>,<span class="numbers">y</span>;<br>
+    };<br>
+    <br>
+    Punct <span class="numbers">A</span>, *<span class="numbers">pA</span>;<br>
+    <span class="numbers">A</span>.<span class="numbers">x</span> = 1, <span class="numbers">A</span>.<span class="numbers">y</span> = 2;<br>
+    <span class="numbers">pA</span> = &<span class="numbers">A</span>;<br>
+    cout << (*<span class="numbers">pA</span>).<span class="numbers">x</span> << <span class="strings">" "</span> << (*<span class="numbers">pA</span>).<span class="numbers">y</span> << endl;<br>
+            cout << <span class="numbers">pA</span>-><span class="numbers">x</span> << <span class="strings">" "</span> << <span class="numbers">pA</span>-><span class="numbers">y</span> << endl;<br>
+</p>
+
+<p>Pointerul <span class="numbers">pA</span> memorează adresa variabilei <span class="numbers">A</span>. Observați modul în care s-a făcut accesul la câmpurile variabilei cu adresa în pointerul <span class="numbers">pA</span>:<br>
+    <br>
+    -în expresia (*<span class="numbers">pA</span>).<span class="numbers">x</span> parantezele rotunde sunt necesare, deoarece operatorul de acces . are prioritate mai mare decât operatorul de dereferențiere *. Fără acestea expresia ar fi fost interpretată astfel: *(pA.x), dar pA nu este o structură cu câmpul x, deci s-ar fi obținut eroare de sintaxă;<br>
+        -o altă modalitate, mai simplă, de accesare a câmpurilor structurii cu adresa în pointerul pA constă în folosirea operatorului <span class="numbers">-></span> de acces indirect. În operația p->camp, p trebuie să fie pointer la o structură, iar camp trebuie să fie câmp al acelei structuri.</p>
 </body>

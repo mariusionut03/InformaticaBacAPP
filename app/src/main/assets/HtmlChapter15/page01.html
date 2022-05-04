@@ -1,0 +1,52 @@
+<body>
+<h1>Teoria Grafurilor</h1>
+
+<h2>Grafuri neorientate</h2>
+
+<p><span class="functions">Definiție</span>: Se numește <span class="functions">graf neorientat</span> o pereche ordonată de mulțimi G=(X,U), unde:<br>
+    <span class="functions">-</span> X este o mulțime finită și nevidă de elemente numite vârfuri sau noduri;<br>
+    <span class="functions">-</span> U este o mulțime finită de submulțimi cu două elemente din X, numite muchii.
+    Vom nota în continuare vârfurile cu valori între 1 și n – unde n este număru de vârfuri din graf, iar muchiile cu <span class="functions">[x,y]</span> sau <span class="functions">(x,y)</span>, unde x și y sunt vârfuri și se numesc extremitățile muchiei. <br>
+    Un vecin al unui vârf x este orice vârf y cu proprietatea că există muchia <span class="functions">[x,y]</span>.<br>
+    Două vârfuri între care există muchie se numesc <span class="functions">adiacente</span>.<br>
+
+    Două muchii sunt <span class="functions">incidente</span> dacă au o o extremitate comună. Un vârf este incident cu o muchie dacă vârful este extremitate a acelei muchii.<br>
+
+    Mulțimea muchiilor are proprietatea de simetrie: dacă <span class="functions">[x,y]</span> este muchie, atunci și <span class="functions">[y,x]</span> este muchie.<br>
+
+    Conform definiției:<br>
+
+    într-un graf neorientat nu există muchie de la un vârf la el însuși;<br>
+    intre două vârfuri distincte există cel mult o muchie.<br>
+
+    <span class="functions">Exemplu</span>: Fie G=(X,U), unde:<br>
+
+    X={1,2,3,4,5,6,7,8,9,10,11}<br>
+    U={[1,4],[1,5],[2,3],[2,8],[3,11],[4,5],[4,9],[7,10],[8,11]}<br>
+</p>
+
+<h2>Gradul unui vârf</h2>
+
+<p>Într-un graf neorientat se numește grad al unui vârf numărul de vârful adiacente cu acesta (sau numărul de muchii incidente cu acesta). Gradul unui vărf x se notează d(x).</p>
+<p><span class="functions">-</span> un vârf cu gradul 0 se numește izolat. În graful de mai sus, vârful 6 este izolat.<br>
+    <span class="functions">-</span> un vârf cu gradul 1 se numește terminal. În graful de mai sus, vârful 9 este vârf terminal.<br>
+    <span class="functions">-</span> gradul maxim al unui vârf într-un graf cu n vârfuri este n-1.</p>
+
+<p>Teoremă: Într-un graf neorientat, suma gradelor tuturor vârfurilor este dublul numărului de muchii.</p>
+
+<h2>Termeni din teoria grafurilor</h2>
+
+<p><span class="functions">-</span> graf nul -> dacă mulțimea muchiilor este vidă.<br>
+<span class="functions">-</span> graf complet -> toate varfurile sunt adiacente intre ele<br>
+<span class="functions">-</span> graf regulat -> toate varfurile au acelasi grad<br>
+<span class="functions">-</span> lant -> o succesiune de vârfuri adiacente consecutive<br>
+<span class="functions">-</span> ciclu -> lant unde primul varf este identic cu ultimul<br>
+<span class="functions">-</span> graf conex -> daca pentru oricare doua varfuri exista cel putin un lant care le leaga<br>
+<span class="functions">-</span> componentă conexă -> subgraf al lui G, poate fi asemanat cu o insula. un nod izolat reprezinta o componenta conexa<br>
+<span class="functions">-</span> graf hamiltonian -> are un ciclu care trece prin toate varfurile grafului.<br>
+<span class="functions">-</span> graf eulerian -> are un ciclu care trece prin toate muchiile grafului</p>
+
+
+
+
+</body>

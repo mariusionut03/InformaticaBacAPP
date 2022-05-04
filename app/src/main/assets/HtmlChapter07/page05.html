@@ -1,0 +1,39 @@
+<body>
+    <h1><span class="functions">Cautarea intr-un vector</span></h1>
+
+<p>Căutarea unei valori într-un vector se poate face în două moduri:
+<br><br>
+    <span class="functions">-> secvențial</span> – presupune analizarea fiecărui element al vectorului într-o anumită ordine (de obicei de la stânga la dreapta). Când se găsește valoarea căutată parcurgerea vectorului se poate opri. În cel mai rău caz, pentru un vector cu n elemente parcurgerea face n pași, complexitatea timp a căutării secvențiale este O(n)
+    <br><span class="functions">-> binar</span>. Căutarea binară se poate face într-un vector numai dacă elementele acestuia sunt în ordine (de obicei crescătoare) după un anumit criteriu (de obicei criteriul este chiar relația de ordine naturală între numere, cuvinte, etc). Căutarea binară presupune împărțirea vectorului în secvențe din ce în ce mai mici, înjumătățindu-le și continuând cu jumătatea în care se poate afla valoarea dorită (conform ordinii elementelor din vector).</p>
+
+    <p>Algoritmul căutării binare este următorul:
+
+    Date de intrare:
+
+        un vector <span class="numbers">v</span>[] cu <span class="numbers">n</span> elemente, indexate de la 1 la <span class="numbers">n</span>, ordonate crescător și o valoare <span class="numbers">x</span> care se va căuta.
+    Date de ieșire:
+
+        un indice poz dacă valoarea <span class="numbers">x</span> apare în vectorul <span class="numbers">v</span>[] sau 0 în caz contrar.
+        Algoritm pseudocod:</p>
+<p class="codeblock">
+    <span class="numbers">st</span> ← 1<br>
+    <span class="numbers">dr</span> ← n<br>
+    <span class="numbers">poz</span> ← 0<br>
+    <span class="comments">┏━━━</span> <span class="functions">cat timp</span> <span class="numbers">st</span> < <span class="numbers">dr</span> <span class="functions">si</span> <span class="numbers">poz</span>=0 <span class="functions">executa</span><br>
+    <span class="comments">┃ </span>            &emsp;&emsp; <span class="numbers">m</span> ← (<span class="numbers">st</span> + <span class="numbers">dr</span>) % 2<br>
+    <span class="comments">┃ ┏━━</span>          <span class="functions">daca</span> <span class="numbers">v</span>[<span class="numbers">m</span>] = <span class="numbers">x</span> <span class="functions">atunci</span><br>
+    <span class="comments">┃ ┃ </span>          &emsp;&emsp;<span class="numbers">poz</span> = <span class="numbers">m</span><br>
+    <span class="comments">┃ ┃ </span>             <span class="functions">altfel</span><br>
+    <span class="comments">┃ ┃ ┏━</span>           <span class="functions">daca</span> <span class="numbers">v</span>[<span class="numbers">m</span>] < <span class="numbers">x</span> <span class="functions">atunci</span><br>
+    <span class="comments">┃ ┃ ┃</span>&emsp;&emsp;<span class="numbers">st</span> ← <span class="numbers">m</span> + 1<br>
+    <span class="comments">┃ ┃ ┃</span> <span class="functions">altfel</span><br>
+    <span class="comments">┃ ┃ ┃</span>&emsp;&emsp;<span class="numbers">dr</span> ← <span class="numbers">m</span> -1<br>
+    <span class="comments">┃ ┃ ┗━■</span><br>
+    <span class="comments">┃ ┗━━■</span><br>
+    <span class="comments">┗━━■</span>
+</p>
+
+
+
+
+</body>

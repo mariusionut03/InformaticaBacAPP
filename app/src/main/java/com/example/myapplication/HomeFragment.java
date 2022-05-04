@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     private String chapterString, pageString;
 
     public boolean appRefreshTheme;
-    public TextView learn1Text, learn2Text, learn3Text, titleText, textView4, textView5, textView6, textView7;
+    public TextView learn1Text, learn2Text, learn3Text, titleText, textView4, textView5, textView6, textView7, infotextview;
 
     @SuppressLint("ClickableViewAccessibility")
     @Nullable
@@ -63,6 +63,7 @@ public class HomeFragment extends Fragment {
         textView5 = (TextView) view.findViewById(R.id.textView5);
         textView6 = (TextView) view.findViewById(R.id.textView6);
         textView7 = (TextView) view.findViewById(R.id.textView7);
+        infotextview = view.findViewById(R.id.textView20);
 
         learn2Text.setText("Capitolul " + chapterString);
         learn3Text.setText("Pagina " + pageString);
@@ -73,6 +74,8 @@ public class HomeFragment extends Fragment {
             FragmentManager manager = getParentFragmentManager();
             manager.beginTransaction().replace(R.id.fragment_container, settingsFragment, settingsFragment.getTag()).commit();
         });
+
+        quizButton.setOnClickListener(v -> quizButtonFunction());
 
         learnButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -117,10 +120,16 @@ public class HomeFragment extends Fragment {
         startActivity(intent);
     }
 
+    public void quizButtonFunction() {
+        Intent intent = new Intent(getActivity(), quizActivity.class);
+        startActivity(intent);
+    }
+
     private void loadThemeFunction()
     {
         if(theme == true)
         {
+            infotextview.setTextColor(Color.parseColor("#FFFFFF"));
             learnButton.setBackgroundResource(R.drawable.style_bg_dark_ripple);
             quizButton.setBackgroundResource(R.drawable.style_bg_dark_ripple);
             subiecteButton.setBackgroundResource(R.drawable.style_bg_dark_ripple);

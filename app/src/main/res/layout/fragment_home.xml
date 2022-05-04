@@ -9,37 +9,37 @@
         android:id="@+id/titleHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="464dp"
         android:fontFamily="@font/righteous"
-        android:text="Infromatică Bac"
+        android:text="Memorator Informatică"
         android:textColor="#000000"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/buttonLearn"
         android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_height="100dp"
-        android:background="@drawable/style_bg_light_ripple"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="125dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple" />
 
     <TextView
         android:id="@+id/textViewLearn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:fontFamily="@font/dosis"
-        android:text="Continuă învățatul"
-        android:elevation="2dp"
+        android:layout_alignStart="@+id/buttonLearn"
+        android:layout_alignTop="@+id/buttonLearn"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="Continuă învățatul"
         android:textColor="@color/black"
-        android:layout_alignTop="@+id/buttonLearn"
-        android:layout_alignStart="@+id/buttonLearn"/>
+        android:textSize="30dp" />
     
     <TextView
         android:id="@+id/textViewLearn2"
@@ -70,111 +70,129 @@
     <TextView
         android:id="@+id/buttonQuiz"
         android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:fontFamily="@font/dosis"
-        android:textSize="20dp"
-        android:background="@drawable/style_bg_light_ripple"
-        android:textColor="@color/black"
         android:layout_below="@+id/buttonLearn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:fontFamily="@font/dosis"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/dosis"
-        android:textSize="30dp"
-        android:elevation="2dp"
+        android:layout_alignStart="@+id/buttonQuiz"
+        android:layout_alignTop="@+id/buttonQuiz"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="Întrebări grilă"
         android:textColor="@color/black"
-        android:layout_alignTop="@+id/buttonQuiz"
-        android:layout_alignStart="@+id/buttonQuiz"
-        android:text="Quiz Button" />
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/buttonSubiecte"
         android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_height="75dp"
-        android:fontFamily="@font/dosis"
-        android:textSize="20dp"
-        android:background="@drawable/style_bg_light_ripple"
-        android:textColor="@color/black"
+        android:layout_height="150dp"
         android:layout_below="@+id/buttonQuiz"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:fontFamily="@font/dosis"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/dosis"
-        android:textSize="30dp"
-        android:elevation="2dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="5dp"
-        android:textColor="@color/black"
-        android:layout_alignTop="@+id/buttonSubiecte"
         android:layout_alignStart="@+id/buttonSubiecte"
-        android:text="Subiecte Button" />
+        android:layout_alignTop="@+id/buttonSubiecte"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="Informații"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonSubiecte"
+        android:layout_alignBottom="@+id/buttonSubiecte"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="25dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="Vizitați meniul din partea de jos pentru a vizualiza toate capitolele, subiectele din anii trecuți de la examenul de bacalaureat sau pentru a schimba tema interfaței."
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/buttonSettings"
         android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:fontFamily="@font/dosis"
-        android:textSize="20dp"
-        android:background="@drawable/style_bg_light_ripple"
-        android:textColor="@color/black"
-        android:onClick="onSelectFragment"
         android:layout_below="@+id/buttonSubiecte"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:fontFamily="@font/dosis"
+        android:onClick="onSelectFragment"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/dosis"
-        android:textSize="30dp"
-        android:elevation="2dp"
+        android:layout_alignStart="@+id/buttonSettings"
+        android:layout_alignTop="@+id/buttonSettings"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="Settings Button"
         android:textColor="@color/black"
-        android:layout_alignTop="@+id/buttonSettings"
-        android:layout_alignStart="@+id/buttonSettings"
-        android:text="Settings Button" />
+        android:textSize="30dp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/buttonFeedback"
         android:layout_width="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_height="75dp"
-        android:background="@drawable/style_bg_light_ripple"
         android:layout_below="@+id/buttonSettings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/style_bg_light_ripple"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/dosis"
-        android:textSize="30dp"
-        android:elevation="2dp"
+        android:layout_alignStart="@+id/buttonFeedback"
+        android:layout_alignTop="@+id/buttonFeedback"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
+        android:elevation="2dp"
+        android:fontFamily="@font/dosis"
+        android:text="FeedBack Button"
         android:textColor="@color/black"
-        android:layout_alignTop="@+id/buttonFeedback"
-        android:layout_alignStart="@+id/buttonFeedback"
-        android:text="FeedBack Button" />
+        android:textSize="30dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>
